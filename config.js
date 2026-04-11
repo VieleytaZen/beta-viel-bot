@@ -1,24 +1,24 @@
-global.owner = ['62895401166720']  
-global.mods = ['62895401166720'] 
-global.prems = ['62895401166720']
-global.nameowner = 'Lann'
-global.numberowner = '62895401166720'
-global.mail = 'support@tioprm.eu.org' 
-global.gc = 'https://chat.whatsapp.com/G4f1fTpz9zL4EH3FyIcaPR'
-global.instagram = 'https://instagram.com/erlanrahmat_14'
-global.wm = '© Tio'
+global.owner = ['6285161444491']  
+global.mods = ['6285161444491'] 
+global.prems = ['6285161444491']
+global.nameowner = 'Viel'
+global.numberowner = '6285161444491'
+global.mail = 'vieleytazen@gmail.com' 
+global.gc = 'https://chat.whatsapp.com/BBl1lh2NlDU1cxAhjZlpnT'
+global.instagram = 'https://instagram.com/vieleyta_zen'
+global.wm = '© Viel'
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
-global.packname = 'Made With'
-global.author = 'Bot WhatsApp'
-global.maxwarn = '2' // Peringatan maksimum
+global.packname = 'VieleytaZen'
+global.author = 'ig: vieleyta_zen'
+global.maxwarn = '5' // Peringatan maksimum
 global.antiporn = true // Auto delete pesan porno (bot harus admin)
 
 // Prefix
 global.prefix = './#'
 //INI WAJIB DI ISI!//
-global.lann = ''
+global.lann = 'beta-rxyzal'
 global.aksesKey = '' // Register dan buy 
 //Daftar terlebih dahulu https://api.betabotz.eu.org
 

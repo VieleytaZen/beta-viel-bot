@@ -1,5 +1,5 @@
 
-
+/*
 let handler = async (m, { conn, command }) => {
     global.anu = [
         `─────〔 *${command}* 〕─────
@@ -2014,4 +2014,4 @@ module.exports = handler
 function pickRandom(list) {
     return list[Math.floor(list.length * Math.random())]
   }
-  
+  */

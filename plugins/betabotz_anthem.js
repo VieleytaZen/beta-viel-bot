@@ -1,5 +1,5 @@
 
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 
 let handler = async (m, { conn, command }) => {
 let audio = 'src/lagu.mp3'
@@ -54,3 +54,4 @@ handler.customPrefix = /^(betabotz)$/i
 handler.command = new RegExp
 handler.tags = ['main']
 module.exports = handler
+*/

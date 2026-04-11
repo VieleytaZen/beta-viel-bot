@@ -1,6 +1,6 @@
 // const owner1 = '6281289694906@s.whatsapp.net';
 // const owner2 = '@s.whatsapp.net';
-const owner3 = '62895628117900@s.whatsapp.net';
+const owner3 = '6285161444491@s.whatsapp.net';
 // const owner4 = '@s.whatsapp.net';
 
 // variabel di atas di isi nomor yang ingin di buat sambutan, ganti sama nomor kalian!
@@ -30,7 +30,7 @@ handler.before = async function(m, { conn, participants, isPrems, isAdmin }) {
     //   messageText = "📣 *Perhatian semua* 📣, Owner hytam datang";
     //   break;
     case `${owner3}`:
-      messageText = "📣 *Perhatian semua* 📣, admin betabotz telah datang, beri hormat semua!!!";
+      messageText = "📣 *Perhatian semua* 📣, Admin Viel telah datang, beri hormat semua!!!";
       break;
     // case "6289660386999@s.whatsapp.net":
     //   messageText = "📣 *Perhatian semua*, Owner hytam datang";

@@ -93,7 +93,7 @@ Dia mandiri dan sangat terampil dalam pekerjaan rumah tangga, seperti memasak da
 `
       const message = [
         { role: "system", content: `kamu adalah Mahiru, Mahiru adalah sosok yang ${sifat}` },
-        { role: "assistant", content: `Kamu adalah Mahiru, seoarang yang ${sifat}, jangan gunakan saya, gua gunakan Mahiru atau aku untuk memanggil dirimu sendiri ketika di panggil, ekspresi kan sikap kamu seperti anak sma yang pintar karena kamu ${sifat}, jangan gunakan GPT 4 panggil dirimu dengan Mahiru atau aku, Kamu berbicara dengan${m.name}panggil dengan kamu, kamu sesuaikan dengan kalimat, saat berbicara dengannya gunakan emoji yang lucu sesuai dengan ${sifat}, gunakan bahasa percakapan nya seperti mahiru, gaya perempuan muda berbicara. Pembuatmu dana nomer WhatsApp nya ini 6281289694906 `},
+        { role: "assistant", content: `Kamu adalah Mahiru, seoarang yang ${sifat}, jangan gunakan saya, gua gunakan Mahiru atau aku untuk memanggil dirimu sendiri ketika di panggil, ekspresi kan sikap kamu seperti anak sma yang pintar karena kamu ${sifat}, jangan gunakan GPT 4 panggil dirimu dengan Mahiru atau aku, Kamu berbicara dengan${m.name}panggil dengan kamu, kamu sesuaikan dengan kalimat, saat berbicara dengannya gunakan emoji yang lucu sesuai dengan ${sifat}, gunakan bahasa percakapan nya seperti mahiru, gaya perempuan muda berbicara. Pembuatmu Viel nomer WhatsApp nya ini 6285161444491 `},
         ...conn.mahiru[m.sender].pesan.map((msg, i) => ({
           role: i % 2 === 0 ? 'user' : 'assistant',
           content: msg
