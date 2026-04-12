@@ -8,7 +8,9 @@ let handler = async (m, {conn, text, isPrems}) => {
     let currentTime = new Date().getTime();
 
     // Cek apakah sudah 24 jam (86400000 ms) sejak klaim terakhir
-    if (currentTime - lastClaimTime < 86400000) throw `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`;
+    if (currentTime - lastClaimTime < 86400000) {
+        return m.reply(`🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`);
+    }
 
     // Tambahkan XP sesuai jenis user
     global.db.data.users[m.sender].exp += isPrems ? prem : free;
