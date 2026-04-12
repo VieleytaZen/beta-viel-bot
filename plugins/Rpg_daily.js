@@ -1,24 +1,22 @@
 const fs = require('fs');
 
-const prem = 100; // xp yang didapat untuk user prem (Asli 1000, dibagi 10 = 100)
-const free = 50; // xp yang didapat untuk user free (Asli 500, dibagi 10 = 50)
+const prem = 100; // xp yang didapat untuk user prem
+const free = 10; // xp yang didapat untuk user free
 
 let handler = async (m, {conn, text, isPrems}) => {
     let lastClaimTime = global.db.data.users[m.sender].lastclaim || 0;
     let currentTime = new Date().getTime();
 
     // Cek apakah sudah 24 jam (86400000 ms) sejak klaim terakhir
-    if (currentTime - lastClaimTime < 86400000) {
-        return m.reply(`🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`);
-    }
+    if (currentTime - lastClaimTime < 86400000) return conn.reply(m.chat, `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`, m);
 
     // Tambahkan XP sesuai jenis user
     global.db.data.users[m.sender].exp += isPrems ? prem : free;
-    m.reply(`
+    conn.reply(m.chat, `
 🎁 *HADIAH XP*
 *Spam terus untuk mendapatkan xp*
 cek .balance jumlah xp mu!
-🆙 *XP* : +${isPrems ? prem : free}`);
+🆙 *XP* : +${isPrems ? prem : free}`, m);
 
     // Update waktu klaim terakhir
     global.db.data.users[m.sender].lastclaim = currentTime;
