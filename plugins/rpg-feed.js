@@ -32,10 +32,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     user.rubahlastclaim = new Date * 1
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
                     if (rubah > 0) {
-                        let naiklvl = ((rubah * 100) - 1)
+                        let naiklvl = ((rubah * 10) - 1)
                         if (user.rubahexp > naiklvl) {
                             user.rubah += 1
-                            user.rubahexp -= (rubah * 100)
+                            user.rubahexp -= (rubah * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }
@@ -56,10 +56,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
             
                     if (kucing > 0) {
-                        let naiklvl = ((kucing * 100) - 1)
+                        let naiklvl = ((kucing * 10) - 1)
                         if (user.kucingexp > naiklvl) {
                             user.kucing += 1
-                            user.kucingexp -= (kucing * 100)
+                            user.kucingexp -= (kucing * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }
@@ -80,10 +80,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
             
                     if (serigala > 0) {
-                        let naiklvl = ((serigala * 100) - 1)
+                        let naiklvl = ((serigala * 10) - 1)
                         if (user.serigalaexp > naiklvl) {
                             user.serigala += 1
-                            user.serigalaexp -= (serigala * 100)
+                            user.serigalaexp -= (serigala * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }
@@ -103,10 +103,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     user.anjinglastclaim = new Date * 1
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
                     if (anjing > 0) {
-                        let naiklvl = ((anjing * 100) - 1)
+                        let naiklvl = ((anjing * 10) - 1)
                         if (user.anjingexp > naiklvl) {
                             user.anjing += 1
-                            user.anjingexp -= (anjing * 100)
+                            user.anjingexp -= (anjing * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }
@@ -126,10 +126,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     user.phonixlastclaim = new Date * 1
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
                     if (phonix > 0) {
-                        let naiklvl = ((phonix * 100) - 1)
+                        let naiklvl = ((phonix * 10) - 1)
                         if (user.phonixexp > naiklvl) {
                             user.phonix += 1
-                            user.phonixexp -= (phonix * 100)
+                            user.phonixexp -= (phonix * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }
@@ -149,10 +149,10 @@ let pesan = pickRandom(['ɴʏᴜᴍᴍᴍ~', 'ᴛʜᴀɴᴋs', 'ᴛʜᴀɴᴋʏ�
                     user.robolastfeed = new Date * 1
                     m.reply(`ғᴇᴇᴅɪɴɢ *${type}*...\n*${emo} :* ${pesan}`)
                     if (robot > 0) {
-                        let naiklvl = ((robot * 100) - 1)
+                        let naiklvl = ((robot * 10) - 1)
                         if (user.roboexp > naiklvl) {
                             user.robo += 1
-                            user.roboexp -= (robot * 100)
+                            user.roboexp -= (robot * 10)
                             m.reply(`*ᴄᴏɴɢʀᴀᴛs!* , ʏᴏᴜʀ ᴘᴇᴛ ʟᴇᴠᴇʟᴜᴘ`)
                         }
                     }

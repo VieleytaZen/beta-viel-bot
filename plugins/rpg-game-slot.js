@@ -1,16 +1,16 @@
 //import db from '../lib/database.js'
-let reg = 100
+let reg = 10
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     let fa = `
 Berapa banyak yang ingin Anda pertaruhkan? 
 
 📌 Contoh :
-*${usedPrefix + command}* 100`.trim()
+*${usedPrefix + command}* 10`.trim()
     if (!args[0]) throw fa
     if (isNaN(args[0])) throw fa
     let apuesta = parseInt(args[0])
     let users = global.db.data.users[m.sender]
-    let time = users.lastslot + 20000 // 20 seconds cooldown
+    let time = users.lastslot + 2000 // 20 seconds cooldown
     if (new Date - users.lastslot < 20000) throw `⏳ Tunggu *${msToTime(time - new Date())}* Untuk menggunakan lagi`
     if (apuesta < 100) throw '✳️ tambahkan *MONEY* Untuk menggunakan lagi'
     if (users.money < apuesta) {

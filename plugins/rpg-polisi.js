@@ -69,7 +69,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
       conn.reply(m.chat, `*👮‍♂️ Status Polisi 👮‍♂️*\n\n🔍 Sedang Mencari Pencuri: ${player.State === STATES.SEARCHING ? "Ya" : "Tidak"}\n🚓 Pencuri Tertangkap: ${player.Pencuri_Tertangkap}\n💰 Uang: Rp${player.Uang.toLocaleString()}\n🏆 Level Pencuri: ${player.Level}`, m);
     } else if (subCommand === "item") {
       if (args.length === 1) {
-        conn.reply(m.chat, "*🛒 Item Shop 🛒*\n\nKaca Pembesar - 200 coins\n" +
+        conn.reply(m.chat, "*🛒 Item Shop 🛒*\n\nKaca Pembesar - 20 coins\n" +
           `Gunakan *${usedPrefix}polisi item kaca-pembesar* untuk membeli kaca pembesar.`, m);
       } else {
         const item = args[1]?.toLowerCase();
@@ -83,7 +83,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
           }
 
           player.Kaca_Pembesar = 1;
-          player.Uang -= 200;
+          player.Uang -= 20;
           conn.reply(m.chat, "*🛒 Anda berhasil membeli kaca pembesar.* Gunakan 'polisi cari' untuk meningkatkan peluang menangkap pencuri.", m);
         } else {
           conn.reply(m.chat, "*🛒 Item yang dimaksud tidak ditemukan.*", m);
@@ -130,16 +130,16 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         let reward = 0;
         switch (polisiAction) {
           case "kejar":
-            reward = 1000 * level;
+            reward = 100 * level;
             break;
           case "tembak":
-            reward = 2000 * level;
+            reward = 200 * level;
             break;
           case "lempar":
-            reward = 3000 * level;
+            reward = 300 * level;
             break;
           case "tangkap":
-            reward = 5000 * level;
+            reward = 500 * level;
             break;
         }
 
@@ -147,7 +147,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         player.Uang += reward;
         user.money += reward;
         if (player.Uang < 5000) {
-          player.Uang = 5000;
+          player.Uang=50;
         }
 
         conn.reply(m.chat, `*🚓 Anda berhasil melawan dan menangkap pencuri level ${level}!* Anda mendapatkan imbalan Rp${reward.toLocaleString()}. Total Uang Anda: Rp${player.Uang.toLocaleString()}.`, m);

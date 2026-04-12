@@ -1,54 +1,54 @@
-const cooldown = 30000;
+const cooldown = 300;
 
 
 const items = {
     buygun: {
-        tombak: { money: 50000000 },
-        busur: { money: 10000000 },
-        anakpanah: { money: 8000000 },
-        glock: { dana: 3000000 },
-        ammo: { gopay: 3500000 },
-        ak47: { dana: 6400000 },
-        m4: { dana: 3400000 },
-        m16: { dana: 8400000 },
-        ar15: { ovo: 7700000 },
-        scar: { gopay: 9000000 },
-        famas: { ovo: 9000000 },
-        aug: { dana: 9400000 },
-        uzi: { dana: 5500000 },
-        mp5: { ovo: 5000000 },
-        p90: { money: 6400000 },
-        mac10: { money: 4000000 },
-        vector: { gopay: 4200000 },
-        barrettm82: { money: 19900000 },
-        remington700: { ovo: 2000000 },
-        dragunovsvd: { dana: 88000000 },
-        m40: { ovo: 40000000 },
-        m24: { ovo: 40000000 }
+        tombak: { money:500000 },
+        busur: { money:100000 },
+        anakpanah: { money:80000 },
+        glock: { dana: 300000 },
+        ammo: { gopay: 350000 },
+        ak47: { dana: 640000 },
+        m4: { dana: 340000 },
+        m16: { dana: 840000 },
+        ar15: { ovo: 770000 },
+        scar: { gopay: 900000 },
+        famas: { ovo: 900000 },
+        aug: { dana: 940000 },
+        uzi: { dana: 550000 },
+        mp5: { ovo: 500000 },
+        p90: { money:64000 },
+        mac10: { money:40000 },
+        vector: { gopay: 420000 },
+        barrettm82: { money:199000 },
+        remington700: { ovo: 200000 },
+        dragunovsvd: { dana: 8800000 },
+        m40: { ovo: 4000000 },
+        m24: { ovo: 4000000 }
     },
     sellgun: {
-        tombak: { money: 2500000 },
-        busur: { money: 500000 },
-        anakpanah: { money: 400000 },
-        glock: { money: 1500000 },
-        ammo: { money: 1750000 },
-        ak47: { money: 3200000 },
-        m4: { money: 170000 },
-        m16: { money: 420000 },
-        ar15: { money: 385000 },
-        scar: { money: 450000 },
-        famas: { money: 450000 },
-        aug: { money: 470000 },
-        uzi: { money: 275000 },
-        mp5: { money: 250000 },
-        p90: { money: 320000 },
-        mac10: { money: 200000 },
-        vector: { money: 210000 },
-        barrettm82: { money: 9950000 },
-        remington700: { money: 100000 },
-        dragunovsvd: { money: 4400000 },
-        m40: { money: 200000 },
-        m24: { money: 200000 }
+        tombak: { money:25000 },
+        busur: { money:5000 },
+        anakpanah: { money:4000 },
+        glock: { money:15000 },
+        ammo: { money:17500 },
+        ak47: { money:32000 },
+        m4: { money:1700 },
+        m16: { money:4200 },
+        ar15: { money:3850 },
+        scar: { money:4500 },
+        famas: { money:4500 },
+        aug: { money:4700 },
+        uzi: { money:2750 },
+        mp5: { money:2500 },
+        p90: { money:3200 },
+        mac10: { money:2000 },
+        vector: { money:2100 },
+        barrettm82: { money:99500 },
+        remington700: { money:1000 },
+        dragunovsvd: { money:44000 },
+        m40: { money:2000 },
+        m24: { money:2000 }
     }
 };
 
@@ -163,7 +163,7 @@ function toSimple(number) {
     if (parseFloat(number) === 0) return '0';
     number = parseFloat(number).toFixed(0);
     const suffixes = ['', 'K', 'JT', 'M', 'T'];
-    const base = 1000;
+    const base = 10;
     const exponent = Math.floor(Math.log10(Math.abs(number)) / 3);
     const suffix = suffixes[exponent] || '';
     const simplified = number / Math.pow(base, exponent);

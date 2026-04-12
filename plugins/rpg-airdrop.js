@@ -1,14 +1,14 @@
 let fetch = require('node-fetch');
 let fs = require('fs');
 
-let timeout = 3600000 // 1 jam dalam milidetik
+let timeout = 36000 // 1 jam dalam milidetik
 
 let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
   
     let u = global.db.data.users[m.sender];
-    let time = u.lastclaim + 3600000; // 1 jam dalam milidetik
+    let time = u.lastclaim + 360000; // 1 jam dalam milidetik
     if (new Date - u.lastclaim < 3600000) throw `*Sudah Melakukan Pencarian Airdrop!* 🪙\nHarus menunggu selama agar bisa mencari Airdrop kembali selama ${clockString(time - new Date())}`;
-    let Aku = `${Math.floor(Math.random() * 101)}`.trim();
+    let Aku = `${Math.floor(Math.random() * 11)}`.trim();
     let Kamu = `${Math.floor(Math.random() * 81)}`.trim(); 
     let A = (Aku * 1);
     let K = (Kamu * 1);
@@ -37,7 +37,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
       u.lastclaim = new Date * 1;
     } else {
       conn.sendFile(m.chat, 'https://telegra.ph/file/5d71027ecbcf771b299fb.jpg', 'zonk.jpg', `*Airdrop Zonks!*, Kamu mendapatkan Kotak Airdrop *Zonk (Kosong)*\n\nSelamat kamu mendapatkan *Rewards*\n• *Money:* -1.000.000\n• *Isi:* Angin`, m);
-      u.money -= 1000000;
+      u.money-=1000;
       u.lastclaim = new Date * 1;
     }
 

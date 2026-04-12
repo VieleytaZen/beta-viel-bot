@@ -1,12 +1,12 @@
-const free = 10000
-const prem = 20000
-const limitfree = 10
-const limitprem = 20
-const moneyfree = 10000
-const moneyprem = 20000
+const free = 50
+const prem = 10
+const limitfree = 2
+const limitprem = 5
+const moneyfree = 50
+const moneyprem = 10
 
 let handler = async (m, { isPrems }) => {
-    let time = global.db.data.users[m.sender].lastweekly + 604800000
+    let time = global.db.data.users[m.sender].lastweekly + 60480000
   if (new Date - global.db.data.users[m.sender].lastweekly < 604800000) throw `Anda sudah mengklaim, klaim mingguan ini\ntunggu selama ${msToTime(time - new Date())} lagi`
     //    conn.reply(m.chat, `Anda sudah mengklaim dan mendapatkan :`, m)
         global.db.data.users[m.sender].exp += isPrems ? prem : free

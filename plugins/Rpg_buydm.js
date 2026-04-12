@@ -1,4 +1,4 @@
-const xpperdiamond = 1000000 
+const xpperdiamond = 10000 
 let handler = async (m, { conn, command, args }) => {
   let count = command.replace(/^buydm/i, '')
   count = count ? /all/i.test(count) ? Math.floor(global.db.data.users[m.sender].exp / xpperdiamond) : parseInt(count) : args[0] ? parseInt(args[0]) : 1

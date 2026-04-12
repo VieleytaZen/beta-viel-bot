@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   
   // Cooldown check (5 minutes)
   if (timeDiff < 300000) {
-    const remainingTime = 300000 - timeDiff
+    const remainingTime = 3000 - timeDiff
     const remainingTimeString = clockString(remainingTime)
     return conn.reply(m.chat, `Kamu sudah melakukan redeem baru-baru ini. Tunggu ${remainingTimeString} lagi sebelum bisa redeem kembali.`, m, {
       contextInfo: {

@@ -16,35 +16,35 @@ let handler = async (m, { conn, args }) => {
             if (user.money < 5000000000) return conn.reply(m.chat, 'Kamu tidak memiliki cukup money untuk upgrade level guild. Butuh 5.000.000.000 money.', m);
 
             guild.level++;
-            user.money -= 5000000000;
+            user.money-=5000000;
             conn.reply(m.chat, `Level guild ${guild.name} telah ditingkatkan menjadi ${guild.level}.`, m);
             break;
         case 'eliksir':
             if (user.money < 1000000000) return conn.reply(m.chat, 'Kamu tidak memiliki cukup money untuk upgrade eliksir guild. Butuh 1.000.000.000 money.', m);
 
             guild.eliksir++;
-            user.money -= 1000000000;
+            user.money-=1000000;
             conn.reply(m.chat, `Eliksir guild ${guild.name} telah ditingkatkan menjadi ${guild.eliksir}.`, m);
             break;
         case 'harta':
             if (user.money < 2000000000) return conn.reply(m.chat, 'Kamu tidak memiliki cukup money untuk upgrade harta guild. Butuh 2.000.000.000 money.', m);
 
             guild.harta++;
-            user.money -= 2000000000;
+            user.money-=2000000;
             conn.reply(m.chat, `Harta guild ${guild.name} telah ditingkatkan menjadi ${guild.harta}.`, m);
             break;
         case 'guardian':
             if (user.money < 3000000000) return conn.reply(m.chat, 'Kamu tidak memiliki cukup money untuk upgrade guardian guild. Butuh 3.000.000.000 money.', m);
 
             guild.guardian++;
-            user.money -= 3000000000;
+            user.money-=3000000;
             conn.reply(m.chat, `Guardian guild ${guild.name} telah ditingkatkan menjadi ${guild.guardian}.`, m);
             break;
         case 'attack':
             if (user.money < 4000000000) return conn.reply(m.chat, 'Kamu tidak memiliki cukup money untuk upgrade attack guild. Butuh 4.000.000.000 money.', m);
 
             guild.attack++;
-            user.money -= 4000000000;
+            user.money-=4000000;
             conn.reply(m.chat, `Attack guild ${guild.name} telah ditingkatkan menjadi ${guild.attack}.`, m);
             break;
         default:

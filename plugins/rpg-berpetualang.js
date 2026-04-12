@@ -18,7 +18,7 @@ function createAdventures() {
                 potion: Math.floor(Math.random() * 10) + 1,
                 diamond: Math.floor(Math.random() * 5) + 1,
                 emas: Math.floor(Math.random() * 10) + 1,
-                money: Math.floor(Math.random() * (50000 - 1000 + 1)) + 1000,
+                money: Math.floor(Math.random() * (50000 - 100 + 1)) + 1000,
                 limit: Math.floor(Math.random() * 10) + 1
             }
         }
@@ -53,7 +53,7 @@ async function handler(m, { conn, text }) {
             if (typeof user.loot !== "object") global.db.data.users[m.sender].loot = { potion: 0, diamond: 0, emas: 0, money: 0, limit: 0 };
             if (typeof user.lastGameTime !== "number") global.db.data.users[m.sender].kerjasatu = 0;
 
-            const cooldown = 5 * 60 * 1000; // 5 menit cooldown
+            const cooldown = 5 * 60 * 100; // 5 menit cooldown
             let timers = cooldown - (Date.now() - (user.kerjasatu || 0));
             if (timers > 0) return m.reply(`Silakan tunggu ${formatTime(timers)} lagi sebelum memulai petualangan baru.`);
 
@@ -89,7 +89,7 @@ handler.before = async m => {
     if (m.isBaileys) return;
 
     let { areas, currentArea, hasilPetualangan, lastPetualanganTime, totalReward } = conn.adventure[m.sender];
-    const cooldown = 5 * 60 * 1000; // 5 menit cooldown
+    const cooldown = 5 * 60 * 100; // 5 menit cooldown
     let user = global.db.data.users[m.sender];
 
     let msg = m.text.toLowerCase();

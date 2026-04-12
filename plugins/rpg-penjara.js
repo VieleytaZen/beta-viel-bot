@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
- const JAIL_TIME = 60 * 60 * 1000
+ const JAIL_TIME = 60 * 60 * 100
  let who = (m.mentionedJid && m.mentionedJid[0]) ? m.mentionedJid[0] : args[0] ? ((args.join('').replace(/[@ .+-]/g, '')).replace(/^\+/, '').replace(/-/g, '') + '@s.whatsapp.net') : '';
  const user = global.db.data.users[who]
  const usar = global.db.data.users[m.sender]

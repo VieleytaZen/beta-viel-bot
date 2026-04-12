@@ -20,7 +20,7 @@ const handler = async (m, { conn, args }) => {
                 this.level++;
                 this.maxPenumpang += 1;
                 this.pendapatanPerPenumpang += 1;
-                this.biayaUpgrade += 100;
+                this.biayaUpgrade += 10;
 
                 // Simpan perubahan ke database
                 this.saveToDatabase();
@@ -86,7 +86,7 @@ const handler = async (m, { conn, args }) => {
         // Metode untuk bermain
         bermain(durasiMenit) {
             const now = Date.now();
-            const cooldownTime = 1 * 86400000; // Cooldown selama 1 hari
+            const cooldownTime = 1 * 8640000; // Cooldown selama 1 hari
 
             // Cek apakah cooldown masih aktif
             if (now < user.pelabuhanLastBermain + cooldownTime) {

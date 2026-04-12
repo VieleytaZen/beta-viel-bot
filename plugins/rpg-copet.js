@@ -20,7 +20,7 @@ let rndm1 = `${Math.floor(Math.random() * 10)}`
 let rndm2 = `${Math.floor(Math.random() * 10)}`
 .trim()
 
-let ran1 = (rndm1 * 1000)
+let ran1 = (rndm1 * 100)
 let ran2 = (rndm2 * 10) 
 
 let hmsil1 = `${ran1}`

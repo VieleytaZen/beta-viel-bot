@@ -1,6 +1,6 @@
 let handler = async (m, { conn, usedPrefix }) => {
   let __timers = new Date() - global.db.data.users[m.sender].lastngewe;
-  let _timers = 3600000 - __timers;
+  let _timers = 36000 - __timers;
   let order = global.db.data.users[m.sender].ngewe
   let user = global.db.data.users[m.sender];
   let timers = clockString(_timers);
@@ -27,8 +27,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let ngerok4 = Math.floor(Math.random() * 10);
     let ngerok5 = Math.floor(Math.random() * 10);
 
-    let ngrk4 = ngerok4 * 100000;
-    let ngrk5 = ngerok5 * 1000;
+    let ngrk4 = ngerok4 * 1000;
+    let ngrk5 = ngerok5 * 10;
 
     let rokit = `📲 Orderan Masuk dari [ Om Teguh ]
 

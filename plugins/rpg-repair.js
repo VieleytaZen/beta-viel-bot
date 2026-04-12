@@ -73,7 +73,7 @@ _Example_ :
              user.kayu -= 5
              user.iron -= 3
              user.diamond -= 1
-             user.pickaxedurability = 100
+             user.pickaxedurability = 10
             m.reply("Sukses Memperbaiki Pickaxe")
             break
             case 'katana':
@@ -84,7 +84,7 @@ _Example_ :
              user.kayu -= 5
              user.iron -= 20
              user.diamond -= 10
-             user.katanadurability = 100
+             user.katanadurability = 10
             m.reply("Sukses Memperbaiki Katana")
             break
           case 'sword':
@@ -94,7 +94,7 @@ _Example_ :
              user.kayu -= 5
              user.iron -= 9
              user.diamond -= 1
-             user.sworddurability = 100
+             user.sworddurability = 10
             m.reply("Sukses Memperbaiki Sword")
             break
             case 'fishingrod':
@@ -104,7 +104,7 @@ _Example_ :
              user.kayu -= 10
              user.batu -= 15
              user.iron -= 5
-             user.fishingroddurability = 100
+             user.fishingroddurability = 10
             m.reply("Sukses Memperbaiki Fishingrod")
             break
             case 'bow':
@@ -114,7 +114,7 @@ _Example_ :
              user.kayu -= 10
              user.iron -= 5
              user.string -= 5
-             user.bowdurability = 100
+             user.bowdurability = 10
             m.reply("Sukses Memperbaiki Fishingrod")
             break
             case 'armor':
@@ -123,7 +123,7 @@ _Example_ :
             if(user.diamond < 3 || user.iron < 15 ) return m.reply(`Bahan Tidak Cukup Untuk Memperbaiki Armor!`)
              user.iron -= 15
              user.diamond -= 3
-             user.armordurability = 100
+             user.armordurability = 10
             m.reply("Sukses Memperbaiki Armor")
             break
             case 'axe':
@@ -132,7 +132,7 @@ _Example_ :
             if(user.kayu < 10 || user.iron < 15 ) return m.reply(`Bahan Tidak Cukup Untuk Memperbaiki Armor!`)
              user.iron -= 15
              user.kayu -= 10
-             user.axedurability = 100
+             user.axedurability = 10
             m.reply("Sukses Memperbaiki Axe")
             break
           default:

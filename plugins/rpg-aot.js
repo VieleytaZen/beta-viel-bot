@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                 let monsters = [
                     { name: 'Pure Titan', health: 20, attack: 5 },
                     { name: 'Abnormal Titan', health: 50, attack: 10 },
-                    { name: 'Armored Titan', health: 100, attack: 20 },
+                    { name: 'Armored Titan', health: 10, attack: 20 },
                     { name: 'Female Titan', health: 30, attack: 7 },
                     { name: 'Colossal Titan', health: 40, attack: 15 },
                     { name: 'Beast Titan', health: 70, attack: 17 },
@@ -30,24 +30,24 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                     { name: 'Jaw Titan', health: 60, attack: 12 },
                     { name: 'War Hammer Titan', health: 45, attack: 14 },
                     { name: 'Attack Titan', health: 80, attack: 18 },
-                    { name: 'Founding Titan', health: 120, attack: 25 },
-                    { name: 'Ymir’s Titan', health: 150, attack: 30 },
-                    { name: 'Rod Reiss Titan', health: 200, attack: 35 },
-                    { name: 'Mindless Titan', health: 250, attack: 40 },
-                    { name: 'Dina Fritz Titan', health: 300, attack: 45 },
-                    { name: 'Smiling Titan', health: 350, attack: 50 },
-                    { name: 'Grisha Yeager Titan', health: 400, attack: 55 },
-                    { name: 'Frieda Reiss Titan', health: 450, attack: 60 },
-                    { name: 'Eren Yeager Titan', health: 500, attack: 65 },
-                    { name: 'Armin Arlert Titan', health: 550, attack: 70 }
+                    { name: 'Founding Titan', health: 12, attack: 25 },
+                    { name: 'Ymir’s Titan', health: 15, attack: 30 },
+                    { name: 'Rod Reiss Titan', health: 20, attack: 35 },
+                    { name: 'Mindless Titan', health: 25, attack: 40 },
+                    { name: 'Dina Fritz Titan', health: 30, attack: 45 },
+                    { name: 'Smiling Titan', health: 35, attack: 50 },
+                    { name: 'Grisha Yeager Titan', health: 40, attack: 55 },
+                    { name: 'Frieda Reiss Titan', health: 45, attack: 60 },
+                    { name: 'Eren Yeager Titan', health: 50, attack: 65 },
+                    { name: 'Armin Arlert Titan', health: 55, attack: 70 }
                 ]
 
                 // Define Boss Titans
                 let bosses = [
-                    { name: 'Eren Yeager (Founding Titan)', health: 1000, attack: 100 },
-                    { name: 'Zeke Yeager (Beast Titan)', health: 1200, attack: 120 },
-                    { name: 'Reiner Braun (Armored Titan)', health: 1500, attack: 150 },
-                    { name: 'Bertholdt Hoover (Colossal Titan)', health: 2000, attack: 200 }
+                    { name: 'Eren Yeager (Founding Titan)', health: 100, attack: 10 },
+                    { name: 'Zeke Yeager (Beast Titan)', health: 120, attack: 12 },
+                    { name: 'Reiner Braun (Armored Titan)', health: 150, attack: 15 },
+                    { name: 'Bertholdt Hoover (Colossal Titan)', health: 200, attack: 20 }
                 ]
 
                 // Pick a random Titan or Boss Titan
@@ -70,17 +70,17 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                     return
                 }
 
-                let _money = `${Math.floor(Math.random() * 100001)}`.trim()
+                let _money = `${Math.floor(Math.random() * 20)}`.trim()
                 let money = (_money * 1)
-                let exp = `${Math.floor(Math.random() * 10001)}`.trim()
-                let kayu = `${Math.floor(Math.random() * 51)}`.trim()
-                let batu = `${Math.floor(Math.random() * 51)}`.trim()
-                let limit = `${Math.floor(Math.random() * 50) + 1}`.trim() // Random limit between 1 and 50
-                let _stamina = `${Math.floor(Math.random() * 51)}`.trim()
+                let exp = `${Math.floor(Math.random() * 20)}`.trim()
+                let kayu = `${Math.floor(Math.random() * 11)}`.trim()
+                let batu = `${Math.floor(Math.random() * 11)}`.trim()
+                let limit = `${Math.floor(Math.random() * 5) + 1}`.trim() // Random limit between 1 and 5
+                let _stamina = `${Math.floor(Math.random() * 21)}`.trim()
                 let stamina = (_stamina * 1)
-                let _mythic = `${pickRandom(['1', '3', '1', '1', '2'])}`
+                let _mythic = `${pickRandom(['0', '0', '0', '1', '0'])}`
                 let mythic = (_mythic * 1)
-                let _legendary = `${pickRandom(['1', '3', '1', '1', '2'])}`
+                let _legendary = `${pickRandom(['0', '0', '0', '0', '1'])}`
                 let legendary = (_legendary * 1)
                 let itemrand = [`*Selamat anda mendapatkan item rare yaitu*\n${mythic} 🎁 Mythic Crate`, `*Selamat kamu mendapatkan item rare yaitu*\n${legendary} 🎁 Legendary Crate`]
                 let rendem = itemrand[Math.floor(Math.random() * itemrand.length)]

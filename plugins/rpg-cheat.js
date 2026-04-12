@@ -4,10 +4,10 @@ let handler = async (m, { conn }) => {
     if (currentTime - lastClaimTime < 86400000) throw `*anda sudah ngecheat!*\n\n🕚nanti lagi *${msToTime(86400000 - (currentTime - lastClaimTime))}*`;
     if (global.db.data.users[m.sender].money > 20) {
     let user = global.db.data.users[m.sender]
-        global.db.data.users[m.sender]. money = 9999999
-        global.db.data.users[m.sender].limit = 9999999
-        global.db.data.users[m.sender].exp = 9999999
-        global.db.data.users[m.sender].level = 1000
+        global.db.data.users[m.sender]. money=9999
+        global.db.data.users[m.sender].limit=9999
+        global.db.data.users[m.sender].exp=9999
+        global.db.data.users[m.sender].level = 100
         global.db.data.users[m.sender].lastclaim = currentTime;
         m.reply(`_*SUKSES CHEAT TELAH AKTIF GUNAKAN DENGAN BIJAK*_`)
     } else {

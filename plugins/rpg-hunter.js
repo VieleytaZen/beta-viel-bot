@@ -59,9 +59,9 @@ let handler = async (m, { conn, text }) => {
   if (new Date - global.db.data.users[m.sender].lasthunt > 1200000) {
   // if (global.db.data.users[m.sender].health > 99) {
 //   if (global.db.data.users[m.sender].sword > 9) {
-    let coins = parseInt(Math.floor(Math.random() * 100000))
-    let exp = parseInt(Math.floor(Math.random() * 10000))
-    let _healing = `${Math.floor(Math.random() * 100)}`.trim()
+    let coins = parseInt(Math.floor(Math.random() * 100))
+    let exp = parseInt(Math.floor(Math.random() * 10))
+    let _healing = `${Math.floor(Math.random() * 10)}`.trim()
     let healing = (_healing * 1)
     
     /*let sum = 82 * player.area - 59
@@ -81,7 +81,7 @@ let handler = async (m, { conn, text }) => {
         msg += `\nLevel Anda Turun 1 Karena Mati Saat Berburu!\nSword Anda Berkurang 5 Karena Mati Saat Berburu!`
       }
       }
-      player.health = 100
+      player.health = 10
       conn.reply(m.chat, msg, m)
       return
     }

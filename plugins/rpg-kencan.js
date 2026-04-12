@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
   const timeDiff = currentTime - lastDate;
 
   if (timeDiff < 600000) {
-    const remainingTime = 600000 - timeDiff;
+    const remainingTime = 6000 - timeDiff;
     conn.reply(m.chat, `Anda harus menunggu ${remainingTime / 1000} detik lagi sebelum berkencan lagi. ⏳`, m);
     return;
   }
