@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const prem = 1000; // xp yang didapat untuk user prem
-const free = 100; // xp yang didapat untuk user free
+const prem = 10; // xp yang didapat untuk user prem
+const free = 50; // xp yang didapat untuk user free
 
 let handler = async (m, {conn, text, isPrems}) => {
     let lastClaimTime = global.db.data.users[m.sender].lastclaim || 0;

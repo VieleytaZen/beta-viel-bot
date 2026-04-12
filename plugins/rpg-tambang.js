@@ -17,14 +17,14 @@ function createTambangs() {
         area: `Tambang ${areaName}`,
         txt: areaName.toLowerCase().replace(/ /g, "_"),
         reward: {
-            exp: 50 + (i * 50),
+            exp: 50 + (i * 20),
             resources: {
-                diamond: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0,
-                gold: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0,
-                stone: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0,
-                emerald: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0,
-                coal: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0,
-                iron: Math.random() > 0.5 ? Math.floor(Math.random() * 6) : 0
+                diamond: Math.random() > 0.8 ? Math.floor(Math.random() * 2) : 0,
+                gold: Math.random() > 0.5 ? Math.floor(Math.random() * 3) : 0,
+                stone: Math.random() > 0.5 ? Math.floor(Math.random() * 10) : 0,
+                emerald: Math.random() > 0.8 ? Math.floor(Math.random() * 2) : 0,
+                coal: Math.random() > 0.5 ? Math.floor(Math.random() * 5) : 0,
+                iron: Math.random() > 0.5 ? Math.floor(Math.random() * 4) : 0
             }
         }
     }));
@@ -58,7 +58,7 @@ async function handler(m, { conn, text }) {
             if (typeof user.resources !== "object") global.db.data.users[m.sender].resources = { diamond: 0, emerald: 0, coal: 0, iron: 0 };
             if (typeof user.kerjasatu !== "number") global.db.data.users[m.sender].kerjasatu = 0;
 
-            const cooldown = 5 * 60 * 1000; // 5 menit cooldown
+            const cooldown = 5 * 60 * 100; // 5 menit cooldown
             let timers = cooldown - (Date.now() - (user.kerjasatu || 0));
             if (timers > 0) return m.reply(`Silakan tunggu ${formatTime(timers)} lagi sebelum memulai pertambangan baru.`);
 
@@ -94,7 +94,7 @@ handler.before = async m => {
     if (m.isBaileys) return;
 
     let { areas, currentArea, hasilTambang, lastTambangTime, totalReward } = conn.tambang[m.sender];
-    const cooldown = 5 * 60 * 1000; // 5 menit cooldown
+    const cooldown = 5 * 60 * 100; // 5 menit cooldown
     let user = global.db.data.users[m.sender];
 
     let msg = m.text.toLowerCase();

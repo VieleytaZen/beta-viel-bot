@@ -12,7 +12,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let hanjing = 10
   let hserigala = 25
   let hrubah = 50
-  let hphonix = 150
+  let hphonix = 15
 
 let logo = `— *P E T   S T O R E* —
 ▮▧▧▧▧▧▧▧▧▧▧▧▧▮`

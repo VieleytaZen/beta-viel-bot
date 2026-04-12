@@ -73,7 +73,7 @@ serverMessageId: -1
       conn.reply(m.chat, `*👨‍⚕ Status Dokter 👨‍⚕*\n\n🔍 Sedang Mencari Pasien: ${player.State === STATES.SEARCHING ? "Ya" : "Tidak"}\n🚑 Pasien Sembuh: ${player.Pasien_Sembuh}\n💰 Balance: Rp${player.Balance.toLocaleString()}\n🏆 Level Pasien: ${player.Lv}`, m);
     } else if (subCommand === "item") {
       if (args.length === 1) {
-        conn.reply(m.chat, "*🛒 Item Shop 🛒*\n\nObat Super - 500 coins\n" +
+        conn.reply(m.chat, "*🛒 Item Shop 🛒*\n\nObat Super - 50 coins\n" +
           `Gunakan *${usedPrefix}dokter item obat-super* untuk membeli kaca pembesar.`, m);
       } else {
         const item = args[1]?.toLowerCase();
@@ -87,7 +87,7 @@ serverMessageId: -1
           }
 
           player.Obat_Super = 1;
-          player.Balance -= 500;
+          player.Balance -= 50;
           conn.reply(m.chat, "*🛒 Anda berhasil membeli obat super.* Gunakan '.dokter cari' untuk meningkatkan peluang menyembuhkan pasien.", m);
         } else {
           conn.reply(m.chat, "*🛒 Item yang dimaksud tidak ditemukan.*", m);
@@ -134,16 +134,16 @@ serverMessageId: -1
         let reward = 0;
         switch (dokterAction) {
           case "beriobat":
-            reward = 1000 * level;
+            reward = 100 * level;
             break;
           case "rawat":
-            reward = 2000 * level;
+            reward = 200 * level;
             break;
           case "suntik":
-            reward = 3000 * level;
+            reward = 300 * level;
             break;
           case "operasi":
-            reward = 5000 * level;
+            reward = 500 * level;
             break;
         }
 
@@ -151,7 +151,7 @@ serverMessageId: -1
         player.Balance += reward;
         user.money += reward;
         if (player.Balance < 5000) {
-          player.Balance = 5000;
+          player.Balance = 500;
         }
 
         conn.reply(m.chat, `*🚑 Anda berhasil merawat dan menyembuhkan pasien level ${level}!* Anda mendapatkan imbalan Rp${reward.toLocaleString()}. Total Balance Anda: Rp${player.Balance.toLocaleString()}.`, m);

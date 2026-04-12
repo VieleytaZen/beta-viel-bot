@@ -1,7 +1,7 @@
 let handler = async (m, { conn, command, args, usedPrefix }) => {
     let type = (args[0] || '').toLowerCase()
     let users = global.db.data.users[m.sender]
-    let time = users.lastkerja + 300000
+    let time = users.lastkerja + 30000
     let __timers = (new Date - users.lastkerja)
     let _timers = (0 - __timers)
     let timers = clockString(_timers)
@@ -24,7 +24,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
         switch (type) {
             case 'ojek':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja\nSaatnya istirahat selama ${clockString(time - new Date())}`)
-                let hasilojek = Math.floor(Math.random() * 5000000)
+                let hasilojek = Math.floor(Math.random() * 12)
                 m.reply(`Kamu Sudah Mengantarkan *${penumpang}* 🚗\nDan mendapatkan uang senilai *Rp ${hasilojek} money*`).then(() => {
                     users.money += hasilojek
                     users.lastkerja = new Date * 1
@@ -32,7 +32,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'pedagang':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasildagang = Math.floor(Math.random() * 5000000)
+                let hasildagang = Math.floor(Math.random() * 12)
                 m.reply(`Ada pembeli yg membeli *${dagangan}* 🛒\nDan mendapatkan uang senilai *Rp ${hasildagang} money*`).then(() => {
                     users.money += hasildagang
                     users.lastkerja = new Date * 1
@@ -40,7 +40,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'dokter':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasildokter = Math.floor(Math.random() * 5000000)
+                let hasildokter = Math.floor(Math.random() * 12)
                 m.reply(`Kamu menyembuhkan pasien *${pasien}* 💉\nDan mendapatkan uang senilai *Rp ${hasildokter}* money`).then(() => {
                     users.money += hasildokter
                     users.lastkerja = new Date * 1
@@ -48,7 +48,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'petani':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasiltani = Math.floor(Math.random() * 5000000)
+                let hasiltani = Math.floor(Math.random() * 12)
                 m.reply(`${panen} Sudah Panen !🌽 Dan menjualnya 🧺\nDan mendapatkan uang senilai Rp *${hasiltani} money*`).then(() => {
                     users.money += hasiltani
                     users.lastkerja = new Date * 1
@@ -56,7 +56,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'montir':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasilmontir = Math.floor(Math.random() * 5000000)
+                let hasilmontir = Math.floor(Math.random() * 12)
                 m.reply(`Kamu Baru saja mendapatkan pelanggan dan memperbaiki *${bengkel} 🔧*\nDan kamu mendapatkan uang senilai *Rp ${hasilmontir}* money`).then(() => {
                     users.money += hasilmontir
                     users.lastkerja = new Date * 1
@@ -64,7 +64,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'kuli':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasilkuli = Math.floor(Math.random() * 5000000)
+                let hasilkuli = Math.floor(Math.random() * 12)
                 m.reply(`Kamu baru saja selesai ${rumah} 🔨\nDan mendapatkan uang senilai *Rp ${hasilkuli} money*`).then(() => {
                     users.money += hasilkuli
                     users.lastkerja = new Date * 1
@@ -72,7 +72,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 break
             case 'polisi':
                 if (new Date - users.lastkerja < 300000) return m.reply(`Kamu sudah bekerja,Saatnya istirahat selama\n🕜 ${clockString(time - new Date())}`)
-                let hasilpolis = Math.floor(Math.random() * 5000000)
+                let hasilpolis = Math.floor(Math.random() * 12)
                 m.reply(`Kamu baru saja menangkap ${pnjht} 🚨\nDan mendapatkan uang senilai *Rp ${hasilpolis} money*`).then(() => {
                     users.money += hasilpolis
                     users.lastkerja = new Date * 1

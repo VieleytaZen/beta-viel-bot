@@ -1,5 +1,5 @@
-const cooldown = 300000; // Cooldown default (5 menit dalam milidetik)
-const cooldownAfterWork = 5 * 60 * 1000; // Cooldown setelah bekerja selama 5 menit (dalam milidetik)
+const cooldown = 3000; // Cooldown default (5 menit dalam milidetik)
+const cooldownAfterWork = 5 * 60 * 100; // Cooldown setelah bekerja selama 5 menit (dalam milidetik)
 
 let handler = async (m, { isPrems, conn, text, usedPrefix, command }) => {
     const user = global.db.data.users[m.sender];
@@ -31,23 +31,23 @@ let handler = async (m, { isPrems, conn, text, usedPrefix, command }) => {
 
   
     const jobList = {
-        'gojek': [11000, 10000, 10000],
-        'kantoran': [32000, 32000, 40000],
-        'game developer': [420000, 410000, 400000],
-        'backend developer': [130000, 130000, 140000],
-        'web developer': [72000, 72000, 80000],
-        'sopir': [26000, 25000, 25000],
-        'kurir': [15000, 14000, 14000],
-        'frontend developer': [52000, 52000, 60000],
-        'fullstack developer': [210000, 210000, 200000],
-        'pemain sepak bola': [900000, 900000, 1000000],
-        'karyawan indomaret': [27000, 27000, 30000],
-        'pembunuh bayaran': [31000, 31000, 40000],    
-        'pemburu manusia': [31000, 31000, 40000],        
-        'polisi': [31000, 31000, 40000],
-        'trader': [1700000, 1700000, 2000000],
-        'dokter': [1700000, 1700000, 2000000],
-        'hunter': [1700000, 1700000, 2000000]
+        'gojek': [1000, 1000, 1000],
+        'kantoran': [1100, 1000, 1000],
+        'game developer': [1200, 1200, 1200],
+        'backend developer': [1200, 1200, 1200],
+        'web developer': [1150, 1150, 1150],
+        'sopir': [1000, 1000, 1000],
+        'kurir': [1000, 1000, 1000],
+        'frontend developer': [1150, 1150, 1150],
+        'fullstack developer': [1200, 1200, 1200],
+        'pemain sepak bola': [1200, 1200, 1200],
+        'karyawan indomaret': [1000, 1000, 1000],
+        'pembunuh bayaran': [1200, 1200, 1200],    
+        'pemburu manusia': [1200, 1200, 1200],        
+        'polisi': [1100, 1100, 1100],
+        'trader': [1200, 1200, 1200],
+        'dokter': [1200, 1200, 1200],
+        'hunter': [1200, 1200, 1200]
     };
 
     if (jobList[user.job]) {

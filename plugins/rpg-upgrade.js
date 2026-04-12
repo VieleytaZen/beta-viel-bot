@@ -44,7 +44,7 @@ const handler = async (m, {
                 } else {
                     let _kayu = fishingrod * 25;
                     let _string = fishingrod * 15;
-                    let _money = fishingrod * 10000;
+                    let _money = fishingrod * 1000;
                     if (user.kayu < _kayu || user.string < _string || user.money < _money) {
                         m.reply(`Material kamu kurang!!${user.kayu < _kayu ? `\n🪵Kayu Kamu Kurang *${_kayu - user.kayu}*` : ''}${user.string < _string ? `\n🧶String Kamu Kurang *${_string - user.string}*` : ''}${user.money < _money ? `\n💰Uang Kamu Kurang *${_money - user.money}*` : ''}`);
                     } else {
@@ -66,7 +66,7 @@ const handler = async (m, {
                 } else {
                     let __batu = pickaxe * 25;
                     let __kayu = pickaxe * 15;
-                    let __money = pickaxe * 15000;
+                    let __money = pickaxe * 1500;
                     if (user.batu < __batu || user.kayu < __kayu || user.money < __money) {
                         m.reply(`Material Anda Kurang!!${user.batu < __batu ? `\n🪨Batu kamu kurang *${__batu - user.batu}*` : ''}${user.kayu < __kayu ? `\n🪵Kayu kamu kurang *${__kayu - user.kayu}*` : ''}${user.money < __money ? `\n💰Uang kamu kurang *${__money - user.money}*` : ''}`);
                     } else {
@@ -88,7 +88,7 @@ const handler = async (m, {
                 } else {
                     let __batu = axe * 25;
                     let __kayu = axe * 15;
-                    let __money = axe * 15000;
+                    let __money = axe * 1500;
                     if (user.batu < __batu || user.kayu < __kayu || user.money < __money) {
                         m.reply(`Material Anda Kurang!!${user.batu < __batu ? `\n🪨Batu kamu kurang *${__batu - user.batu}*` : ''}${user.kayu < __kayu ? `\n🪵Kayu kamu kurang *${__kayu - user.kayu}*` : ''}${user.money < __money ? `\n💰Uang kamu kurang *${__money - user.money}*` : ''}`);
                     } else {
@@ -110,7 +110,7 @@ const handler = async (m, {
                 } else {
                     let __batu = bow * 25;
                     let __kayu = bow * 15;
-                    let __money = bow * 15000;
+                    let __money = bow * 1500;
                     if (user.batu < __batu || user.kayu < __kayu || user.money < __money) {
                         m.reply(`Material Anda Kurang!!${user.batu < __batu ? `\n🪨Batu kamu kurang *${__batu - user.batu}*` : ''}${user.kayu < __kayu ? `\n🪵Kayu kamu kurang *${__kayu - user.kayu}*` : ''}${user.money < __money ? `\n💰Uang kamu kurang *${__money - user.money}*` : ''}`);
                     } else {
@@ -132,7 +132,7 @@ const handler = async (m, {
                 } else {
                     let _iron = sword * 25;
                     let ___kayu = sword * 15;
-                    let ___money = sword * 10000;
+                    let ___money = sword * 1000;
                     if (user.iron < _iron || user.kayu < ___kayu || user.money < ___money) {
                         m.reply(`Material Anda Kurang!!${user.iron < _iron ? `\n🔩Iron kamu kurang *${_iron - user.iron}*` : ''}${user.kayu < ___kayu ? `\n🪵Kayu kamu kurang *${___kayu - user.kayu}*` : ''}${user.money < ___money ? `\n💰Uang kamu kurang *${___money - user.money}*` : ''}`);
                     } else {
@@ -154,7 +154,7 @@ const handler = async (m, {
                 } else {
                     let _iron = pisau * 25;
                     let ___kayu = pisau * 15;
-                    let ___money = pisau * 10000;
+                    let ___money = pisau * 1000;
                     if (user.iron < _iron || user.kayu < ___kayu || user.money < ___money) {
                         m.reply(`Material Anda Kurang!!${user.iron < _iron ? `\n🔩Iron kamu kurang *${_iron - user.iron}*` : ''}${user.kayu < ___kayu ? `\n🪵Kayu kamu kurang *${___kayu - user.kayu}*` : ''}${user.money < ___money ? `\n💰Uang kamu kurang *${___money - user.money}*` : ''}`);
                     } else {
@@ -178,7 +178,7 @@ const handler = async (m, {
                     let ___kayu = katana * 15;
                     let ___diamond = katana * 10;
                     let ___emerald = katana * 5;
-                    let ___money = katana * 50000;
+                    let ___money = katana * 5000;
                     if (user.iron < _iron || user.kayu < ___kayu || user.diamond < ___diamond || user.emerald < ___emerald || user.money < ___money) {
                         m.reply(`Material Anda Kurang!!${user.iron < _iron ? `\n🔩Iron kamu kurang *${_iron - user.iron}*` : ''}${user.kayu < ___kayu ? `\n🪵Kayu kamu kurang *${___kayu - user.kayu}*` : ''}${user.diamond < ___diamond ? `\n💎Diamond kamu kurang *${___diamond - user.diamond}*` : ''}${user.emerald < ___emerald ? `\n🟩Emerald kamu kurang *${___emerald - user.emerald}*` : ''}${user.money < ___money ? `\n💰Uang kamu kurang *${___money - user.money}*` : ''}`);
                     } else {
@@ -202,7 +202,7 @@ const handler = async (m, {
                 } else {
                     let __iron = armor * 10;
                     let ___diamond = armor * 5;
-                    let ___money = armor * 30000;
+                    let ___money = armor * 3000;
                     if (user.iron < __iron || user.diamond < ___diamond || user.money < ___money) {
                         m.reply(`Material Anda Kurang!!${user.iron < __iron ? `\n🔩 iron kamu kurang *${__iron - user.iron}*` : ''}${user.diamond < ___diamond ? `\n💎 Diamond kamu kurang *${___diamond - user.diamond}*` : ''}${user.money < ___money ? `\n💰Uang kamu kurang *${___money - user.money}*` : ''}`);
                     } else {

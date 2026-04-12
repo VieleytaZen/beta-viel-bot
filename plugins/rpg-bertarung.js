@@ -16,7 +16,7 @@ let handler = async (m, { conn, text }) => {
   let alasanKalah = `${pickRandom(['bodoh gitu doang aja kalah tolol lu di denda','lemah lu kontol mending lu di rumah aja dah lu di denda dek','Jangan beratem kalo cupu dek wkwkwk kamu di denda','Dasar tolol lawan itu doang aja ga bisa lu di denda','Hadehh sono lu mending di rumah aja deh lu di denda'])}`
   let alasanMenang = `${pickRandom(['kamu berhasil menggunakan kekuatan elemental untuk menghancurkan pertahanan lawan dan mendapatkan','kamu berhasil melancarkan serangan mematikan dengan gerakan akrobatik yang membingungkan lawan, dan mendapatkan','Kamu berhasil menang karena baru selesai coli dan mendapatkan','Kamu berhasil menang karena menyogok lawan dan mendapatkan','Kamu berhasil menang karena bot merasa kasihan sama kamu dan mendapatkan','Kamu berhasil menang karena kamu melawan orang cupu dan mendapatkan'])}`
 
-  let betAmount = Math.floor(Math.random() * (10000000 - 10000 + 1)) + 10000 
+  let betAmount = Math.floor(Math.random() * (10000000 - 1000 + 1)) + 10000 
   
   if (user.money < betAmount) {
     return conn.reply(m.chat, 'Uang Anda tidak mencukupi', m)

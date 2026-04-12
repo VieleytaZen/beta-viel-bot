@@ -2,21 +2,21 @@ let handler = async (m, { isPrems, args, conn, text, command, usedPrefix }) => {
     let user = global.db.data.users[m.sender];
 
     const jobRequirements = {
-        'gojek': { min: 10, max: 100000 },
-        'kurir': { min: 10, max: 200000 },
-        'sopir': { min: 10, max: 200000 },
-        'karyawan indomaret': { min: 20, max: 300000 },
-        'kantoran': { min: 30, max: 400000 },
-        'dokter': { min: 50, max: 100000 },
-        'frontend developer': { min: 40, max: 600000 },
-        'web developer': { min: 40, max: 600000 },
-        'backend developer': { min: 40, max: 600000 },
-        'fullstack developer': { min: 50, max: 700000 },
-        'game developer': { min: 40, max: 600000 },
-        'pemain sepak bola': { min: 30, max: 500000 },
-        'trader': { min: 40, max: 60000 },
-        'hunter': { min: 20, max: 300000 },
-        'polisi': { min: 100, max: 100000 }
+        'gojek': { min: 10, max: 10000 },
+        'kurir': { min: 10, max: 20000 },
+        'sopir': { min: 10, max: 20000 },
+        'karyawan indomaret': { min: 20, max: 30000 },
+        'kantoran': { min: 30, max: 40000 },
+        'dokter': { min: 50, max: 10000 },
+        'frontend developer': { min: 40, max: 60000 },
+        'web developer': { min: 40, max: 60000 },
+        'backend developer': { min: 40, max: 60000 },
+        'fullstack developer': { min: 50, max: 70000 },
+        'game developer': { min: 40, max: 60000 },
+        'pemain sepak bola': { min: 30, max: 50000 },
+        'trader': { min: 40, max: 6000 },
+        'hunter': { min: 20, max: 30000 },
+        'polisi': { min: 10, max: 10000 }
     };
 
     function capitalizeFirstLetter(str) {
@@ -27,7 +27,7 @@ let handler = async (m, { isPrems, args, conn, text, command, usedPrefix }) => {
         return words.join(" ");
     }
 
-    //const COOLDOWN_PERIOD = 3 * 24 * 60 * 60 * 1000; // 3 days in milliseconds
+    //const COOLDOWN_PERIOD = 3 * 24 * 60 * 60 * 100; // 3 days in milliseconds
 
     // Memeriksa apakah pengguna dalam periode cooldown
     /*if (user.lastjobchange) {
@@ -35,9 +35,9 @@ let handler = async (m, { isPrems, args, conn, text, command, usedPrefix }) => {
         let now = new Date();
         if (now - lastjobchange < COOLDOWN_PERIOD) {
             let timeLeft = COOLDOWN_PERIOD - (now - lastjobchange);
-            let daysLeft = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
-            let hoursLeft = Math.floor((timeLeft % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-            let minutesLeft = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000));
+            let daysLeft = Math.floor(timeLeft / (24 * 60 * 60 * 100));
+            let hoursLeft = Math.floor((timeLeft % (24 * 60 * 60 * 100)) / (60 * 60 * 100));
+            let minutesLeft = Math.floor((timeLeft % (60 * 60 * 100)) / (60 * 100));
             throw `Anda telah mengganti pekerjaan baru-baru ini. Silakan tunggu ${daysLeft} hari, ${hoursLeft} jam, dan ${minutesLeft} menit lagi sebelum mengganti pekerjaan lagi.`;
         }
     }*/

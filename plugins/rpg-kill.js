@@ -1,13 +1,13 @@
-const timeout = 604800000
+const timeout = 6048000
 
 let handler = async (m, { conn, usedPrefix, text }) => {
-	    let time = global.db.data.users[m.sender].lastkill + 604800000
+	    let time = global.db.data.users[m.sender].lastkill + 60480000
   if (new Date - global.db.data.users[m.sender].lastkill< 604800000) return conn.reply(m.chat, `Anda sudah menggunakan kill\nTunggu selama ${msToTime(time - new Date())} lagi`, m)
- let nabung = global.db.data.users[m.sender].nabung += 100000
-let bank = global.db.data.users[m.sender].bank += 1000000
-	let money = `${Math.floor(Math.random() * 30000)}`.trim()
-	let exp = `${Math.floor(Math.random() * 999)}`.trim()
-	let kardus = `${Math.floor(Math.random() * 1000)}`.trim()
+ let nabung = global.db.data.users[m.sender].nabung += 10000
+let bank = global.db.data.users[m.sender].bank += 100000
+	let money = `${Math.floor(Math.random() * 30)}`.trim()
+	let exp = `${Math.floor(Math.random() * 99)}`.trim()
+	let kardus = `${Math.floor(Math.random() * 10)}`.trim()
 	global.db.data.users[m.sender].money += money * 1
 	global.db.data.users[m.sender].exp += exp * 1
 	global.db.data.users[m.sender].kardus += kardus * 1

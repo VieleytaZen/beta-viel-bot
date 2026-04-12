@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, isOwner }) => {
         let waktutionskh = clockString(_waktutionskh)
         if (new Date - global.db.data.users[m.sender].judilast > 5000) {
         global.db.data.users[m.sender].judilast = new Date * 1
-        let randomaku = `${Math.floor(Math.random() * 350)}`.trim()
+        let randomaku = `${Math.floor(Math.random() * 35)}`.trim()
         let randomkamu = `${Math.floor(Math.random() * 50)}`.trim()                //hehe Biar Susah Menang :v
         let Aku = (randomaku * 1)
         let Kamu = (randomkamu * 1)

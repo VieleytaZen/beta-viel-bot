@@ -14,7 +14,7 @@ let handler = async (m, {
 	})*/
 
 	let count = parseInt(args[0]);
-	let hrg = 50000;
+	let hrg = 500;
 	let price = count * hrg;
 	let users = global.db.data.users;
 	let user = users[m.sender];

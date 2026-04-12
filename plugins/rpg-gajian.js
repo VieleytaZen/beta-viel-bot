@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, text }) => {
     let user = global.db.data.users[m.sender]
-	let time = user.lastclaimb2 + 86400000
+	let time = user.lastclaimb2 + 8640000
     if (new Date - user.lastclaimb2 < 86400000) throw `Kamu Sudah Ambil Gaji Hari Ini\nTunggu selama ${msToTime(time - new Date())} lagi`
-	let money = `${Math.floor(Math.random() * 5000000)}`.trim()
-	user.money += 50000
+	let money = `${Math.floor(Math.random() * 5000)}`.trim()
+	user.money+=50
 	user.lastclaimb2 = new Date * 1
   m.reply(`Kamu Mendapatkan 50.000 Money`)
 }

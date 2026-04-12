@@ -48,7 +48,7 @@ let handler = async (m, { conn, args }) => {
             waitingRoom: [], // Menambahkan waiting room guild
         };
         user.guild = guildId;
-        user.money -= 20000000000; // Mengurangi money user setelah membuat guild
+        user.money-=20000000; // Mengurangi money user setelah membuat guild
         fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
         conn.reply(m.chat, `Guild ${guildName} berhasil dibuat.`, m);
     } else {

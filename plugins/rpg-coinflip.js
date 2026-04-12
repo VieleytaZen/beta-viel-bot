@@ -8,10 +8,10 @@ const handler = async (m, { conn, args, text }) => {
     var res;
     var pesan;
     var stiker;
-    var MiliSecond = 3000; //1 second
+    var MiliSecond = 30; //1 second
 
-    let coins = parseInt(Math.floor(Math.random() * 100000));
-    let exp = parseInt(Math.floor(Math.random() * 10000));
+    let coins = parseInt(Math.floor(Math.random() * 100));
+    let exp = parseInt(Math.floor(Math.random() * 10));
     let player = global.db.data.users[m.sender];
 
     if (terbang == "atas") {

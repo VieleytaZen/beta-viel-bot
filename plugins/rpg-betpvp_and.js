@@ -8,8 +8,8 @@ module.exports.before = async function (m) {
     this.judipvp = this.judipvp ? this.judipvp : {};
     let room = Object.values(this.judipvp).find(room => room.id.startsWith('judipvp') && room.status && [room.p, room.p2].includes(m.sender));
     let user = db.data.users;
-    let score = Math.ceil(Math.random() * 100) * 1;
-    let score2 = Math.ceil(Math.random() * 100) * 1;
+    let score = Math.ceil(Math.random() * 10) * 1;
+    let score2 = Math.ceil(Math.random() * 10) * 1;
 
     if (room) {
         if (m.sender === room.p2 && /y(a|es)?/i.test(m.text.toLowerCase()) && m.isGroup && room.status === 'wait') {

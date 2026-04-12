@@ -5,8 +5,8 @@ let handler = async (m, { conn, participants, text, usedPrefix, command }) => {
     expires: 0,
     reward: {
       limit: 30,
-      exp: 2500,
-      money: 3500000
+      exp:25,
+      money:35000
     }
   };
 
@@ -52,7 +52,7 @@ let handler = async (m, { conn, participants, text, usedPrefix, command }) => {
   }
 
   const currentDate = new Date();
-  const expirationDate = new Date(currentDate.getTime() + expirationHours * 60 * 60 * 1000);
+  const expirationDate = new Date(currentDate.getTime() + expirationHours * 60 * 60 * 100);
   const formattedExpirationDate = expirationDate.toLocaleString('id-ID', { 
     day: 'numeric', 
     month: 'long', 

@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     );
   else conn.casino[m.chat] = true;
   try {
-    let randomaku = `${Math.floor(Math.random() * 150)}`.trim();
+    let randomaku = `${Math.floor(Math.random() * 15)}`.trim();
     let randomkamu = `${Math.floor(Math.random() * 80)}`.trim(); //hehe Biar Susah Menang :v
     let Aku = randomaku * 1;
     let Kamu = randomkamu * 1;

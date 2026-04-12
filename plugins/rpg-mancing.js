@@ -10,17 +10,17 @@ let handler = async (m, {
 }) => {
 		let lastFishingTime = global.db.data.users[m.sender].lastmancing || 0;
 		let timeDiff = Date.now() - lastFishingTime;
-		let remainingTime = 180000 - timeDiff; 
+		let remainingTime = 1800 - timeDiff; 
 
 		if (global.db.data.users[m.sender].fishingrod > 0) {
 			if (timeDiff >= 180000) { 
-				let ikan = Math.floor(Math.random() * 30);
-				let lele = Math.floor(Math.random() * 15);
-				let nila = Math.floor(Math.random() * 10);
-				let bawal = Math.floor(Math.random() * 10);
-				let udang = Math.floor(Math.random() * 39);
-				let paus = Math.floor(Math.random() * 2);
-				let kepiting = Math.floor(Math.random() * 27);
+				let ikan = Math.floor(Math.random() * 10);
+				let lele = Math.floor(Math.random() * 10);
+				let nila = Math.floor(Math.random() * 5);
+				let bawal = Math.floor(Math.random() * 5);
+				let udang = Math.floor(Math.random() * 10);
+				let paus = Math.floor(Math.random() * 1);
+				let kepiting = Math.floor(Math.random() * 5);
 
 				let imageUrl = 'https://api.betabotz.eu.org/api/tools/get-upload?id=f/arit56zv.jpg';
 				let totalCatch = nila + bawal + ikan + lele + udang + paus + kepiting;

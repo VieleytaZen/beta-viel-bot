@@ -40,7 +40,7 @@ Kamu sudah melakukan trading. Silakan tunggu selama *🕐${new Date(timers).toIS
 `.trim());
     }
 
-    let minimal_ewallet = 100000;
+    let minimal_ewallet = 1000;
 
     if (user[ewallet] === undefined || user[ewallet] < minimal_ewallet) {
         let errorMessage = `Saldo ${ewallet} anda tidak mencukupi untuk melakukan trading sebesar ${toSimple(minimal_ewallet)} dan berikut adalah contoh topup:\n\n`;
@@ -108,7 +108,7 @@ function toSimple(number) {
     if (parseFloat(number) === 0) return '0';
     number = parseFloat(number).toFixed(0);
     const suffixes = ['', 'K', 'JT', 'M', 'T'];
-    const base = 1000;
+    const base = 10;
     const exponent = Math.floor(Math.log10(Math.abs(number)) / 3);
     const suffix = suffixes[exponent] || '';
     const simplified = number / Math.pow(base, exponent);

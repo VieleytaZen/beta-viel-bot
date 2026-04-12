@@ -1,7 +1,7 @@
 let handler = async (m, { conn, args, usedPrefix }) => {
   try {
     global.DATABASE.data.users[m.sender].lastngepet = global.db.data.users[m.sender].lastngepet || 0
-    let randomaku = `${Math.floor(Math.random() * 150)}`.trim()
+    let randomaku = `${Math.floor(Math.random() * 15)}`.trim()
     let randomkamu = `${Math.floor(Math.random() * 20)}`.trim() // Increased chances of failure
     let Aku = (randomaku * 1)
     let Kamu = (randomkamu * 1)
@@ -30,10 +30,10 @@ let handler = async (m, { conn, args, usedPrefix }) => {
             }
           }
         })
-        user.money -= 10000000 // Penalty for failed robbery is -20 million
+        user.money-=10000 // Penalty for failed robbery is -20 million
         global.db.data.users[m.sender].lastngepet = new Date * 1
       } else if (Aku < Kamu) {
-        user.money += 5000000 // Reward for successful robbery is 10 million
+        user.money+=5000 // Reward for successful robbery is 10 million
         conn.sendMessage(m.chat, {
           text: `Kamu berhasil Ngepet, Dan kamu mendapatkan 5 Juta rupiah`,
           contextInfo: {
