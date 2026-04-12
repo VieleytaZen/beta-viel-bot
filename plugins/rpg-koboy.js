@@ -2,15 +2,15 @@ const handler = async (m, { conn }) => {
     conn.koboy = conn.koboy || {};
     const user = global.db.data.users[m.sender];
 
-    const cooldownPeriod = 5 * 60 * 60 * 100; // 5 jam dalam milidetik
+    const cooldownPeriod = 18000000; // 5 jam dalam milidetik
     const lastPlayed = user.lastKoboy || 0;
     const now = Date.now();
 
     if (now - lastPlayed < cooldownPeriod) {
         const remainingTime = cooldownPeriod - (now - lastPlayed);
-        const hours = Math.floor(remainingTime / (60 * 60 * 100));
-        const minutes = Math.floor((remainingTime % (60 * 60 * 100)) / (60 * 100));
-        const seconds = Math.floor((remainingTime % (60 * 100)) / 1000);
+        const hours = Math.floor(remainingTime / (60 * 60 * 1000));
+        const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+        const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
         return m.reply(`Anda sudah menangkap penjahat. Tunggu ${hours} jam ${minutes} menit ${seconds} detik lagi.`);
     }
 
@@ -38,8 +38,8 @@ Ketik *'kiri'* untuk bergerak ke kiri.`;
         criminalPosition,
         key,
         oldkey: key,
-        earnedExp: 1000,
-        earnedMoney: 100000,
+        earnedExp: 500,
+        earnedMoney: 50000,
         sender: m.sender,
         moveCount: 0,
         maxMoves: 5,

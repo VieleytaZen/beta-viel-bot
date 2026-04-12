@@ -98,17 +98,17 @@ async function handler(m, { conn, usedPrefix, command, text }) {
       if (room.game.player1 && room.game.player2 && room.game.player3 && room.game.player4) {
 
       // Hadiah ben do seneng :v
-      room.price.money += (Math.floor(Math.random() * 20)) * 1
-      room.price.exp += (Math.floor(Math.random() * 20)) * 1
-      room.price.iron += (pickRandom([0, 0, 0, 0, 1, 0, 0, 0])) * 1
-      room.game.diamond += (pickRandom([0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
-      room.game.sampah += (Math.floor(Math.random() * 11)) * 1
-      room.price.string += (Math.floor(Math.random() * 2)) * 1
-      room.price.kayu += (Math.floor(Math.random() * 2)) * 1
-      room.price.batu += (Math.floor(Math.random() * 2)) * 1
-      room.game.makananPet += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
-      room.game.common += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
-      room.game.uncommon += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
+      room.price.money += (Math.floor(Math.random() * 501) + 500) * 1
+      room.price.exp += (Math.floor(Math.random() * 501) + 500) * 1
+      room.price.iron += (pickRandom([1, 0, 1, 0, 1, 0, 0, 0])) * 1
+      room.game.diamond += (pickRandom([0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
+      room.game.sampah += (Math.floor(Math.random() * 51) + 20) * 1
+      room.price.string += (Math.floor(Math.random() * 5) + 2) * 1
+      room.price.kayu += (Math.floor(Math.random() * 11) + 5) * 1
+      room.price.batu += (Math.floor(Math.random() * 11) + 5) * 1
+      room.game.makananPet += (pickRandom([0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
+      room.game.common += (pickRandom([0, 1, 1, 1, 0, 0, 0, 0])) * 1
+      room.game.uncommon += (pickRandom([0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
 
       let str = `
 Room ID: ${room.id}
@@ -330,21 +330,21 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
               player4: '',
           },
           price: {
-              money: (Math.floor(Math.random() * 10)) * 1,
-              exp: (Math.floor(Math.random() * 10)) * 1,
-              sampah: (Math.floor(Math.random() * 21)) * 1,
-              potion: (Math.floor(Math.random() * 2)) * 1,
-              diamond: (pickRandom([0, 0, 0, 0, 1, 0, 0])) * 1,
-              iron: (Math.floor(Math.random() * 2)) * 1,
-              kayu: (Math.floor(Math.random() * 3)) * 1,
-              batu: (Math.floor(Math.random() * 2)) * 1,
-              string: (Math.floor(Math.random() * 2)) * 1,
-              common: (pickRandom([0, 0, 0, 1, 0, 0])) * 1,
-              uncommon: (pickRandom([0, 0, 0, 1, 0, 0, 0])) * 1,
+              money: (Math.floor(Math.random() * 4001) + 1000) * 1,
+              exp: (Math.floor(Math.random() * 4001) + 1000) * 1,
+              sampah: (Math.floor(Math.random() * 101) + 50) * 1,
+              potion: (Math.floor(Math.random() * 5) + 2) * 1,
+              diamond: (pickRandom([0, 0, 1, 1, 2, 0, 0])) * 1,
+              iron: (Math.floor(Math.random() * 5) + 2) * 1,
+              kayu: (Math.floor(Math.random() * 21) + 10) * 1,
+              batu: (Math.floor(Math.random() * 11) + 5) * 1,
+              string: (Math.floor(Math.random() * 11) + 5) * 1,
+              common: (pickRandom([0, 1, 1, 1, 2, 0])) * 1,
+              uncommon: (pickRandom([0, 1, 1, 0, 1, 0, 0])) * 1,
               mythic: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0])) * 1,
               legendary: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0])) * 1,
               pet: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1,
-              makananPet: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0])) * 1,
+              makananPet: (pickRandom([0, 1, 1, 1, 0, 0, 0, 0])) * 1,
           },
           less: {
               healt: (Math.floor(Math.random() * 11)) * 1,
@@ -501,13 +501,13 @@ Sedang berperang di dungeon...
     })
       
     for (let _p of PLAYER) {
-      room.price.money += (Math.floor(Math.random() * 41)) * 1
-      room.price.exp += (Math.floor(Math.random() * 76)) * 1
-      room.game.sampah += (Math.floor(Math.random() * 16)) * 1
-      room.price.string += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
-      room.price.kayu += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
-      room.price.batu += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
-      room.game.common += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
+      room.price.money += (Math.floor(Math.random() * 501) + 500) * 1
+      room.price.exp += (Math.floor(Math.random() * 501) + 500) * 1
+      room.game.sampah += (Math.floor(Math.random() * 51) + 50) * 1
+      room.price.string += (pickRandom([0, 1, 1, 1, 0, 0, 0, 0, 0, 0])) * 1
+      room.price.kayu += (pickRandom([0, 1, 1, 1, 0, 0, 0, 0, 0, 0])) * 1
+      room.price.batu += (pickRandom([0, 1, 1, 1, 0, 0, 0, 0, 0, 0])) * 1
+      room.game.common += (pickRandom([0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
     }
 
     let users = global.db.data.users[m.sender]

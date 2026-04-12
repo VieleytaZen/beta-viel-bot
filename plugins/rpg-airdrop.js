@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     let K = (Kamu * 1);
 
     if (A > K) {
-      let _sampah = Array.from({length: 50}, (_, i) => (i + 1).toString());
+      let _sampah = Array.from({length: 201}, (_, i) => (i + 100).toString());
       let sampah = _sampah[Math.floor(Math.random() * _sampah.length)];
       let kayu = _sampah[Math.floor(Math.random() * _sampah.length)];
       let batu = _sampah[Math.floor(Math.random() * _sampah.length)];
@@ -24,11 +24,11 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
       u.batu += parseInt(batu);
       u.lastclaim = new Date * 1;
     } else if (A < K) {
-      let _limit = ['10', '20', '30'];
+      let _limit = ['10', '25', '40'];
       let limit = _limit[Math.floor(Math.random() * _limit.length)];
-      let _money = ['10000', '100000', '500000'];
+      let _money = ['25000', '50000', '100000'];
       let money = _money[Math.floor(Math.random() * _money.length)];
-      let _point = ['10000', '100000', '500000'];
+      let _point = ['25000', '50000', '100000'];
       let point = _point[Math.floor(Math.random() * _point.length)];
       conn.sendFile(m.chat, 'https://telegra.ph/file/d3bc1d7a97c62d3baaf73.jpg', 'rare.jpg', `*Airdrop Rare!*, Kamu mendapatkan Kotak Airdrop *Rare*\n\nSelamat kamu mendapatkan *Rewards*\n• *Limit:* ${limit}\n• *Money:* ${money}\n• *Point:* ${point}`, m);
       u.limit += parseInt(limit);
@@ -36,8 +36,8 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
       u.poin += parseInt(point);
       u.lastclaim = new Date * 1;
     } else {
-      conn.sendFile(m.chat, 'https://telegra.ph/file/5d71027ecbcf771b299fb.jpg', 'zonk.jpg', `*Airdrop Zonks!*, Kamu mendapatkan Kotak Airdrop *Zonk (Kosong)*\n\nSelamat kamu mendapatkan *Rewards*\n• *Money:* -1.000.000\n• *Isi:* Angin`, m);
-      u.money-=1000;
+      conn.sendFile(m.chat, 'https://telegra.ph/file/5d71027ecbcf771b299fb.jpg', 'zonk.jpg', `*Airdrop Zonks!*, Kamu mendapatkan Kotak Airdrop *Zonk (Kosong)*\n\nSelamat kamu mendapatkan *Rewards*\n• *Money:* -100.000\n• *Isi:* Angin`, m);
+      u.money-=100000;
       u.lastclaim = new Date * 1;
     }
 

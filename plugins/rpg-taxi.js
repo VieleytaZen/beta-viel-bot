@@ -13,8 +13,8 @@ let handler = async (m, { conn }) => {
         throw false
     }
     if (new Date - user.lasttaxi > 3600000) {
-        let randomaku1 = Math.floor(Math.random() * 10)
-        let randomaku2 = Math.floor(Math.random() * 10)
+        let randomaku1 = Math.floor(Math.random() * 10) * 500
+        let randomaku2 = Math.floor(Math.random() * 10) * 50
         
         var njir = `
 🚶⬛⬛⬛⬛⬛⬛⬛⬛⬛

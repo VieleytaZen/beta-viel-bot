@@ -27,8 +27,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let ngerok4 = Math.floor(Math.random() * 10);
     let ngerok5 = Math.floor(Math.random() * 10);
 
-    let ngrk4 = ngerok4 * 1000;
-    let ngrk5 = ngerok5 * 10;
+    let ngrk4 = ngerok4 * 500;
+    let ngrk5 = ngerok5 * 5;
 
     let rokit = `📲 Orderan Masuk dari [ Om Teguh ]
 

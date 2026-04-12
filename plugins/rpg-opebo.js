@@ -7,14 +7,14 @@ let handler = async (m, {
 	let user = global.db.data.users[m.sender]
 	if (new Date - global.db.data.users[m.sender].lastngewe > 500000) {
 		let hsl = `Kamu Terbaring Lemas Karna Melakukan Skidipapap 24 Jam Tetapi Kamu Mendapatkan:
-300 Koin
-1000 Exp
-10 Limit
+150 Koin
+500 Exp
+5 Limit
 Dan Gratis Boba + Nasi Padang
 `
-		global.db.data.users[m.sender].koin += 300
-		global.db.data.users[m.sender].exp+=10
-		global.db.data.users[m.sender].limit += 10
+		global.db.data.users[m.sender].koin += 150
+		global.db.data.users[m.sender].exp += 500
+		global.db.data.users[m.sender].limit += 5
 
 		setTimeout(() => {
 			conn.reply(m.chat, hsl, m)

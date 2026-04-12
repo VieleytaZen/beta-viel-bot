@@ -1,8 +1,8 @@
 let handler = async (m, { conn, args, usedPrefix }) => {
   try {
     global.DATABASE.data.users[m.sender].lastngepet = global.db.data.users[m.sender].lastngepet || 0
-    let randomaku = `${Math.floor(Math.random() * 15)}`.trim()
-    let randomkamu = `${Math.floor(Math.random() * 20)}`.trim() // Increased chances of failure
+    let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
+    let randomkamu = `${Math.floor(Math.random() * 101)}`.trim() // 50/50 balance
     let Aku = (randomaku * 1)
     let Kamu = (randomkamu * 1)
     let temout = 'https://telegra.ph/file/d9fdd23790ab42280ca30.jpg'
@@ -18,10 +18,10 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     if (new Date - global.db.data.users[m.sender].lastngepet > 18000000) { // Changed to 5 hours
       if (Aku > Kamu) {
         conn.sendMessage(m.chat, {
-          text: `Kamu lengah Saat Ngepet, Dan Kamu Mines -10 juta`,
+          text: `Kamu lengah Saat Ngepet, Dan Kamu Mines -2.5 Juta`,
           contextInfo: {
             externalAdReply: {
-              title: 'Nooo, Kamu sekarang memiliki hutang 10JT 😞',
+              title: 'Nooo, Kamu sekarang memiliki hutang 2.5JT 😞',
               body: wm,
               thumbnailUrl: 'https://telegra.ph/file/c6c4a6946a354317fe970.jpg',
               mediaType: 1,
@@ -30,15 +30,15 @@ let handler = async (m, { conn, args, usedPrefix }) => {
             }
           }
         })
-        user.money-=10000 // Penalty for failed robbery is -20 million
+        user.money-=2500000 // Penalty for failed robbery
         global.db.data.users[m.sender].lastngepet = new Date * 1
       } else if (Aku < Kamu) {
-        user.money+=5000 // Reward for successful robbery is 10 million
+        user.money+=1250000 // Reward for successful robbery
         conn.sendMessage(m.chat, {
-          text: `Kamu berhasil Ngepet, Dan kamu mendapatkan 5 Juta rupiah`,
+          text: `Kamu berhasil Ngepet, Dan kamu mendapatkan 1.25 Juta rupiah`,
           contextInfo: {
             externalAdReply: {
-              title: 'Selamat Telah Mendapatkan 5JT',
+              title: 'Selamat Telah Mendapatkan 1.25JT',
               body: wm,
               thumbnailUrl: 'https://telegra.ph/file/6a6a440d7f123bed78263.jpg',
               mediaType: 1,
@@ -90,4 +90,5 @@ function clockString(ms) {
   let s = Math.floor(ms / 1000) % 60
   console.log({ms,h,m,s})
   return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
+}.join(':')
 }

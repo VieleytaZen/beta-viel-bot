@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const prem = 100; // xp yang didapat untuk user prem
-const free = 10; // xp yang didapat untuk user free
+const prem = 500; // xp yang didapat untuk user prem
+const free = 100; // xp yang didapat untuk user free
 
 let handler = async (m, {conn, text, isPrems}) => {
     let user = global.db.data.users[m.sender];

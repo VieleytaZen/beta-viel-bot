@@ -70,9 +70,9 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                     return
                 }
 
-                let _money = `${Math.floor(Math.random() * 20)}`.trim()
+                let _money = `${Math.floor(Math.random() * 10) * 500}`.trim()
                 let money = (_money * 1)
-                let exp = `${Math.floor(Math.random() * 20)}`.trim()
+                let exp = `${Math.floor(Math.random() * 10) * 50}`.trim()
                 let kayu = `${Math.floor(Math.random() * 11)}`.trim()
                 let batu = `${Math.floor(Math.random() * 11)}`.trim()
                 let limit = `${Math.floor(Math.random() * 5) + 1}`.trim() // Random limit between 1 and 5
