@@ -24,9 +24,9 @@ throw `Internal server eror!`
   }
 }
   
-    handler.help = ['daily']
+    handler.help = ['dailynews']
     handler.tags = ['news']
-    handler.command = /^(daily)$/i
+    handler.command = /^(dailynews)$/i
     handler.group = true
     
     handler.limit = true
