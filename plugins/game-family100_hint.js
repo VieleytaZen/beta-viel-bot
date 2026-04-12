@@ -1,6 +1,6 @@
 const similarity = require('similarity')
 const threshold = 0.72 
-let rewardAmount = 1000 //ganti ini buat jumlah money nya
+let rewardAmount = 900 //ganti ini buat jumlah money nya
 
 module.exports = {
     async before(m) {

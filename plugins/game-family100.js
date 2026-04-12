@@ -1,6 +1,6 @@
 let fs = require('fs')
 let fetch = require('node-fetch')
-let winScore = 500
+let winScore = 900 //ganti ini buat jumlah money nya
 let rewardAmount = 100 
 
 async function handler(m) {

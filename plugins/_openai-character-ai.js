@@ -17,7 +17,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 handler.command = handler.help = ['c-ai','character-ai']
 handler.tags = ['tools']
 handler.owner = false
-handler.limit = false
+handler.limit = true
 handler.group = false
 handler.private = false
 

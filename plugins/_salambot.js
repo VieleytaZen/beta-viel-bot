@@ -5,7 +5,7 @@ handler.help = ['Karinn']
 handler.tags = ['main']
 handler.customPrefix = /^(assalamualaikum)$/i 
 handler.command = new RegExp
-handler.limit = false
+handler.limit = true
 handler.group = false
 
 

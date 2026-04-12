@@ -2,7 +2,7 @@ let fs = require('fs')
 let path = require('path')
 
 let timeout = 100000
-let poin = 10000
+let poin = 1000
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakislami = conn.tebakislami ? conn.tebakislami : {}
     let id = m.chat
@@ -43,5 +43,6 @@ handler.tags = ['game']
 handler.command = /^tebakislami/i
 handler.register = false
 handler.group = true
+handler.limit = true
 
 module.exports = handler

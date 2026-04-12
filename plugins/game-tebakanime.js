@@ -1,5 +1,5 @@
 let timeout = 100000
-let poin = 10000
+let poin = 1000
 
 let handler = async (m, { conn, usedPrefix }) => {
   conn.tebakanime = conn.tebakanime ? conn.tebakanime : {}
@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 handler.help = ['tebakanime']
 handler.tags = ['game']
 handler.command = /^tebakanime/i
-handler.limit = false
+handler.limit = true
 handler.group = true
 
 module.exports = handler

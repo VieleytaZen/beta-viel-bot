@@ -42,5 +42,6 @@ let handler = async (m, { text, usedPrefix }) => {
 handler.help = ['suit']
 handler.tags = ['game']
 handler.command = /^(suit)$/i
+handler.limit = true
 
 module.exports = handler

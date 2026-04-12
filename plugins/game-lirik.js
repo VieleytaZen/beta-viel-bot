@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let timeout = 100000
-let poin = 10000
+let poin = 1000
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebaklirik = conn.tebaklirik ? conn.tebaklirik : {}
     let id = m.chat
@@ -37,6 +37,7 @@ handler.tags = ['game']
 handler.command = /^tebaklirik/i
 handler.register = false
 handler.group = true
+handler.limit = true
 
 module.exports = handler
 

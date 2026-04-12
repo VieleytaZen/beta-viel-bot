@@ -25,7 +25,7 @@ handler.help = ['mode']
 handler.tags = ['main']
 handler.customPrefix = /^(mode)$/i 
 handler.command = new RegExp
-handler.limit = false
+handler.limit = true
 
 module.exports = handler
 

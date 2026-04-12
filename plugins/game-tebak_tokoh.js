@@ -1,5 +1,5 @@
 let timeout = 100000
-let poin = 10000
+let poin = 1000
 let src
 const fs = require('fs');
 let handler = async (m, { conn, usedPrefix }) => {
@@ -36,7 +36,7 @@ ${json.soal}
 handler.help = ['tebaktokoh']
 handler.tags = ['game']
 handler.command = /^tebaktokoh/i
-handler.limit = false
+handler.limit = true
 handler.group = true
 
 module.exports = handler

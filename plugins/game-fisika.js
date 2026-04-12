@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let timeout = 100000
-let poin = 10000
+let poin = 1000
 let handler = async (m, { conn, usedPrefix }) => {
     conn.fisika = conn.fisika ? conn.fisika : {}
     let id = m.chat

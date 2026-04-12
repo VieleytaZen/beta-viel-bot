@@ -24,6 +24,6 @@ async function handler(m, { conn, usedPrefix, command }) {
 handler.help = handler.command = ['decodeqr', 'readqr'];
 handler.tags = ['tools'];
 handler.premium = false;
-handler.limit = false;
+handler.limit = true;
 
 module.exports = handler;

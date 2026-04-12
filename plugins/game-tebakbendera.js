@@ -37,6 +37,7 @@ handler.tags = ['game']
 handler.command = /^tebakbendera/i
 handler.register = false
 handler.group = true
+handler.limit = true
 
 module.exports = handler
 

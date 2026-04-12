@@ -1,4 +1,4 @@
-let poin = 10000
+let poin = 1000
 const similarity = require('similarity')
 const threshold = 0.72
 let handler = m => m

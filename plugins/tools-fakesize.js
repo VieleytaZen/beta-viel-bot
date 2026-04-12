@@ -36,6 +36,6 @@ handler.help = ['fakesize <angka>'];
 handler.tags = ['tools'];
 handler.command = ['fakesize'];
 handler.premium = false;
-handler.limit = false;
+handler.limit = true;
 
 module.exports = handler;

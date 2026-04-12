@@ -38,7 +38,7 @@ handler.help = ['img2prompt'];
 handler.tags = ['tools'];
 handler.command = ['img2prompt'];
 handler.premium = false;
-handler.limit = false;
+handler.limit = true;
 handler.group = true;
 
 module.exports = handler;

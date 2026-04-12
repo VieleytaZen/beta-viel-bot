@@ -47,5 +47,6 @@ key
 handler.help = ["bomb"];
 handler.tags = ["game"];
 handler.command = /^(bomb)$/i;
+handler.limit = true;
 
 module.exports = handler;

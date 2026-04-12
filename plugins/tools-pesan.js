@@ -18,7 +18,7 @@ let [number, pesan] = text.split `|`
 }
 handler.command = /^(pesan|chat)$/i
 handler.rowner = false
-handler.limit = false
+handler.limit = true
 handler.premium = false
 handler.group = false
 handler.private = false
@@ -27,6 +27,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.limit = false
+handler.limit = true
 
 module.exports = handler

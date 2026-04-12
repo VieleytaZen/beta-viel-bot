@@ -54,6 +54,6 @@ handler.command = /^(tolak)$/i
 handler.mods = false
 handler.premium = false
 handler.group = true
-handler.limit = false
+handler.limit = true
 handler.fail = null
 module.exports = handler

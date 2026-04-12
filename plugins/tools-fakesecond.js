@@ -31,6 +31,6 @@ handler.help = ['fakesecond <angka>'];
 handler.tags = ['tools'];
 handler.command = ['fakesecond'];
 handler.premium = false;
-handler.limit = false;
+handler.limit = true;
 
 module.exports = handler;
