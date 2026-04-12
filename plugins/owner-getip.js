@@ -10,4 +10,5 @@ handler.help = ['getip']
 handler.tags = ['inownerfo']
 handler.command = /^(getip)$/i;
 
+handler.limit = true
 module.exports = handler;

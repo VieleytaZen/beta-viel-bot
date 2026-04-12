@@ -31,4 +31,5 @@ handler.tags = ['xp']
 
 handler.command = /^(daftar|reg(ister)?)$/i
 
+handler.limit = true
 module.exports = handler

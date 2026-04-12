@@ -34,4 +34,5 @@ handler.before = async function(m, { conn }) {
     }
 };
 
+handler.limit = true
 module.exports = handler;

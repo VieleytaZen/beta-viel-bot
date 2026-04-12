@@ -31,4 +31,5 @@ let handler = async (m, {
 handler.command = handler.help = ['cekbillpln','tagihanpln','pln'];
 handler.tags = ['tools'];
 handler.limit = true;
+handler.limit = true
 module.exports = handler;

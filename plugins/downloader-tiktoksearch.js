@@ -42,4 +42,5 @@ handler.tags = ['internet'];
 handler.command = /^(tiktoksearch|ttsearch)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

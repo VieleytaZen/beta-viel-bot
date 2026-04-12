@@ -24,4 +24,5 @@ handler.help = ['kodepos'];
 handler.tags = ['internet'];
 handler.command = /^(kodepos)$/i;
 
+handler.limit = true
 module.exports = handler;

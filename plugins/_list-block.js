@@ -9,4 +9,5 @@ handler.help = ['blocklist'];
 handler.tags = ['info'];
 handler.command = /^listbloc?k|bloc?klist|daftarbloc?k|blocks$/i
 handler.owner = false;
+handler.limit = true
 module.exports = handler;

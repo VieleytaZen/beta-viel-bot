@@ -30,6 +30,7 @@ handler.command = /^(ringtone)$/i
 handler.group = false
 handler.limit = true
     
+handler.limit = true
 module.exports = handler
 
 

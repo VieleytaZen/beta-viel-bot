@@ -20,7 +20,8 @@ throw `Internal server eror!\n\nulangi lagi perintah`
     handler.command = /^(artimimpi)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
     
 
   //   {

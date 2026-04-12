@@ -34,6 +34,7 @@ let name = Array.isArray(plugins[key]?.help) ? plugins[key]?.help?.join(' , ') :
 
 handler.command = handler.help = ['dashboard','totalhits']
 handler.tags = ['info']
+handler.limit = true
 module.exports = handler;
 
 function formatTime(time) {

@@ -27,6 +27,7 @@ handler.tags = ['tools', 'internet', 'fun']
 
 handler.command = /^zodia[kc]$/i
 
+handler.limit = true
 module.exports = handler
 
 const zodiak = [

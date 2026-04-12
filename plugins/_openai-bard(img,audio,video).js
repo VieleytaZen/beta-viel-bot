@@ -50,4 +50,5 @@ handler.tags = ['tools'];
 handler.command = /^(bardimg|bardimage|bardvideo|bardaudio)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

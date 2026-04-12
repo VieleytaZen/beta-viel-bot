@@ -48,6 +48,7 @@ handler.command = handler.help = ['server'];
 handler.tags = ['info'];
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;
 
 function deleteMessage() {

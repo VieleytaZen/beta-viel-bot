@@ -39,4 +39,5 @@ handler.command = /^tebakdrakor/i
 handler.limit = true
 handler.group = true
 
+handler.limit = true
 module.exports = handler

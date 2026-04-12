@@ -76,4 +76,5 @@ handler.group = true;
 handler.rpg = true
 handler.fail = null;
 
+handler.limit = true
 module.exports = handler;

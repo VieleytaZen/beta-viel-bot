@@ -19,4 +19,5 @@ handler.help = ['wallpaper'];
 handler.command = /^(wallpaper)$/i; 
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

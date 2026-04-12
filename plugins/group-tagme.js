@@ -12,4 +12,5 @@ handler.command = /^tagme$/i
 
 handler.group = true
 
+handler.limit = true
 module.exports = handler

@@ -18,4 +18,5 @@ handler.command = /^(videy|videydl)$/i
 handler.tags = ['downloader'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

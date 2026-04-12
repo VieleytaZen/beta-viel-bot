@@ -25,4 +25,5 @@ handler.tags = ['xp']
 
 handler.command = /^level(|up)$/i
 
+handler.limit = true
 module.exports = handler

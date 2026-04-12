@@ -45,4 +45,5 @@ handler.tags = ['xp'];
 handler.command = /^addmoney$/i;
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;

@@ -34,4 +34,5 @@ handler.limit = true;
 handler.group = false;
 handler.private = false;
 
+handler.limit = true
 module.exports = handler;

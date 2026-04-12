@@ -7,4 +7,5 @@ let handler = async (m, { conn, command }) => {
 
 handler.help = handler.command = ['donasi','donate','sewa','sewabot','belibot']
 handler.tags = ['main']
+handler.limit = true
 module.exports = handler

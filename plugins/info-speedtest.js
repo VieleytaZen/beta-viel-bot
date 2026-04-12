@@ -32,4 +32,5 @@ handler.help = ['speedtest']
 handler.tags = ['info']
 handler.command = /^(speedtest|ookla)$/i
 handler.premium = false
+handler.limit = true
 module.exports = handler

@@ -46,4 +46,5 @@ handler.command = ['sshp', 'sshandphone', 'sstablet',]
 handler.limit = true;
 handler.fail = null;
 
+handler.limit = true
 module.exports = handler;

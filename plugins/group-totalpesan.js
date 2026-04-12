@@ -31,6 +31,7 @@ handler.command = /^(totalchatgc)$/i;
 handler.admin = true;
 handler.group = true;
 
+handler.limit = true
 module.exports = handler;
 
 function parseMs(ms) {

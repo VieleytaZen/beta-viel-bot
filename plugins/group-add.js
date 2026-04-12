@@ -60,7 +60,8 @@
 // handler.botAdmin = true
 // handler.fail = null
 
-// module.exports = handler
+// handler.limit = true
+module.exports = handler
 
 
 // rawan banned matiin aja deh

@@ -38,4 +38,5 @@
   handler.limit = true
   handler.group = true
 
-  module.exports = handler
+  handler.limit = true
+module.exports = handler

@@ -275,4 +275,5 @@ handler.before = async (m, { conn }) => {
     }
 };
 
+handler.limit = true
 module.exports = handler;

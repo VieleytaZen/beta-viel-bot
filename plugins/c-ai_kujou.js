@@ -132,6 +132,7 @@ handler.limit = true;
 handler.owner = false;
 handler.group = true
 
+handler.limit = true
 module.exports = handler;
 
 async function aiBeta(message) {

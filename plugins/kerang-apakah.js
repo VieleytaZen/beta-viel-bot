@@ -14,6 +14,7 @@ handler.owner = false
 
 handler.fail = null
 
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {

@@ -37,4 +37,5 @@ handler.help = ['getlid']
 handler.tags = ['tools']
 handler.command = /^(getlid)$/i
 
+handler.limit = true
 module.exports = handler

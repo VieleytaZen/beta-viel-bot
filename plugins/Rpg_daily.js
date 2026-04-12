@@ -26,6 +26,7 @@ handler.help = handler.command = ['daily'];
 handler.tags = ['rpg'];
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler;
 
 function msToTime(duration) {

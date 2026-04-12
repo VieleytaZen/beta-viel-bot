@@ -19,5 +19,4 @@ handler.help = ['carigrup <pencarian>']
 handler.tags = ['tools']
 handler.command = /^carig(ro?up|c)/i
 handler.limit = true
-
 module.exports = handler

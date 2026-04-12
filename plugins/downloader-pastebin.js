@@ -22,4 +22,5 @@ handler.tags = ['downloader'];
 handler.help = ['pastebindl', 'pastebin'].map(a => a + ' <url>');
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

@@ -21,4 +21,5 @@ handler.help = ['balance']
 handler.tags = ['econ']
 handler.command = ['bal', 'balance'] 
 handler.rpg = true
+handler.limit = true
 module.exports = handler;

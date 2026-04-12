@@ -46,4 +46,5 @@ handler.command = /^(createakunyt|deleteakun)$/i; // Modify to include deleteaku
 handler.register = true;
 handler.group = true;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;

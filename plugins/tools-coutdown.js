@@ -48,4 +48,5 @@ handler.help = ['hitungmundur'];
 handler.tags = ['tools'];
 handler.command = /^(hitungmundur)$/i;
 
+handler.limit = true
 module.exports = handler;

@@ -46,6 +46,7 @@ handler.limit = true
 handler.command = /^dailymisi$/i
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler
 
 function delay(ms) {

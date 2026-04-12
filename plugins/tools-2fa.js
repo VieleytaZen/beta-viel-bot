@@ -25,4 +25,5 @@ let handler = async (m, {
 handler.command = handler.help = ['2fa', 'authenticator', 'autentikator'];
 handler.tags = ['tools'];
 handler.limit = true;
+handler.limit = true
 module.exports = handler;

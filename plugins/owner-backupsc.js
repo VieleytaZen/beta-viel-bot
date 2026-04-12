@@ -54,4 +54,5 @@ handler.tags = ["owner"];
 handler.command = ["backupsc"];
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;

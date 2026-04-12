@@ -25,7 +25,8 @@ throw `Internal server eror!`
     handler.command = /^(bacaanshalat)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
     
 
 

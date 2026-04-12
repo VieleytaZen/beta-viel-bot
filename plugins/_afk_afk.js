@@ -9,5 +9,6 @@ handler.help = ['afk [alasan]']
 handler.tags = ['main']
 handler.command = /^afk$/i
 
+handler.limit = true
 module.exports = handler
 //@${who.split`@`[0]}        /////@${m.sender.split`@`[0]

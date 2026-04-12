@@ -77,6 +77,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ["claimredeem *[code redeem]*"]
 handler.tags = ["rpg"]
 handler.command = ["claimredeem"]
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

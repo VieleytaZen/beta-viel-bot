@@ -25,6 +25,7 @@ handler.tags = ['tools']
 
 handler.command = /^g(ithub|h)search$/i
 
+handler.limit = true
 module.exports = handler
 
 function formatDate(n, locale = 'id') {

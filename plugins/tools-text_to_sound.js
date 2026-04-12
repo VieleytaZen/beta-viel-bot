@@ -115,4 +115,5 @@ handler.group = true;
 handler.fail = null;
 handler.private = false;
 
+handler.limit = true
 module.exports = handler;

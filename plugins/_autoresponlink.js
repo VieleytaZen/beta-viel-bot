@@ -14,4 +14,5 @@ Jika berminat hubungi: @${global.owner[0]} untuk order:)
     }
 }
 
+handler.limit = true
 module.exports = handler

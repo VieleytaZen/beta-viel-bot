@@ -27,6 +27,7 @@ handler.tags = ["owner"]
 handler.command = /^(block|unblock)$/i
 handler.owner = true
 
+handler.limit = true
 module.exports = handler
 
 

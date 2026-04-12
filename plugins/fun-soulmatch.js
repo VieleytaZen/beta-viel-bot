@@ -149,6 +149,7 @@ handler.command = /^soulmatch$/i;
 handler.group = true;
 handler.limit = 1;
 
+handler.limit = true
 module.exports = handler;
 
 

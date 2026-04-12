@@ -137,6 +137,7 @@ handler.tags = ['store'];
 handler.command = /^liststore|dellist|editlist|transaksi$/i;
 handler.owner = false; 
 
+handler.limit = true
 module.exports = handler;
 
 module.exports.all = async (message) => {

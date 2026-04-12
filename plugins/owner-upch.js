@@ -27,6 +27,7 @@ let handler = async (m, { conn, text }) => {
 
 handler.command = /^(ch)$/i; 
 handler.owner = true; 
+handler.limit = true
 module.exports = handler; 
 
 

@@ -43,4 +43,5 @@ handler.help = ['menfess']
 handler.command = /^(menfess|menfes)$/i
 handler.private = true
 
+handler.limit = true
 module.exports = handler

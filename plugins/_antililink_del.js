@@ -4,4 +4,5 @@
 handler.customPrefix = /(https?:\/\/)?(www\.)?(chat.whatsapp.com\/invite\/)?([0-9A-Za-z]{20,24})/ig
 handler.command = new RegExp()
 
+handler.limit = true
 module.exports = handler**/

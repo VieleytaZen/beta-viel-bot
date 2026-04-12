@@ -53,4 +53,5 @@ handler.tags = ['islam'];
 handler.command = /^(jadwal)?s(a|o|ha|ho)lat$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

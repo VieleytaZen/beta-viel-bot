@@ -100,6 +100,7 @@ handler.tags = ['rpg']
 handler.command = /^(copet)$/i
 handler.group = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

@@ -20,4 +20,5 @@ handler.tags = ['owner'];
 handler.command = /^(sf|df)$/i;
 handler.rowner = true;
 
+handler.limit = true
 module.exports = handler;

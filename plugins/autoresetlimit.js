@@ -84,4 +84,5 @@ handler.command = /^(resetauto|rli)$/i;
 
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;

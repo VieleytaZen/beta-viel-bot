@@ -25,4 +25,5 @@ handler.help = ['guildinviteacc <@user>'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildinviteacc)$/i;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;

@@ -26,5 +26,4 @@ handler.tags = ['sticker']
 handler.command = /^(smim)$/i
 
 handler.limit = true
-
 module.exports = handler

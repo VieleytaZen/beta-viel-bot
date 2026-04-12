@@ -38,4 +38,5 @@ handler.command = /^tebakjkt/i
 handler.limit = true
 handler.group = true
 
+handler.limit = true
 module.exports = handler

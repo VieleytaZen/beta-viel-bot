@@ -6,4 +6,5 @@ handler.help = ['say <teks>']
 handler.tags = ['tools']
 handler.command = /^(say)$/i
 
+handler.limit = true
 module.exports = handler

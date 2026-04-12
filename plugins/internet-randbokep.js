@@ -30,6 +30,7 @@ handler.tags = ['internet'];
 handler.premium = true;
 handler.limit = 500;
 
+handler.limit = true
 module.exports = handler;
 
 function getRandomResult(data) {

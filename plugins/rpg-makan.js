@@ -251,4 +251,5 @@ handler.tags = ['rpg']
 handler.register = true
 handler.command = /^(eat|makan)$/i
 handler.rpg = true
+handler.limit = true
 module.exports = handler

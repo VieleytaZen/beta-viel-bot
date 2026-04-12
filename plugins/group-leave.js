@@ -9,6 +9,7 @@ handler.tags = ['group']
 
 handler.owner = true
 
+handler.limit = true
 module.exports = handler
 
 function sleep(ms) {

@@ -26,7 +26,6 @@ handler.tags = ['main']
 handler.customPrefix = /^(mode)$/i 
 handler.command = new RegExp
 handler.limit = true
-
 module.exports = handler
 
 function clockString(ms) {

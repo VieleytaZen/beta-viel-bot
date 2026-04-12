@@ -31,4 +31,5 @@ handler.help = ['myguild'];
 handler.tags = ['rpgG'];
 handler.command = /^(myguild)$/i;
 handler.rpg = true;  
+handler.limit = true
 module.exports = handler;

@@ -43,6 +43,7 @@ handler.tags = ['rpg']
 handler.command = /^(openbo)$/i
 handler.group = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

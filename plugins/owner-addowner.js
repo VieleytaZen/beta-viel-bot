@@ -18,4 +18,5 @@ handler.command = /^(add|tambah|\+)owner$/i
 
 handler.owner = true
 
+handler.limit = true
 module.exports = handler

@@ -101,6 +101,7 @@ handler.help = ['job'];
 handler.tags = ['rpg'];
 handler.command = /^(job)$/i;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;
 
 function capitalizeFirstLetter(str) {

@@ -29,4 +29,5 @@ handler.tags = ['tools']
 handler.command = /^(toimg|togif)$/i
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

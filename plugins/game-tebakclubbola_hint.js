@@ -9,4 +9,5 @@ handler.command = /^tbcl$/i
 
 handler.limit = true
     
+handler.limit = true
 module.exports = handler

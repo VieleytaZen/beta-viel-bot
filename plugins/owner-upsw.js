@@ -87,6 +87,7 @@ handler.tags = ["owner"];
 handler.rowner = true;
 handler.command = new RegExp(`^(${commandList.join("|")})$`, "i");
 
+handler.limit = true
 module.exports = handler;
 
 async function generateVoice(

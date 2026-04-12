@@ -116,4 +116,5 @@ handler.rpg = true;
 handler.group = true;
 
 // Ekspor handler perintah RPG
+handler.limit = true
 module.exports = handler;

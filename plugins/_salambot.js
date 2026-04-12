@@ -9,4 +9,5 @@ handler.limit = true
 handler.group = false
 
 
+handler.limit = true
 module.exports = handler

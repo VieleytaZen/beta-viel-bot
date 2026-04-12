@@ -27,4 +27,5 @@ handler.command = ['remini'];
 handler.premium = false;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

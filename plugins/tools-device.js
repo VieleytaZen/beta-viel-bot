@@ -8,4 +8,5 @@ handler.help = ['device']
 handler.tags = ['tools']
 handler.command = /^(device)$/i
 
+handler.limit = true
 module.exports = handler

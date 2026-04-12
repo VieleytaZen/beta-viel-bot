@@ -54,6 +54,7 @@ const handler = async (message, { isOwner }) => {
 
 handler.customPrefix = /^done$/i;
 handler.command = new RegExp;
+handler.limit = true
 module.exports = handler;
 
 // no copas code dari luar, logic pakai kepala

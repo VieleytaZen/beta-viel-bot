@@ -2009,6 +2009,7 @@ let handler = async (m, { conn, command }) => {
 handler.help = ['erlan']
 handler.tags = ['info']
 handler.command = ['erlan']
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {

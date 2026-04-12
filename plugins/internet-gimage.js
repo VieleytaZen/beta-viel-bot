@@ -16,6 +16,7 @@ handler.help = ['gimage <query>', 'image <query>'];
 handler.tags = ['internet'];
 handler.command = /^(gimage|image)$/i;
 
+handler.limit = true
 module.exports = handler;
 
 function pickRandom(arr) {

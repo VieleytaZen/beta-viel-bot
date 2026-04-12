@@ -58,4 +58,5 @@ handler.command = /^(g(ro?up|c?)?)$/i
 handler.group = true
 handler.botAdmin = false
 
+handler.limit = true
 module.exports = handler

@@ -12,4 +12,5 @@ handler.limit = true;
 handler.admin = false;
 handler.fail = null;
 
+handler.limit = true
 module.exports = handler;

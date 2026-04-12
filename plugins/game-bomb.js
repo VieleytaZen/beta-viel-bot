@@ -49,4 +49,5 @@ handler.tags = ["game"];
 handler.command = /^(bomb)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

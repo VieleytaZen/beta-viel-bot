@@ -50,6 +50,7 @@ handler.command = handler.help = ['aimusic', 'musicgen', 'sunoai'];
 handler.tags = ['ai'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;
 
 async function generateMusic(title, style, lyrics) {

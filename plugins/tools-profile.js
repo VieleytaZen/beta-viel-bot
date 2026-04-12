@@ -94,4 +94,5 @@ handler.limit = true
 handler.register = false
 handler.group = true
 
+handler.limit = true
 module.exports = handler

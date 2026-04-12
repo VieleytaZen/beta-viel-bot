@@ -55,4 +55,5 @@ handler.tags = ['xp'];
 handler.command = /^addlimit$/i;
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;

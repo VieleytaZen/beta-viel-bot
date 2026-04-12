@@ -82,4 +82,5 @@ let handler = async (m, { usedPrefix, command, text }) => {
 handler.command = ['growgarden'];
 handler.tags = ['internet'];
 handler.limit = true;
+handler.limit = true
 module.exports = handler;

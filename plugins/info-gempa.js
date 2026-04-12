@@ -14,4 +14,5 @@ handler.command = handler.help = ['infogempa', 'gempa'];
 handler.tags = ['info'];
 handler.premium = false;
 handler.limit = true;
+handler.limit = true
 module.exports = handler;

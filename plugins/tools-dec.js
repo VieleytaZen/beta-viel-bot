@@ -63,4 +63,5 @@ handler.tags = ['tools']
 handler.command = /^dec$/i
 handler.premium = true;
 
+handler.limit = true
 module.exports = handler

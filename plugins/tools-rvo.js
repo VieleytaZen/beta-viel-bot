@@ -15,4 +15,5 @@ handler.premium = false
 handler.register = false
 handler.fail = null
 
+handler.limit = true
 module.exports = handler

@@ -67,4 +67,5 @@ handler.command = ['autoai'];
 handler.tags = ["ai"];
 handler.help = ['autoai'].map(a => a + " *[on/off]*");
 
+handler.limit = true
 module.exports = handler;

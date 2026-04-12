@@ -25,4 +25,5 @@ handler.help = ['guildpromote <@user>'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildpromote)$/i;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;

@@ -398,4 +398,5 @@ handler.help = ['werewolf'];
 handler.tags = ['game'];
 handler.command = ['ww','werewolf'];
 handler.group = true;
+handler.limit = true
 module.exports = handler

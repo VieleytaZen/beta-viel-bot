@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text, usedPrefix, command }) => {
-    if (!text) throw `contoh:\n${usedPrefix + command} erlanrahmat_14`
+    if (!text) throw `contoh:\n${usedPrefix + command} vieleyta_zen`
     try {
         let api = await fetch(`https://api.betabotz.eu.org/api/stalk/ig?username=${text}&apikey=${lann}`)
         let response = await api.json()
@@ -28,5 +28,4 @@ handler.help = ['igstalk <username>']
 handler.tags = ['stalk']
 handler.command = /^(igstalk)$/i
 handler.limit = true
-
 module.exports = handler

@@ -63,4 +63,5 @@ handler.tags = ['tools', 'stalk'];
 handler.command = /^(roblox|stalkroblox|rbx)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

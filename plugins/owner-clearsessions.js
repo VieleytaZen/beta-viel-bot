@@ -44,4 +44,5 @@ handler.tags = ['owner'];
 handler.command = /^(clearsession|clearsessions)$/i;
 handler.rowner = true;
 
+handler.limit = true
 module.exports = handler;

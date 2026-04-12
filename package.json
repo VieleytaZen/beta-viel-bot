@@ -23,19 +23,19 @@
         "Games-wabot",
         "wabot-aq",
         "whiskeysockets",
-        "ERLANRAHMAT",
+        "VieleytaZen",
         "baileys"
     ],
-    "homepage": "https://github.com/ERLANRAHMAT/RTXZY-MD",
+    "homepage": "https://github.com/VieleytaZen/beta-viel-bot#readme",
     "author": {
-        "name": "ERLANRAHMAT"
+        "name": "VieleytaZen"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ERLANRAHMAT/BETABOTZ-MD2.git"
+        "url": "git+https://github.com/VieleytaZen/beta-viel-bot.git"
     },
     "bugs": {
-        "url": "https://github.com/ERLANRAHMAT/RTXZY-MD/issues"
+        "url": "https://github.com/VieleytaZen/beta-viel-bot/issues"
     },
     "license": "MIT",
     "dependencies": {

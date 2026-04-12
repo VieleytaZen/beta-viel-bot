@@ -36,6 +36,7 @@ handler.help = ['delsetlist'];
 handler.tags = ['store'];
 handler.command = /^delsetlist$/i;
 handler.owner = true;
+handler.limit = true
 module.exports = handler;
 
 

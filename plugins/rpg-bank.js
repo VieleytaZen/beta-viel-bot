@@ -45,4 +45,5 @@ handler.tags = ['rpg']
 handler.command = /^bank$/
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler

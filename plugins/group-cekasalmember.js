@@ -39,4 +39,5 @@ handler.tags = ['group']
 handler.help = ['cekasalmember']
 handler.command = ['cekasalmember', 'asalmember']
 handler.group = true
+handler.limit = true
 module.exports = handler

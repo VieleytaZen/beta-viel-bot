@@ -21,4 +21,5 @@ handler.tags = ['tools']
 handler.command = /^(whatmusic)$/i
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler

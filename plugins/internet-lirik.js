@@ -38,4 +38,5 @@ handler.help = ['lirik'].map(v => v + ' <Title>')
 handler.tags = ['internet']
 handler.command = /^(lirik|lyrics|lyric)$/i
 
+handler.limit = true
 module.exports = handler

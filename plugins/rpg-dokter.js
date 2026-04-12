@@ -175,4 +175,5 @@ handler.group = true;
 handler.command = ["dokter"];
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler;

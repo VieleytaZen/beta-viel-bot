@@ -16,4 +16,5 @@ handler.all = async function (m) {
 		})
 	return !0
 }
+handler.limit = true
 module.exports = handler

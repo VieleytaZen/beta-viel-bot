@@ -22,4 +22,5 @@ handler.command = /^(hidetag)$/i
 handler.group = true
 handler.admin = true
 
+handler.limit = true
 module.exports = handler

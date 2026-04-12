@@ -691,4 +691,5 @@ handler.before = async function (m, { conn, isPrems }) {
 }
 
 
+handler.limit = true
 module.exports = handler

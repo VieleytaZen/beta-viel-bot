@@ -120,6 +120,7 @@ handler.help = ['pinterest <keyword>'];
 handler.tags = ['internet', 'downloader'];
 handler.command = /^(pinterest|pin)$/i;
 
+handler.limit = true
 module.exports = handler;
 
 function sleep(ms) {

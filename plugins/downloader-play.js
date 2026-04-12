@@ -85,6 +85,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
 handler.help = handler.command = ["play"];
 handler.tags = ["internet", "downloader"];
+handler.limit = true
 module.exports = handler;
 
 async function youtube(url) {
@@ -184,6 +185,7 @@ handler.tags = ['downloader'];
 handler.premium = false;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler
 
 function formatViews(views) {

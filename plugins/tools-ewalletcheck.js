@@ -58,4 +58,5 @@ handler.tags = ['tools'];
 handler.command = /^(cekewallet|cekwallet|saldoewallet)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

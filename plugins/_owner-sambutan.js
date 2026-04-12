@@ -55,6 +55,7 @@ handler.before = async function(m, { conn, participants, isPrems, isAdmin }) {
   } 
 }
 
+handler.limit = true
 module.exports = handler
 
 //base code by adrian

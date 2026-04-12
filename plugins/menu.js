@@ -110,6 +110,7 @@ handler.tags = ['main'];
 handler.command = /^(menu|help|bot)$/i;
 handler.exp = 3;
 
+handler.limit = true
 module.exports = handler;
 
 async function sendMenu(m, conn, text, replace) {

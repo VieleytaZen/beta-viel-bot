@@ -11,6 +11,7 @@ handler.command = /^(resetlimit|risetlimit)$/i
 
 handler.owner = true
 
+handler.limit = true
 module.exports = handler
 
 function isNumber(x = 0) {

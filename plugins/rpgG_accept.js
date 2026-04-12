@@ -26,6 +26,7 @@ handler.help = ['guildaccept @user'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildaccept)$/i;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;
 
 

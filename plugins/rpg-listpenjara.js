@@ -17,4 +17,5 @@ handler.help = ['listpenjara']
 handler.tags = ['rpg']
 handler.command = /^penjaralist|listpenjara$/i
 handler.rpg = true
+handler.limit = true
 module.exports = handler

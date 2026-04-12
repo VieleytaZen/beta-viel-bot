@@ -9,4 +9,5 @@ handler.command = /^tbam$/i
 
 handler.limit = true
     
+handler.limit = true
 module.exports = handler

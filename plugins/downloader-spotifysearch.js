@@ -37,5 +37,4 @@ handler.tags = ['downloader'];
 handler.premium = false;
 handler.group = false;
 handler.limit = true
-
 module.exports = handler;

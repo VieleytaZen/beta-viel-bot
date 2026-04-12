@@ -37,4 +37,5 @@ handler.tags = ['internet'];
 handler.command = /^google$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

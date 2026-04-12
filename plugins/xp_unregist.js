@@ -15,4 +15,5 @@ handler.tags = ['rg']
 handler.command = ['unreg'] 
 handler.register = true
 
+handler.limit = true
 module.exports = handler

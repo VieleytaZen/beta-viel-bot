@@ -24,4 +24,5 @@ handler.command = handler.help = ['likee'];
 handler.tags = ['downloader'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

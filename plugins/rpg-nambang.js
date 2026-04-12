@@ -39,6 +39,7 @@ handler.tags = ['rpg']
 handler.command = /^(nambang)$/i
 handler.register = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

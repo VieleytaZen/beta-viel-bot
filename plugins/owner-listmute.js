@@ -40,5 +40,6 @@ let handler = async (m, { conn, args }) => {
   handler.command = ['listmute'];
   handler.owner = true;
   
-  module.exports = handler;
+  handler.limit = true
+module.exports = handler;
   

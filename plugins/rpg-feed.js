@@ -169,6 +169,7 @@ handler.command = /^(feed(ing)?)$/i
 
 handler.register = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

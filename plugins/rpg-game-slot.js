@@ -78,6 +78,7 @@ handler.command = ['slot']
 handler.group = true
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler
 
 function msToTime(duration) {

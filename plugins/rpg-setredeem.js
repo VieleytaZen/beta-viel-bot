@@ -113,4 +113,5 @@ handler.tags = ["owner"];
 handler.command = ["sredeem"];
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;

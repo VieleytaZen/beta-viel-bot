@@ -41,5 +41,6 @@ handler.premium = false;
 handler.limit = true;
 handler.group = true;
 
+handler.limit = true
 module.exports = handler;
 

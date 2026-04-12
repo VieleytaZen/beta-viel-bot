@@ -31,4 +31,5 @@
     }
 
     handler.exp = 0
-    module.exports = handler
+    handler.limit = true
+module.exports = handler

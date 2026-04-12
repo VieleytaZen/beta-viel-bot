@@ -67,5 +67,4 @@ let handler = async (m, {
 handler.command = handler.help = ['vccgenerator', 'vccgen', 'fakeaddress', 'addressgenerator']
 handler.tags = ['tools']
 handler.limit = true
-
 module.exports = handler

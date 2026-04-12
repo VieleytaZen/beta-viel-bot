@@ -23,4 +23,5 @@ handler.help = ['iqc <teks>'];
 handler.tags = ['maker', 'tools'];
 handler.command = /^(iqc|imagequote)$/i;
 
+handler.limit = true
 module.exports = handler;

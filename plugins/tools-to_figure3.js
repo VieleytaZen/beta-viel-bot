@@ -39,4 +39,5 @@ handler.help = ['tofigure3'];
 handler.tags = ['maker', 'tools'];
 handler.command = /^(tofigure3)$/i;
 
+handler.limit = true
 module.exports = handler;

@@ -26,7 +26,6 @@ handler.help = ['instagram'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(ig|instagram|igdl|instagramdl|igstory)$/i
 handler.limit = true
-
 module.exports = handler
 
 function sleep(ms) {

@@ -16,4 +16,5 @@ handler.help = ['getpp <@tag/reply>']
 handler.tags = ['group']
 handler.command = /^(getpp|getpic?t?|pp)$/i
 
+handler.limit = true
 module.exports = handler

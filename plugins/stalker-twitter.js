@@ -31,5 +31,4 @@ handler.help = ['twitterstalk <username>']
 handler.tags = ['stalk']
 handler.command = /^(twstalk|twitterstalk)$/i
 handler.limit = true
-
 module.exports = handler

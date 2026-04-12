@@ -37,5 +37,4 @@ handler.command = /^suit(pvp|2)$/i
 handler.limit = true
 handler.group = true
 handler.limit = true
-
 module.exports = handler

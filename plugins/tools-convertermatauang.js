@@ -42,4 +42,5 @@ handler.command = handler.help = ['matauang', 'convertuang', 'konversiuang'];
 handler.tags = ['tools'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

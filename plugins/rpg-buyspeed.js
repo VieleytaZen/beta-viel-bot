@@ -32,4 +32,5 @@ handler.command = /^buyspeed$/i;
 handler.register = true;
 handler.rpg = true;
 
+handler.limit = true
 module.exports = handler;

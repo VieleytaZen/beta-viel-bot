@@ -21,7 +21,8 @@ throw `Internal server eror!`
     handler.command = /^(tahlil)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
 
     function pickRandom(list) {
       return list[Math.floor(list.length * Math.random())]

@@ -33,4 +33,5 @@ handler.command = /^pointomoney$/i
 handler.register = true
 handler.limit = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler

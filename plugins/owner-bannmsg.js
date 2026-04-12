@@ -60,4 +60,5 @@ handler.before = function(m, { conn, isAdmin }) {
     }
 }
 
+handler.limit = true
 module.exports = handler;

@@ -34,5 +34,4 @@ handler.help = ['ttstalk <username>']
 handler.tags = ['stalk']
 handler.command = /^(ttstalk|tiktokstalk)$/i
 handler.limit = true
-
 module.exports = handler

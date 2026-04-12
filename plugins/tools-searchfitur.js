@@ -26,4 +26,5 @@ handler.help = ['searchfitur']
 handler.tags = ['tools']
 handler.command = ['searchfitur']
 
+handler.limit = true
 module.exports = handler;

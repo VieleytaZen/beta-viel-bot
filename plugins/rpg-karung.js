@@ -19,4 +19,5 @@ handler.tags = ['rpg']
 handler.command = /^(karung)$/i
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler

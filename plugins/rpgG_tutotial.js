@@ -62,4 +62,5 @@ handler.help = ['tutorguild'];
 handler.tags = ['rpgG'];
 handler.command = /^tutorguild$/i;
 handler.rpg = true; 
+handler.limit = true
 module.exports = handler;

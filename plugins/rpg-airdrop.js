@@ -51,6 +51,7 @@ handler.tags = ['rpg'];
 handler.command = /^(airdrop)$/i;
 handler.group = true;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;
 
 function pickRandom(list) {

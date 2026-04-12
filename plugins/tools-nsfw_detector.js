@@ -35,4 +35,5 @@ handler.command = /^(nsfwdetector|nsfwdetecd)$/i
 handler.limit = 1
 handler.group = true
 
+handler.limit = true
 module.exports = handler

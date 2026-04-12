@@ -32,4 +32,5 @@ handler.command = /^(telestick|stele)$/i;
 handler.tags = ['downloader'];
 handler.limit = 100;
 handler.fail = null;
+handler.limit = true
 module.exports = handler;

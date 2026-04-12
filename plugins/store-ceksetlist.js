@@ -24,6 +24,7 @@ handler.help = ['ceksetlist'];
 handler.tags = ['store'];
 handler.command = /^ceksetlist$/i;
 handler.owner = true;
+handler.limit = true
 module.exports = handler;
 
 

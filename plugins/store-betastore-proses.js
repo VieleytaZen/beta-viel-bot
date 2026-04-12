@@ -61,6 +61,7 @@ const handler = async (message, { isOwner }) => {
 
 handler.customPrefix = /^proses$/i;
 handler.command = new RegExp;
+handler.limit = true
 module.exports = handler;
 
 

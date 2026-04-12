@@ -35,4 +35,5 @@ handler.command = handler.help = ['vocalremover', 'instrumenremover'];
 handler.tags = ['tools'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

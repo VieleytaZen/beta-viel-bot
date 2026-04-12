@@ -32,4 +32,5 @@ handler.command = /^buyattack$/i;
 handler.rpg = true;
 handler.register = true;
 
+handler.limit = true
 module.exports = handler;

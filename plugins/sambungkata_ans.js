@@ -70,6 +70,7 @@ Jawaban tidak valid atau sudah digunakan!`)
     return true
 }
 
+handler.limit = true
 module.exports = handler
 
 async function genKata() {

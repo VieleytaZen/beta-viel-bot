@@ -57,6 +57,7 @@ handler.help = ['yts4 <pencarian>'];
 handler.tags = ['downloader'];
 handler.command = /^(yts4)$/i;
 handler.limit = true;
+handler.limit = true
 module.exports = handler;
 
 async function youtube(url) {

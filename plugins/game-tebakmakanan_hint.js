@@ -8,5 +8,4 @@ let handler = async (m, { conn }) => {
 handler.command = /^tebma$/i
 
 handler.limit = true
-
 module.exports = handler

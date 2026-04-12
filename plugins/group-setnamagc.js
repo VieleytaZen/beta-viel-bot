@@ -24,4 +24,5 @@ handler.register = false;
 handler.admin = true; 
 handler.botAdmin = true; 
 
+handler.limit = true
 module.exports = handler;

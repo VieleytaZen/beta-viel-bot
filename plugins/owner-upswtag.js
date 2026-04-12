@@ -119,4 +119,5 @@ handler.help = ['upswtag'];
 handler.group = true 
 handler.owner = true
 
+handler.limit = true
 module.exports = handler;

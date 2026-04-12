@@ -24,4 +24,5 @@ handler.help = ['anime'];
 handler.tags = ['quotes'];
 handler.command = /^(anime)$/i;
 
+handler.limit = true
 module.exports = handler;

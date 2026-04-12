@@ -120,6 +120,7 @@ handler.command = ['blacklist', 'unblacklist', 'listbl', 'listblacklist'];
 handler.admin = handler.group = true;
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;
 
 //apalah

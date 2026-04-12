@@ -12,4 +12,5 @@ handler.help = ['pick <jumlah> <teks>']
 handler.tags = ['fun']
 handler.command = /^pick/i
 
+handler.limit = true
 module.exports = handler

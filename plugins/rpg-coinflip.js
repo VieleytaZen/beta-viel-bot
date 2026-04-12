@@ -58,6 +58,7 @@ handler.help = ["coinflip"];
 handler.tags = ["rpg"];
 handler.command = /^(coinflip|putarkoin)$/i;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;
 
 async function createSticker(img, url, wm, author, quality) {

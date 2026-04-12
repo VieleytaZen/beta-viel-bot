@@ -69,6 +69,7 @@ handler.command = /^(teraboxdl|terabox)$/i
 handler.limit = true
 handler.premium = false
 
+handler.limit = true
 module.exports = handler
 
 function formatSize(size) {

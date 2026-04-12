@@ -42,4 +42,5 @@ handler.tags = ["owner"];
 
 handler.command = /^(simulate|simulasi)$/i;
 handler.owner = false;
+handler.limit = true
 module.exports = handler;

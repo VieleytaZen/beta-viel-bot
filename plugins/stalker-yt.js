@@ -30,5 +30,4 @@ handler.help = ['ytstalk <username>']
 handler.tags = ['stalk']
 handler.command = /^(ytstalk)$/i
 handler.limit = true
-
 module.exports = handler

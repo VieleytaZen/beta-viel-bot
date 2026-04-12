@@ -23,4 +23,5 @@ handler.help = ['', 'earch'].map(v => 'yts' + v + ' <pencarian>')
 handler.tags = ['tools', 'internet', 'downloader']
 handler.command = /^yts(earch)?$/i
 
+handler.limit = true
 module.exports = handler

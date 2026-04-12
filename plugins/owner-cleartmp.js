@@ -42,4 +42,5 @@ handler.tags = ['owner'];
 handler.command = /^(cleartmp)$/i;
 handler.rowner = true;
 
+handler.limit = true
 module.exports = handler;

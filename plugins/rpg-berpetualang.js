@@ -133,4 +133,5 @@ handler.group = true;
 handler.limit = true;
 handler.rpg = true;
 handler.register = true;
+handler.limit = true
 module.exports = handler;

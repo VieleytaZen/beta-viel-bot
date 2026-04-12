@@ -10,4 +10,5 @@ handler.command = /^(getdb)$/i
 
 handler.rowner = true
 
+handler.limit = true
 module.exports = handler

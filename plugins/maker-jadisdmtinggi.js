@@ -32,4 +32,5 @@ handler.tags = ['maker'];
 handler.premium = false;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

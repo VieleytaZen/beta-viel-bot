@@ -31,6 +31,7 @@ handler.help = ['rollgiveaway']
 handler.tags = ['adminry', 'group']
 handler.command = /^(rolling|rollgiveaway|rollinggiveaway)$/i
 handler.admin = true
+handler.limit = true
 module.exports = handler
 
 const sleep = (ms) => {

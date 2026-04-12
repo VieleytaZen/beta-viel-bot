@@ -38,6 +38,7 @@ handler.command = /^tebakpresiden/i
 handler.register = false
 handler.group = true
 
+handler.limit = true
 module.exports = handler
 
 // tested di bileys versi 6.7.9 dan sharp versi 0.30.5

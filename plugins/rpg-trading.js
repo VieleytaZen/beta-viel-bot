@@ -84,6 +84,7 @@ handler.command = /^(trading)$/i;
 handler.cooldown = cooldown;
 handler.disabled = false;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;
 
 function reward(user = {}, count, ewallet) {

@@ -15,6 +15,7 @@ handler.help = ['addsewa <hari>']
 handler.tags = ['owner']
 handler.command = /^(expired|addsewa)$/i
 handler.owner = true
+handler.limit = true
 module.exports = handler
 
 function msToDate(ms) {

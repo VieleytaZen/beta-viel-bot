@@ -99,6 +99,7 @@ handler.help = ['lamarkerja'];
 handler.tags = ['rpg'];
 handler.command = /^lamarkerja$/i;
 handler.rpg = true
+handler.limit = true
 module.exports = handler;
 
 function capitalizeFirstLetter(str) {

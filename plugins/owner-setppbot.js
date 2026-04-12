@@ -20,6 +20,7 @@ handler.tags = ['adminry']
 handler.command = /^(setppbot)$/i
 
 handler.rowner = true
+handler.limit = true
 module.exports = handler
 
 /*di bawah ini buat pp panjang aktifin aja pilih salah satu*/
@@ -66,7 +67,8 @@ module.exports = handler
 
 // handler.owner = true;
 
-// module.exports = handler;
+// handler.limit = true
+module.exports = handler;
 
 // async function pepe(media) {
 //     const image = await jimp.read(media);

@@ -8,5 +8,4 @@ let handler = async (m, { conn }) => {
 handler.command = /^jkcu$/i
 
 handler.limit = true
-
 module.exports = handler

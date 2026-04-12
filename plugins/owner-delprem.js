@@ -22,6 +22,7 @@ handler.command = /^(unprem|delprem)$/i;
 handler.owner = true;
 handler.fail = null;
 
+handler.limit = true
 module.exports = handler;
 
 // hapis skibidi

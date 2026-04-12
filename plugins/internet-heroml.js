@@ -101,4 +101,5 @@ handler.tags = ['internet'];
 handler.help = ['heroml <hero_name>'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

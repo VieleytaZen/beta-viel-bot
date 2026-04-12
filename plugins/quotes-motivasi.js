@@ -12,4 +12,5 @@ handler.help = ['motivasi']
 handler.tags = ['quotes']
 handler.command = /^(motivasi)$/i
 
+handler.limit = true
 module.exports = handler

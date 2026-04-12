@@ -26,4 +26,5 @@ handler.command = /^(kic?k|remove|tendang|\-)$/i
 handler.group = true
 handler.botAdmin = true
 
+handler.limit = true
 module.exports = handler

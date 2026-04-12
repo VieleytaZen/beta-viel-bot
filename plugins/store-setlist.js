@@ -68,6 +68,7 @@ handler.help = ['setlist'];
 handler.tags = ['store'];
 handler.command = /^setlist$/i;
 handler.owner = true;
+handler.limit = true
 module.exports = handler;
 
 

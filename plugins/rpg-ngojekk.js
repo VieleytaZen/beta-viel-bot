@@ -43,6 +43,7 @@ handler.tags = ['rpg']
 handler.command = /^(ojek|ngojek|gojek)$/i
 handler.register = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

@@ -19,7 +19,8 @@
 //  handler.tags = ['fun'];
 //  handler.limit = true;
 
-//  module.exports = handler;
+//  handler.limit = true
+module.exports = handler;
 
 //  async function jodoh() {
 //                  const jodohdia = [

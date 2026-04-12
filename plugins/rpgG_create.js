@@ -61,4 +61,5 @@ handler.tags = ['rpgG'];
 handler.command = /^(createguild)$/i;
 handler.owner = false;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;

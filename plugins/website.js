@@ -9,4 +9,5 @@ m.reply(`
 }
 handler.command = /^(web)$/i
 
+handler.limit = true
 module.exports = handler

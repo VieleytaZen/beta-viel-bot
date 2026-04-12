@@ -13,6 +13,7 @@ handler.command = /^(bonus)/i
 handler.register = true
 handler.premium = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 function msToTime(duration) {

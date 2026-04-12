@@ -133,5 +133,6 @@ handler.command = ['betaai'];
 handler.tags = ['ai'];
 handler.help = ['betaai [on/off]'];
  
+handler.limit = true
 module.exports = handler;
 //Hapus Teros Wm ny, Kek Bocah Aja🤮🤮🤮

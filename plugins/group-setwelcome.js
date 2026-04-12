@@ -12,4 +12,5 @@ handler.tags = ['owner', 'group']
 handler.command = /^setwelcome$/i
 handler.botAdmin = true
 
+handler.limit = true
 module.exports = handler

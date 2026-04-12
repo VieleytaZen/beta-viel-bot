@@ -118,4 +118,5 @@ handler.tags = ['downloader'];
 handler.command = /^(asupantiktok)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

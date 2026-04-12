@@ -33,4 +33,5 @@ handler.tags = ['downloader'];
 handler.command = /^(scribd|scribddl|dlscribd)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

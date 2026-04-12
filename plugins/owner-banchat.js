@@ -25,6 +25,7 @@ handler.tags = ['owner'];
 handler.command = ['mute', 'unmute'];
 handler.owner = true;
 
+handler.limit = true
 module.exports = handler;
 
 // let handler = async (m, { conn, participants }) => {
@@ -38,4 +39,5 @@ module.exports = handler;
 // handler.command = ['mute']
 // handler.owner = true
 
-// module.exports = handler
+// handler.limit = true
+module.exports = handler

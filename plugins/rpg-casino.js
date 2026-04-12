@@ -92,6 +92,7 @@ handler.register = true;
 handler.group = true;
 handler.rpg = true
 handler.limit = 10;
+handler.limit = true
 module.exports = handler;
 
 function pickRandom(list) {

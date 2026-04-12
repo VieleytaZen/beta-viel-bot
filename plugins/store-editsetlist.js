@@ -68,6 +68,7 @@ handler.help = ['editsetlist'];
 handler.tags = ['store'];
 handler.command = /^editsetlist$/i;
 handler.owner = true;
+handler.limit = true
 module.exports = handler;
 
 

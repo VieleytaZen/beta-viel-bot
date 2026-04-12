@@ -56,4 +56,5 @@ handler.premium = false
 handler.group = true
 handler.limit = true
 handler.fail = null
+handler.limit = true
 module.exports = handler

@@ -91,6 +91,7 @@ handler.help = ['', 'bot'].map(v => 'status' + v)
 handler.tags = ['info']
 handler.command = /^(bot)?stat(us)?(bot)?$/i
 
+handler.limit = true
 module.exports = handler
 
 function clockString(ms) {

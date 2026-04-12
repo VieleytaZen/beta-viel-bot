@@ -36,5 +36,4 @@ handler.help = ['tebaklagu']
 handler.tags = ['game']
 handler.command = /^tebaklagu/i
 handler.limit = true
-
 module.exports = handler;

@@ -114,6 +114,7 @@ handler.before = async function (m, { conn, text, command }) {
 	await kocok(m, ut, conn) 
 	}
 
+handler.limit = true
 module.exports = handler;
 
 async function kocok(m, ut, conn) {

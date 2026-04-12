@@ -44,5 +44,4 @@ handler.command = /^tebakislami/i
 handler.register = false
 handler.group = true
 handler.limit = true
-
 module.exports = handler

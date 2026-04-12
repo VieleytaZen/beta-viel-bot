@@ -101,4 +101,5 @@ handler.tags = ['game'];
 handler.command = /^math/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

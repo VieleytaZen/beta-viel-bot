@@ -14,4 +14,5 @@ handler.help = ['listcmd']
 handler.tags = ['database', 'premium']
 handler.command = ['listcmd', 'infocmd']
 
+handler.limit = true
 module.exports = handler

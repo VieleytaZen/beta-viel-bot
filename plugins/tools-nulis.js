@@ -65,6 +65,7 @@ handler.tags = ['tools']
 handler.command = /^nulis$/i
 
 
+handler.limit = true
 module.exports = handler
 
 // BY MFARELS NJEENK

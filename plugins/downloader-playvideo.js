@@ -59,6 +59,7 @@ handler.tags = ['downloader'];
 handler.limit = true;
 handler.premium = false;
 
+handler.limit = true
 module.exports = handler;
 
 async function youtube(url) {
@@ -158,6 +159,7 @@ handler.tags = ['downloader'];
 handler.premium = false;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler
 
 function formatViews(views) {

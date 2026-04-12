@@ -53,5 +53,6 @@ conn.sendMessage(m.chat, { audio: { url: audio }, mimetype: 'audio/mpeg' }, { qu
 handler.customPrefix = /^(betabotz)$/i 
 handler.command = new RegExp
 handler.tags = ['main']
+handler.limit = true
 module.exports = handler
 */

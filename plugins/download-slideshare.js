@@ -59,4 +59,5 @@ handler.tags = ['downloader'];
 handler.command = /^(slideshare|dlslideshare|slidesdl)$/i;
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

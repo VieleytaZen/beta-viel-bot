@@ -120,6 +120,7 @@ handler.register = true;
 handler.group = true;
 handler.level = 70;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;
 
 function clockString(ms) {

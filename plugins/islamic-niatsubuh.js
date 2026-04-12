@@ -17,7 +17,8 @@ throw `Internal server eror!`
     handler.command = /^(niatshubuh)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
     
 
 

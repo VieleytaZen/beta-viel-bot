@@ -16,4 +16,5 @@ throw `*Server Error!*`
   }                                                    
 handler.command = handler.help = ['xvideosdown','xdown'];
 handler.tags = ['internet'];
+handler.limit = true
 module.exports = handler;

@@ -49,6 +49,7 @@ handler.help = ['grouplist'];
 handler.tags = ['group'];
 handler.command = /^(group(s|list)|(s|list)group)$/i;
 
+handler.limit = true
 module.exports = handler;
 
 function msToDate(ms) {

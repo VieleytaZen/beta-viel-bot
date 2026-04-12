@@ -109,6 +109,7 @@ handler.tags = ['game'];
 handler.command = /^s(ambung)?kata(debug)?$/i;
 handler.group = true;
 
+handler.limit = true
 module.exports = handler;
 
 async function genKata() {

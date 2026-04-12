@@ -20,4 +20,5 @@ handler.help = ['ikutgiveaway']
 handler.tags = ['group']
 handler.command = /^(ikut|ikutgiveaway)$/i
 handler.group = true
+handler.limit = true
 module.exports = handler

@@ -60,6 +60,7 @@ handler.nyerah = async function (m) {
     }
 }
 
+handler.limit = true
 module.exports = handler
 
 //danaputra_133

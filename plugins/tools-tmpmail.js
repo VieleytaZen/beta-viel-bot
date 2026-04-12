@@ -68,6 +68,7 @@ handler.tags = ['tools'];
 handler.help = ['tempmail', 'cekmail', 'checkmail'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;
 
 function extractText(html) {

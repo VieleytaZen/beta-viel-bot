@@ -15,4 +15,5 @@ m.reply(intro)
 }
 handler.command = /^(intro)$/i
 
+handler.limit = true
 module.exports = handler

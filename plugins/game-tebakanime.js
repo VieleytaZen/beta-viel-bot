@@ -49,4 +49,5 @@ handler.command = /^tebakanime/i
 handler.limit = true
 handler.group = true
 
+handler.limit = true
 module.exports = handler

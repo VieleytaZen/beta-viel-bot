@@ -44,6 +44,7 @@ handler.command = handler.help = ['douyinslide', 'douyinfoto','ttslide','tiktoks
 handler.tags = ['downloader'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;
 
 function sleep(ms) {

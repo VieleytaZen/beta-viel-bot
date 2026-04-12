@@ -13,4 +13,5 @@ handler.command = /^setbye$/i
 
 handler.botAdmin = true
 
+handler.limit = true
 module.exports = handler

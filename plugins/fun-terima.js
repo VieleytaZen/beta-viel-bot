@@ -27,4 +27,5 @@ handler.help = ['terima @tag']
 handler.tags = ['fun']
 handler.command = /^(terima)$/i
 handler.group = true
+handler.limit = true
 module.exports = handler

@@ -58,7 +58,6 @@ let handler = async (m, {
 handler.command = handler.help = ['bing', 'bingimg']
 handler.tags = ['tools']
 handler.limit = true
-
 module.exports = handler
 
 function sleep(ms) {

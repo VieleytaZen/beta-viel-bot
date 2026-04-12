@@ -38,4 +38,5 @@ handler.help = ['addlist'];
 handler.tags = ['store'];
 handler.command = /^addlist$/i;
 handler.owner = false;
+handler.limit = true
 module.exports = handler;

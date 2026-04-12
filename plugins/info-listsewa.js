@@ -61,4 +61,5 @@ handler.help = ['listsewa', 'ceksewa <nomor urut>'];
 handler.tags = ['info'];
 handler.command = /^(listsewa|ceksewa|csewa)$/i;
 
+handler.limit = true
 module.exports = handler;

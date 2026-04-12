@@ -23,4 +23,5 @@ handler.help = ['guildwar <nama_guild>'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildwar)$/i;
 handler.rpg = true;
+handler.limit = true
 module.exports = handler;

@@ -53,6 +53,7 @@ handler.tags = ['fun']
 handler.command = /^(kecocokanpasangan)$/i
 handler.group = true
 
+handler.limit = true
 module.exports = handler;
 
 //danaputra133

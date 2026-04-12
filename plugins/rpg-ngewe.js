@@ -63,6 +63,7 @@ handler.command = /^(ngewe|anu)$/i
 handler.register = true
 handler.premium = false
 handler.rpg = true
+handler.limit = true
 module.exports = handler
 
 

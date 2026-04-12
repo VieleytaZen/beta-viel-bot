@@ -20,5 +20,6 @@ throw `Internal server eror!`
     handler.command = /^(cnbc)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
     

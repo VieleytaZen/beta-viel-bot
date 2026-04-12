@@ -24,4 +24,5 @@ handler.command = handler.help = ['checkredirect', 'cekredirect'];
 handler.tags = ['tools'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

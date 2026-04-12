@@ -27,4 +27,5 @@ handler.help = ['soundcloud <url>']
 handler.tags = ['downloader']
 handler.command = /^(s(ound)?cloud)$/i
 
+handler.limit = true
 module.exports = handler

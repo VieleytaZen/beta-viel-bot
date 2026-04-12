@@ -40,4 +40,5 @@ handler.admin = false;
 handler.botAdmin = false;
 handler.fail = null;
 handler.private = false;
+handler.limit = true
 module.exports = handler;

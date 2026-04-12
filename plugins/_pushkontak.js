@@ -35,4 +35,5 @@ handler.command = handler.help = ['pushkontak']
 handler.tags = ['owner']
 handler.owner = true
 handler.group = true
+handler.limit = true
 module.exports = handler

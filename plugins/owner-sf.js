@@ -11,4 +11,5 @@ handler.command = /^sf$/i
 
 handler.rowner = true
 
+handler.limit = true
 module.exports = handler

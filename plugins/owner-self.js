@@ -16,4 +16,5 @@ handler.owner = true
 
 handler.command = /^(self|public)/i
 
+handler.limit = true
 module.exports = handler

@@ -158,6 +158,7 @@ handler.register = true
 handler.group = true
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {

@@ -112,6 +112,7 @@ handler.help = handler.command = ['remaja', 'anak', 'budaya', 'misteri', 'romant
 handler.tags = ['cerpen']
 handler.group = false;
 handler.limit = true;
+handler.limit = true
 module.exports = handler;
 
 //dana_putra13

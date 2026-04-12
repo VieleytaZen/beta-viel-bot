@@ -40,4 +40,5 @@ handler.tags = ['game']
 handler.command = /^tekateki/i
 handler.group = true
 
+handler.limit = true
 module.exports = handler

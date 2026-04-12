@@ -44,6 +44,7 @@ handler.command = /^fisika/i
 handler.register = false
 handler.group = true
 
+handler.limit = true
 module.exports = handler
 
 // tested di bileys versi 6.5.0 dan sharp versi 0.30.5

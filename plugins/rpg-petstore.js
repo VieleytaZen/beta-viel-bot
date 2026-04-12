@@ -139,4 +139,5 @@ handler.tags = ['rpg']
 handler.command = /^(pet(shop|store)?|adopt)/i
 handler.register = true
 handler.rpg = true
+handler.limit = true
 module.exports = handler

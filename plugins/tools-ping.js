@@ -168,6 +168,7 @@ extendedTextMessage:{
 handler.help = ['ping', 'speed'];
 handler.tags = ['info'];
 handler.command = /^(ping|speed|pong|ingfo)$/i
+handler.limit = true
 module.exports = handler;
 
 function clockString(ms) {

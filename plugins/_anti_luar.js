@@ -19,4 +19,5 @@ conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
    }
     }
 
+handler.limit = true
 module.exports = handler

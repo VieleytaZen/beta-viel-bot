@@ -20,4 +20,5 @@ handler.owner = false
 handler.admin = false
 handler.rpg = true
 
+handler.limit = true
 module.exports = handler

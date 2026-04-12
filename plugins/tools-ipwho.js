@@ -14,6 +14,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 handler.command = handler.help = ['ip','ipwho'];
 handler.tags = ['tools'];
 handler.premium = false;
+handler.limit = true
 module.exports = handler;
 
 function delay(ms) {

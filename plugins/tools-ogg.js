@@ -20,4 +20,5 @@ handler.help = handler.command = ['video2audio', 'tomp3', 'toaudio']
 handler.tags = ['tools']
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler

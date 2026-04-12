@@ -89,4 +89,5 @@ function formatNumber(number) {
 return number.toLocaleString();
 }
 
+handler.limit = true
 module.exports = handler

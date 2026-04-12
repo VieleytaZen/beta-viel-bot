@@ -147,4 +147,5 @@ handler.tags = ['group']
 handler.command = /^reminder$/i
 handler.group = true
 
+handler.limit = true
 module.exports = handler

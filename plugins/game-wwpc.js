@@ -101,4 +101,5 @@ let handler = async (m, { conn, command, usedPrefix, args }) => {
 }
 handler.command = /^((ww|werewolf)pc)$/i
 handler.private = true
+handler.limit = true
 module.exports = handler

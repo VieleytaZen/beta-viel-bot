@@ -12,4 +12,5 @@ handler.help = ['ppcp']
 handler.tags = ['internet']
 handler.command = /^ppcp$/i
 
+handler.limit = true
 module.exports = handler

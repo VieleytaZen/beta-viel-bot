@@ -19,5 +19,4 @@ handler.tags = ['github']
 handler.command = /gitclone/i
 
 handler.limit = true
-
 module.exports = handler

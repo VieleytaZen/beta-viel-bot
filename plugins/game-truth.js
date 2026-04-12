@@ -9,5 +9,4 @@ handler.help = ['truth']
 handler.tags = ['fun']
 handler.command = /^(truth|kebenaran|kejujuran)$/i
 handler.limit = true
-
 module.exports = handler

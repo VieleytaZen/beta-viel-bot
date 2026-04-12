@@ -40,4 +40,5 @@ handler.tags = ['owner']
 handler.command = /^loadplug(in)?$/i
 handler.owner = true
 
+handler.limit = true
 module.exports = handler;

@@ -40,4 +40,5 @@ handler.help = ['guildstaff <tambah/hapus> <@user>'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildstaff)$/i;
 handler.rpg = true;   
+handler.limit = true
 module.exports = handler;

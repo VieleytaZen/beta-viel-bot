@@ -219,4 +219,5 @@ handler.command = handler.help = ['ffstalk', 'mlstalk', 'mlstalk2', 'supersussta
 handler.tags = ['stalk'];
 handler.limit = true;
 
+handler.limit = true
 module.exports = handler;

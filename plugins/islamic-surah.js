@@ -29,7 +29,8 @@ throw `Internal server eror!\n\nulangi lagi perintah dengan nomor surat lain!`
     handler.command = /^(surah)$/i
     handler.group = true
     
-    module.exports = handler
+    handler.limit = true
+module.exports = handler
 
     function pickRandom(list) {
       return list[Math.floor(list.length * Math.random())]

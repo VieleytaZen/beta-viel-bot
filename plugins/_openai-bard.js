@@ -18,4 +18,5 @@ try {
 handler.command = handler.help = ['bard','bardai'];
 handler.tags = ['tools'];
 handler.premium = false
+handler.limit = true
 module.exports = handler;
