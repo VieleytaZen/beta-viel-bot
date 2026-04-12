@@ -4,33 +4,41 @@ const prem = 1000; // xp yang didapat untuk user prem
 const free = 100; // xp yang didapat untuk user free
 
 let handler = async (m, {conn, text, isPrems}) => {
-    let lastClaimTime = global.db.data.users[m.sender].lastclaim || 0;
+    let user = global.db.data.users[m.sender];
+    if (!user) return m.reply('Data user tidak ditemukan di database.');
+
+    let lastClaimTime = user.lastclaim || 0;
     let currentTime = new Date().getTime();
 
-    // Cek apakah sudah 24 jam (86400000 ms) sejak klaim terakhir
-    if (currentTime - lastClaimTime < 86400000) throw `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`;
+    if (currentTime - lastClaimTime < 86400000) {
+        throw `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`;
+    }
 
     // Tambahkan XP sesuai jenis user
-    global.db.data.users[m.sender].exp += isPrems ? prem : free;
+    let reward = isPrems ? prem : free;
+    user.exp += reward;
+    
     m.reply(`
 🎁 *HADIAH XP*
 *Spam terus untuk mendapatkan xp*
 cek .balance jumlah xp mu!
-🆙 *XP* : +${isPrems ? prem : free}`);
+🆙 *XP* : +${reward}`);
 
-    // Update waktu klaim terakhir
-    global.db.data.users[m.sender].lastclaim = currentTime;
+    user.lastclaim = currentTime;
 }
 
-handler.help = handler.command = ['daily'];
+handler.help = ['daily'];
+handler.command = ['daily'];
 handler.tags = ['rpg'];
-handler.rpg = true
+handler.rpg = true;
+handler.limit = true;
+handler.register = true;
+handler.premium = false;
 
 module.exports = handler;
 
 function msToTime(duration) {
-    var milliseconds = parseInt((duration % 1000) / 100),
-        seconds = Math.floor((duration / 1000) % 60),
+    var seconds = Math.floor((duration / 1000) % 60),
         minutes = Math.floor((duration / (1000 * 60)) % 60),
         hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
 
