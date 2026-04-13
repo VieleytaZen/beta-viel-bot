@@ -10,7 +10,7 @@ let handler = async (m, { conn, command, args }) => {
             if (!title || title.length > 50) {
                 return conn.reply(m.chat, `${tag} Silakan berikan judul untuk live Anda (maksimal 50 karakter).`, m);
             }
-            const cooldownTime = 6000; // 10 menit dalam milidetik (10 * 60 * 100)
+            const cooldownTime = 600000; // 10 menit dalam milidetik
             const lastLiveTime = user.lastLiveTime || 0;
             const timeSinceLastLive = new Date() - lastLiveTime;
             if (timeSinceLastLive < cooldownTime) {
@@ -21,10 +21,10 @@ let handler = async (m, { conn, command, args }) => {
             setTimeout(() => {
                 conn.reply(m.chat, `👋 Hai Kak ${tag}, Subscribermu sudah menunggu,\nwaktunya untuk live streaming kembali!`, m);
             }, cooldownTime);
-            const randomSubscribers = Math.floor(Math.random() * (3000 - 10 + 1)) + 1;
-            const randomLike = Math.floor(Math.random() * (1000 - 20 + 1)) + 10;
-            const randomViewers = Math.floor(Math.random() * (1000000 - 10 + 1)) + 1;
-            const randomDonation = Math.floor(Math.random() * (200000 - 1000 + 1)) + 10000;
+            const randomSubscribers = Math.floor(Math.random() * (1000 - 10 + 1)) + 1;
+            const randomLike = Math.floor(Math.random() * (250 - 20 + 1)) + 10;
+            const randomViewers = Math.floor(Math.random() * (250000 - 10 + 1)) + 1;
+            const randomDonation = Math.floor(Math.random() * (50000 - 1000 + 1)) + 1000;
             user.subscribers += randomSubscribers;
             user.like += randomLike;
             user.viewers += randomViewers;

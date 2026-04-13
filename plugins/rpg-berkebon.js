@@ -13,11 +13,11 @@ const timeout = 18000
                                  	if (global.db.data.users[m.sender].bibitpisang > 499) {
                                  	if (global.db.data.users[m.sender].bibitjeruk > 499) {
                                  	if (global.db.data.users[m.sender].bibitanggur > 499) {
-                                     let pisangpoin = `${Math.floor(Math.random() * 50)}`.trim()
-                                     let anggurpoin = `${Math.floor(Math.random() * 50)}`.trim()
-                                     let manggapoin = `${Math.floor(Math.random() * 50)}`.trim()
-                                     let jerukpoin = `${Math.floor(Math.random() * 50)}`.trim()
-                                     let apelpoin = `${Math.floor(Math.random() * 50)}`.trim()
+                                     let pisangpoin = `${Math.floor(Math.random() * 25)}`.trim()
+                                     let anggurpoin = `${Math.floor(Math.random() * 25)}`.trim()
+                                     let manggapoin = `${Math.floor(Math.random() * 25)}`.trim()
+                                     let jerukpoin = `${Math.floor(Math.random() * 25)}`.trim()
+                                     let apelpoin = `${Math.floor(Math.random() * 25)}`.trim()
                                      global.db.data.users[m.sender].pisang += pisangpoin * 1
                                      global.db.data.users[m.sender].anggur += anggurpoin * 1
                                      global.db.data.users[m.sender].mangga += manggapoin * 1

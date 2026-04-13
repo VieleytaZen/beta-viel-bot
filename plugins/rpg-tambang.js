@@ -17,7 +17,7 @@ function createTambangs() {
         area: `Tambang ${areaName}`,
         txt: areaName.toLowerCase().replace(/ /g, "_"),
         reward: {
-            exp: 50 + (i * 20),
+            exp: 25 + (i * 10),
             resources: {
                 diamond: Math.random() > 0.8 ? Math.floor(Math.random() * 2) : 0,
                 gold: Math.random() > 0.5 ? Math.floor(Math.random() * 3) : 0,

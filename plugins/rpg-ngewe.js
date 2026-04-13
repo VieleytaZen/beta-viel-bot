@@ -15,11 +15,11 @@ let randomaku5 = `${Math.floor(Math.random() * 10)}`
 
 .trim()
 
-let rbrb1 = (randomaku1 * 2)
-let rbrb2 = (randomaku2 * 10) 
+let rbrb1 = (randomaku1 * 1)
+let rbrb2 = (randomaku2 * 5) 
 let rbrb3 = (randomaku3 * 1)
-let rbrb4 = (randomaku4 * 15)
-let rbrb5 = (randomaku5 * 20)
+let rbrb4 = (randomaku4 * 7)
+let rbrb5 = (randomaku5 * 10)
 
 var zero1 = `${rbrb1}`
 var zero2 = `${rbrb2}`

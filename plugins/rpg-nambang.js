@@ -10,14 +10,14 @@ let handler = async (m, { conn }) => {
 
     let randomaku1 = `${Math.floor(Math.random() * 10)}`
     let randomaku2 = `${Math.floor(Math.random() * 10)}`
-    let randomaku4 = `${Math.floor(Math.random() * 5)}`
-    let randomaku3 = `${Math.floor(Math.random() * 2)}`
-    let randomaku5 = `${Math.floor(Math.random() * 10)}`
+    let randomaku4 = `${Math.floor(Math.random() * 6) + 2}`
+    let randomaku3 = `${Math.floor(Math.random() * 3)}`
+    let randomaku5 = `${Math.floor(Math.random() * 21) + 5}`
 
-    let rbrb1 = (randomaku1 * 2)
+    let rbrb1 = (randomaku1 * 1)
     let rbrb2 = (randomaku2 * 1)
     let rbrb3 = (randomaku3 * 1)
-    let rbrb4 = (randomaku4 * 10)
+    let rbrb4 = (randomaku4 * 5)
     let rbrb5 = (randomaku5 * 1)
 
     var zero1 = `${rbrb1}`

@@ -3,9 +3,9 @@ const timeout = 288000
 let handler = async (m, { conn, usedPrefix, text }) => {
 	    let time = global.db.data.users[m.sender].lastturu + 2880000
   if (new Date - global.db.data.users[m.sender].lastturu< 28800000) throw `Anda sudah memulung\nMohon tunggu selama ${msToTime(time - new Date())} untuk mulung lagi`
-    let botolnye = `${Math.floor(Math.random() * 10)}`.trim()
-	let kalengnye = `${Math.floor(Math.random() * 10)}`.trim()
-	let kardusnye = `${Math.floor(Math.random() * 10)}`.trim()
+    let botolnye = `${Math.floor(Math.random() * 25) + 10}`.trim()
+	let kalengnye = `${Math.floor(Math.random() * 25) + 10}`.trim()
+	let kardusnye = `${Math.floor(Math.random() * 25) + 10}`.trim()
 	global.db.data.users[m.sender].botol += botolnye * 1
 	global.db.data.users[m.sender].kaleng += kalengnye * 1
 	global.db.data.users[m.sender].kardus += kardusnye * 1

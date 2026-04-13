@@ -15,8 +15,8 @@ let handler = async (m, { conn }) => {
         let randomaku4 = Math.floor(Math.random() * 10)
         let randomaku5 = Math.floor(Math.random() * 10)
 
-        let rbrb4 = (randomaku4 * 10000)
-        let rbrb5 = (randomaku5 * 100)
+        let rbrb4 = (randomaku4 * 5000)
+        let rbrb5 = (randomaku5 * 50)
 
         var dimas = `
 🕵️ Mendapatkan Target.....

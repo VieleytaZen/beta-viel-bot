@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                 let monsters = [
                     { name: 'Goblin', health: 20, attack: 5 },
                     { name: 'Troll', health: 50, attack: 10 },
-                    { name: 'Dragon', health: 10, attack: 20 },
+                    { name: 'Dragon', health: 100, attack: 20 },
                     { name: 'Zombie', health: 30, attack: 7 },
                     { name: 'Vampire', health: 40, attack: 15 },
                     { name: 'Werewolf', health: 70, attack: 17 },
@@ -30,24 +30,24 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                     { name: 'Orc', health: 60, attack: 12 },
                     { name: 'Witch', health: 45, attack: 14 },
                     { name: 'Golem', health: 80, attack: 18 },
-                    { name: 'Demon', health: 12, attack: 25 },
-                    { name: 'Phoenix', health: 15, attack: 30 },
-                    { name: 'Hydra', health: 20, attack: 35 },
-                    { name: 'Kraken', health: 25, attack: 40 },
-                    { name: 'Minotaur', health: 30, attack: 45 },
-                    { name: 'Basilisk', health: 35, attack: 50 },
-                    { name: 'Griffin', health: 40, attack: 55 },
-                    { name: 'Cyclops', health: 45, attack: 60 },
-                    { name: 'Chimera', health: 50, attack: 65 },
-                    { name: 'Leviathan', health: 55, attack: 70 }
+                    { name: 'Demon', health: 120, attack: 25 },
+                    { name: 'Phoenix', health: 150, attack: 30 },
+                    { name: 'Hydra', health: 200, attack: 35 },
+                    { name: 'Kraken', health: 250, attack: 40 },
+                    { name: 'Minotaur', health: 300, attack: 45 },
+                    { name: 'Basilisk', health: 350, attack: 50 },
+                    { name: 'Griffin', health: 400, attack: 55 },
+                    { name: 'Cyclops', health: 450, attack: 60 },
+                    { name: 'Chimera', health: 500, attack: 65 },
+                    { name: 'Leviathan', health: 550, attack: 70 }
                 ]
 
                 // Define bosses
                 let bosses = [
-                    { name: 'Ancient Dragon', health: 100, attack: 10 },
-                    { name: 'Dark Lord', health: 120, attack: 12 },
-                    { name: 'Titan', health: 150, attack: 15 },
-                    { name: 'Elder God', health: 200, attack: 20 }
+                    { name: 'Ancient Dragon', health: 1000, attack: 100 },
+                    { name: 'Dark Lord', health: 1200, attack: 120 },
+                    { name: 'Titan', health: 1500, attack: 150 },
+                    { name: 'Elder God', health: 2000, attack: 200 }
                 ]
 
                 // Pick a random monster or boss
@@ -75,36 +75,36 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                 let kuda = user.kuda
                 let kucing = user.kucing
                 let serigala = user.serigala
-                let _healt = `${Math.floor(Math.random() * 81)}`.trim() 
+                let _healt = `${Math.floor(Math.random() * 101)}`.trim()
                 let healt = (_healt * 1)
-                let exp = `${Math.floor(Math.random() * 10)}`.trim() // 1/10 dari 10k
-                let uang = `${Math.floor(Math.random() * 10)}`.trim() // 1/10 dari 100k
+                let exp = `${Math.floor(Math.random() * 5001)}`.trim() // Seimbang (Asli 10k)
+                let uang = `${Math.floor(Math.random() * 35001)}`.trim() // Seimbang (Asli 100k)
                 let _potion = ['1', '2', '3']
                 let potion = _potion[Math.floor(Math.random() * _potion.length)]
-                let _sampah = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
+                let _sampah = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
                 let sampah = _sampah[Math.floor(Math.random() * _sampah.length)]
-                let _diamond = ['1', '2', '3']
+                let _diamond = ['1', '2', '3', '4', '5']
                 let diamond = _diamond[Math.floor(Math.random() * _diamond.length)]
                 let _common = ['1', '2', '3']
                 let common = _common[Math.floor(Math.random() * _common.length)]
-let _uncommon = ['1', '2']
-let uncommon = _uncommon[Math.floor(Math.random() * _uncommon.length)]
-let _mythic = `${pickRandom(['1', '0', '1', '0', '1'])}`
-let mythic = (_mythic * 1)
-let _legendary = `${pickRandom(['1', '0', '0', '0', '1'])}`
-let legendary = (_legendary * 1)
-let itemrand = [`*Selamat anda mendapatkan item rare yaitu*\n${mythic} 🎁 Mythic Crate`, `*Selamat kamu mendapatkan item rare yaitu*\n${legendary} 🎁 Legendary Crate`]
-let rendem = itemrand[Math.floor(Math.random() * itemrand.length)]
-let peta = pickRandom([
-    '🏯 Jepang', '🇰🇷 Korea', '🏝️ Bali', '🇺🇸 Amerika', '🇮🇶 Iraq', '🇸🇦 Arab', '🇵🇰 Pakistan', 
-    '🇩🇪 German', '🇫🇮 Finlandia', '💤 Ke bawa dunia mimpi', '🌍 Ujung dunia', '🔴 Mars', '🇿🇼 Zimbabwe', 
-    '🌕 Bulan', '🔵 Pluto', '☀️ Matahari', '💖 Hatinya dia', '🌲 Hutan Amazon', '🏜️ Gurun Sahara', 
-    '🏔️ Pegunungan Himalaya', '🌊 Samudra Atlantik', '🏰 Kastil Terbengkalai', '🌌 Galaksi Andromeda', 
-    '🏞️ Grand Canyon', '🏜️ Death Valley', '🏕️ Yosemite', '🏖️ Maldives', '🏙️ New York', '🇮🇳 India',
-    '🇧🇷 Brazil', '🇿🇦 South Africa', '🇦🇺 Australia', '🇨🇦 Canada', '🇷🇺 Russia', '🇲🇽 Mexico', '🇳🇿 New Zealand',
-    '🏞️ Patagonia', '🇫🇷 France', '🇪🇸 Spain', '🇮🇹 Italy', '🇬🇧 United Kingdom', '🇨🇭 Switzerland'
-])
-let str = `
+                let _uncommon = ['1', '2', '1', '2']
+                let uncommon = _uncommon[Math.floor(Math.random() * _uncommon.length)]
+                let _mythic = `${pickRandom(['1', '3', '1', '1', '2'])}`
+                let mythic = (_mythic * 1)
+                let _legendary = `${pickRandom(['1', '3', '1', '1', '2'])}`
+                let legendary = (_legendary * 1)
+                let itemrand = [`*Selamat anda mendapatkan item rare yaitu*\n${mythic} 🎁 Mythic Crate`, `*Selamat kamu mendapatkan item rare yaitu*\n${legendary} 🎁 Legendary Crate`]
+                let rendem = itemrand[Math.floor(Math.random() * itemrand.length)]
+                let peta = pickRandom([
+                    '🏯 Jepang', '🇰🇷 Korea', '🏝️ Bali', '🇺🇸 Amerika', '🇮🇶 Iraq', '🇸🇦 Arab', '🇵🇰 Pakistan', 
+                    '🇩🇪 German', '🇫🇮 Finlandia', '💤 Ke bawa dunia mimpi', '🌍 Ujung dunia', '🔴 Mars', '🇿🇼 Zimbabwe', 
+                    '🌕 Bulan', '🔵 Pluto', '☀️ Matahari', '💖 Hatinya dia', '🌲 Hutan Amazon', '🏜️ Gurun Sahara', 
+                    '🏔️ Pegunungan Himalaya', '🌊 Samudra Atlantik', '🏰 Kastil Terbengkalai', '🌌 Galaksi Andromeda', 
+                    '🏞️ Grand Canyon', '🏜️ Death Valley', '🏕️ Yosemite', '🏖️ Maldives', '🏙️ New York', '🇮🇳 India',
+                    '🇧🇷 Brazil', '🇿🇦 South Africa', '🇦🇺 Australia', '🇨🇦 Canada', '🇷🇺 Russia', '🇲🇽 Mexico', '🇳🇿 New Zealand',
+                    '🏞️ Patagonia', '🇫🇷 France', '🇪🇸 Spain', '🇮🇹 Italy', '🇬🇧 United Kingdom', '🇨🇭 Switzerland'
+                ])
+                let str = `
 🩸 Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${peta} dan melawan ${enemy.name}. Kamu mendapatkan:
 ✨ *Exp:* ${exp}
 💰 *Uang:* ${uang}
@@ -112,60 +112,60 @@ let str = `
 🗑️ *Sampah:* ${sampah}${potion == 0 ? '' : '\n🧪 *Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n💎 *Diamond:* ' + diamond + ''}${common == 0 ? '' : '\n📦 *Common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n🎁 *Uncommon crate:* ' + uncommon + ''}
 `.trim()
 
-setTimeout(() => {
-    conn.reply(m.chat, str, m, {
-        contextInfo: {
-            externalAdReply: {
-                mediaType: 1,
-                title: 'BETABOTZ RPG',
-                thumbnailUrl: 'https://telegra.ph/file/221ec27b2997f203569eb.jpg',
-                renderLargerThumbnail: true,
-                sourceUrl: ''
+                setTimeout(() => {
+                    conn.reply(m.chat, str, m, {
+                        contextInfo: {
+                            externalAdReply: {
+                                mediaType: 1,
+                                title: 'BETABOTZ RPG',
+                                thumbnailUrl: 'https://telegra.ph/file/221ec27b2997f203569eb.jpg',
+                                renderLargerThumbnail: true,
+                                sourceUrl: ''
+                            }
+                        }
+                    })
+                }, 0)
+                setTimeout(() => {
+                    conn.reply(m.chat, rendem, m)
+                }, 1000)
+
+                user.healt -= healt * 1
+                user.exp += exp * 1
+                user.tiketcoin += 1
+                user.money += uang * 1
+                user.potion += potion * 1
+                user.diamond += diamond * 1
+                user.common += common * 1
+                user.uncommon += uncommon * 1
+                user.sampah += sampah * 1
+                user.mythic += mythic * 1
+                user.legendary += legendary * 1
+                user.lastadventure = new Date * 1
+
+                // Decrease sword and armor durability
+                user.sworddurability -= 1
+                user.armordurability -= 1
+
+                // Check for broken sword or armor
+                if (user.sworddurability <= 0) {
+                    user.sword = false
+                    conn.reply(m.chat, '⚔️ Sword kamu telah rusak, craft lagi untuk melanjutkan adventure.', m)
+                }
+                if (user.armordurability <= 0) {
+                    user.armor = false
+                    conn.reply(m.chat, '🛡️ Armor kamu telah rusak, craft lagi untuk melanjutkan adventure.', m)
+                }
+
+            } else {
+                conn.reply(m.chat, `💧 Anda sudah berpetualang dan kelelahan, silahkan coba *${timers}* lagi`, m)
             }
+        } else {
+            conn.reply(m.chat, '🩸 Minimal 80 healt untuk bisa berpetualang, beli nyawa dulu dengan ketik *' + usedPrefix + 'shop buy potion <jumlah>*\ndan ketik *' + usedPrefix + 'use potion <jumlah>*', m)
         }
-    })
-}, 0)
-setTimeout(() => {
-    if (mythic > 0 || legendary > 0) conn.reply(m.chat, rendem, m)
-}, 1000)
-
-user.healt -= healt * 1
-user.exp += exp * 1
-user.tiketcoin += 1
-user.money += uang * 1
-user.potion += potion * 1
-user.diamond += diamond * 1
-user.common += common * 1
-user.uncommon += uncommon * 1
-user.sampah += sampah * 1
-user.mythic += mythic * 1
-user.legendary += legendary * 1
-user.lastadventure = new Date * 1
-
-// Decrease sword and armor durability
-user.sworddurability -= 1
-user.armordurability -= 1
-
-// Check for broken sword or armor
-if (user.sworddurability <= 0) {
-    user.sword = false
-    conn.reply(m.chat, '⚔️ Sword kamu telah rusak, craft lagi untuk melanjutkan adventure.', m)
-}
-if (user.armordurability <= 0) {
-    user.armor = false
-    conn.reply(m.chat, '🛡️ Armor kamu telah rusak, craft lagi untuk melanjutkan adventure.', m)
-}
-
-} else {
-    conn.reply(m.chat, `💧 Anda sudah berpetualang dan kelelahan, silahkan coba *${timers}* lagi`, m)
-}
-} else {
-    conn.reply(m.chat, '🩸 Minimal 80 healt untuk bisa berpetualang, beli nyawa dulu dengan ketik *' + usedPrefix + 'shop buy potion <jumlah>*\ndan ketik *' + usedPrefix + 'use potion <jumlah>*', m)
-}
-} catch (e) {
-    console.log(e)
-    conn.reply(m.chat, 'Error', m)
-}
+    } catch (e) {
+        console.log(e)
+        conn.reply(m.chat, 'Error', m)
+    }
 }
 
 handler.help = ['adventure']
@@ -176,7 +176,6 @@ handler.group = true
 handler.rpg = true
 handler.fail = null
 
-handler.limit = true
 module.exports = handler
 
 function pickRandom(list) {

@@ -19,9 +19,9 @@ let handler = async (m, { conn }) => {
   m.reply('Anda sedang mengerjakan misi..')
   await delay(2000)
 
-  let randomMoney = Math.floor(Math.random() * (1000000 - 1000 + 1) + 10000)
-  let randomExp = Math.floor(Math.random() * (1000 - 10 + 1) + 100)
-  let randomLimit = Math.floor(Math.random() * (20 - 10 + 1) + 10)
+  let randomMoney = Math.floor(Math.random() * (250000 - 1000 + 1) + 5000)
+  let randomExp = Math.floor(Math.random() * (250 - 10 + 1) + 50)
+  let randomLimit = Math.floor(Math.random() * (5 - 2 + 1) + 2)
 
   user.money += randomMoney
   user.exp += randomExp

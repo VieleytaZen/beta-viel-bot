@@ -3,9 +3,9 @@ const timeout = 6048000
 let handler = async (m, { conn, usedPrefix, text }) => {
 	    let time = global.db.data.users[m.sender].lastmaling + 60480000
   if (new Date - global.db.data.users[m.sender].lastmaling< 604800000) return conn.reply(m.chat, `Anda sudah merampok bank\nTunggu selama ${msToTime(time - new Date())} lagi`, m)
-	let money = `${Math.floor(Math.random() * 30)}`.trim()
-	let exp = `${Math.floor(Math.random() * 99)}`.trim()
-	let kardus = `${Math.floor(Math.random() * 10)}`.trim()
+	let money = `${Math.floor(Math.random() * 15)}`.trim()
+	let exp = `${Math.floor(Math.random() * 50)}`.trim()
+	let kardus = `${Math.floor(Math.random() * 5)}`.trim()
 	global.db.data.users[m.sender].money += money * 1
 	global.db.data.users[m.sender].exp += exp * 1
 	global.db.data.users[m.sender].kardus += kardus * 1

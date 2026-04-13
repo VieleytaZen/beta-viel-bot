@@ -13,13 +13,13 @@ function createAdventures() {
         area: `Petualangan di ${areaName}`,
         txt: areaName.toLowerCase().replace(/ /g, "_"),
         reward: {
-            exp: 50 + (i * 50),
+            exp: 25 + (i * 25),
             loot: {
-                potion: Math.floor(Math.random() * 10) + 1,
-                diamond: Math.floor(Math.random() * 5) + 1,
-                emas: Math.floor(Math.random() * 10) + 1,
-                money: Math.floor(Math.random() * (50000 - 100 + 1)) + 1000,
-                limit: Math.floor(Math.random() * 10) + 1
+                potion: Math.floor(Math.random() * 5) + 1,
+                diamond: Math.floor(Math.random() * 2) + 1,
+                emas: Math.floor(Math.random() * 5) + 1,
+                money: Math.floor(Math.random() * (25000 - 500 + 1)) + 500,
+                limit: Math.floor(Math.random() * 5) + 1
             }
         }
     }));

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const prem = 1000; // xp yang didapat untuk user prem
+const prem = 500; // xp yang didapat untuk user prem
 const free = 100; // xp yang didapat untuk user free
 
 let handler = async (m, {conn, text, isPrems}) => {

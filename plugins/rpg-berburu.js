@@ -6,18 +6,18 @@ let handler = async (m, { conn }) => {
     let user = global.db.data.users[m.sender]
 
     if (new Date - global.db.data.users[m.sender].lastberburu > 3600000) {
-        let randomaku1 = `${Math.floor(Math.random() * 10)}`
-        let randomaku2 = `${Math.floor(Math.random() * 10)}`
-        let randomaku4 = `${Math.floor(Math.random() * 10)}`
-        let randomaku3 = `${Math.floor(Math.random() * 10)}`
-        let randomaku5 = `${Math.floor(Math.random() * 10)}`
-        let randomaku6 = `${Math.floor(Math.random() * 10)}`
-        let randomaku7 = `${Math.floor(Math.random() * 10)}`
-        let randomaku8 = `${Math.floor(Math.random() * 10)}`
-        let randomaku9 = `${Math.floor(Math.random() * 10)}`
-        let randomaku10 = `${Math.floor(Math.random() * 10)}`
-        let randomaku11 = `${Math.floor(Math.random() * 10)}`
-        let randomaku12 = `${Math.floor(Math.random() * 10)}`
+        let randomaku1 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku2 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku4 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku3 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku5 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku6 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku7 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku8 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku9 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku10 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku11 = `${Math.floor(Math.random() * 21) + 5}`
+        let randomaku12 = `${Math.floor(Math.random() * 21) + 5}`
             .trim()
 
         let rbrb1 = (randomaku1 * 1)

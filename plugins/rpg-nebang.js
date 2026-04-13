@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
   if (new Date - global.db.data.users[m.sender].lastnebang< 28800000) throw `Anda sudah nebang\nMohon tunggu hasil nebang mu\nTunggu selama ${msToTime(time - new Date())} lagi`
    // if (global.db.data.users[m.sender].aqua > 9) {
    // let aquah = `${Math.floor(Math.random() * 5)}`.trim()
-    let kayu = `${Math.floor(Math.random() * 20)}`.trim()
+    let kayu = `${Math.floor(Math.random() * 50) + 25}`.trim()
     // global.db.data.users[m.sender].aqua -= aquah * 1
     global.db.data.users[m.sender].kayu += kayu * 1
 	/*let pisangnye = `${Math.floor(Math.random(global.db.data.users[m.sender].pisang = pisangpoin) * 1)}`.trim()
