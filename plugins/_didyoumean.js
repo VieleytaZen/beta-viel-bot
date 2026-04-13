@@ -33,5 +33,4 @@ handler.before = function (m, { match, usedPrefix, text, args }) {
 	}
   }
 
-handler.limit = true
 module.exports = handler

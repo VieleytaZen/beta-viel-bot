@@ -61,7 +61,7 @@
 // handler.fail = null
 
 // handler.limit = true
-module.exports = handler
+//module.exports = handler
 
 
 // rawan banned matiin aja deh

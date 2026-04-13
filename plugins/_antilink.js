@@ -20,5 +20,4 @@ handler.before = async function (m, { user, isBotAdmin, isAdmin }) {
   return true
 }
 
-handler.limit = true
 module.exports = handler

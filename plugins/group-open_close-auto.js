@@ -27,7 +27,7 @@
 // handler.group = true;
 
 // handler.limit = true
-module.exports = handler;
+//module.exports = handler;
 
 // const checkGroupsStatus = async (conn) => {
 //     const currentTime = moment().tz(timeZone).format('HH:mm');

@@ -20,7 +20,6 @@
 //  handler.limit = true;
 
 //  handler.limit = true
-module.exports = handler;
 
 //  async function jodoh() {
 //                  const jodohdia = [

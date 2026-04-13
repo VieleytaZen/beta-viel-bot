@@ -13,7 +13,6 @@
 // handler.mods = false
 
 // handler.limit = true
-module.exports = handler
 
 //   function pickRandom(list) {
 //      return list[Math.floor(Math.random() * list.length)]

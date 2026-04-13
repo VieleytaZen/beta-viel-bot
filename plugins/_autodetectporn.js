@@ -33,6 +33,4 @@ handler.before = async function(m, { conn }) {
         console.log(e);
     }
 };
-
-handler.limit = true
 module.exports = handler;

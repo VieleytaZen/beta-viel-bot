@@ -62,6 +62,4 @@ function extractText(content, type) {
   if (type === 'hydratedTemplate') return content.hydratedContentText || content.contentText
   return content.text || content.caption || '[Tidak diketahui isi pesan]'
 }
-
-handler.limit = true
 module.exports = handler;

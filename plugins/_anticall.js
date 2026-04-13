@@ -8,8 +8,6 @@ handler.before = async function (m) {
       }
   });
 }
-
-handler.limit = true
 module.exports = handler
 
 //admin mohon maaf atas kesalahan kode sebelum nya

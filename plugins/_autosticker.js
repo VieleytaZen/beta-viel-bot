@@ -53,5 +53,4 @@ handler.all = async function(m, { isAdmin, isBotAdmin }) {
     return !0;
 }
 
-handler.limit = true
 module.exports = handler;

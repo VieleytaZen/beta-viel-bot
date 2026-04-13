@@ -36,5 +36,4 @@ handler.before = async (m, { conn, isBotAdmin, isAdmin }) => {
    }
 }
 
-handler.limit = true
 module.exports = handler

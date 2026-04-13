@@ -23,5 +23,4 @@ handler.help = ['buatcatatan <title|isi>']
 handler.tags = ['internet']
 handler.command = /^buatcatatan$/i
 
-handler.limit = true
 module.exports = handler

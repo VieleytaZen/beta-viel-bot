@@ -38,5 +38,4 @@ handler.help = ['hapuscatatan title']
 handler.tags = ['internet']
 handler.command = /^hapuscatatan$/i
 
-handler.limit = true
 module.exports = handler
