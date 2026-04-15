@@ -171,10 +171,10 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
 handler.help = ['adventure']
 handler.tags = ['rpg']
 handler.command = /^(adventure)$/i
-handler.limit = true
-handler.group = true
-handler.rpg = true
-handler.fail = null
+handler.limit = true;
+handler.group = true;
+handler.rpg = true;
+handler.fail = null;
 
 module.exports = handler
 

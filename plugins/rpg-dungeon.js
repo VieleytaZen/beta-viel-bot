@@ -725,6 +725,7 @@ handler.command = /^(dungeon)$/i
 handler.rpg = true
 handler.mods = false
 
+handler.limit = true;
 module.exports = handler
 
 /**
