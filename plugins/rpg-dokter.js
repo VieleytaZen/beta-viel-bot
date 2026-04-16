@@ -29,12 +29,12 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
 newsletterJid: '120363248530706545@newsletter', 
-newsletterName: '>>BETABOTZ RPG<<', 
+newsletterName: '>>VIEL RPG BOT<<', 
 serverMessageId: -1
 },
           externalAdReply: {
             mediaType: 1,
-            title: 'BETABOTZ RPG',
+            title: 'VIEL RPG BOT',
             thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
             renderLargerThumbnail: true,
             sourceUrl: ''
