@@ -123,21 +123,12 @@ async function sendMenu(m, conn, text, replace) {
         text,
         m
     );
-
-    // Music di Menu
-    let musicPath = path.join(__dirname, 'music.mp3');
-    if (fs.existsSync(musicPath)) {
-        await conn.sendMessage(m.chat, { 
-            audio: { url: musicPath }, 
-            mimetype: 'audio/mpeg',
-            ptt: false 
-        }, { quoted: m });
-    }
+    // Fungsi kirim audio (music.mp3) sudah dihapus dari sini
 }
 
 function clockString(ms) {
     let h = Math.floor(ms / 3600000);
     let m = Math.floor(ms / 60000) % 60;
     let s = Math.floor(ms / 1000) % 60;
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':');
+    return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':');
 }
