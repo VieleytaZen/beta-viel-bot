@@ -80,13 +80,13 @@ async function handler(m, { conn, usedPrefix, command, text }) {
     }
     
       
-     const buttons = [
-         {buttonId: 'gass..', buttonText: {displayText: 'gass..'}, type: 1}
-     ]
+      const buttons = [
+          {buttonId: 'gass..', buttonText: {displayText: 'gass..'}, type: 1}
+      ]
       
-      let lmao = `${!room.game.player4 ? `Menunggu ${!room.game.player3 && !room.game.player4 ? '2' : '1'} Partner lagi... ${room.name ? `mengetik command dibawah ini *${usedPrefix}${command} ${room.name}*` : ''}` : 'Semua partner telah lengkap...'}`
-      conn.sendMessage(m.chat, {
-        text: lmao,
+       let lmao2 = `${!room.game.player4 ? `Menunggu ${!room.game.player3 && !room.game.player4 ? '2' : '1'} Partner lagi... ${room.name ? `mengetik command dibawah ini *${usedPrefix}${command} ${room.name}*` : ''}` : 'Semua partner telah lengkap...'}`
+       conn.sendMessage(m.chat, {
+        text: lmao2,
         contextInfo: {
         externalAdReply: {
         title: 'D u n g e o n',
@@ -97,8 +97,7 @@ async function handler(m, { conn, usedPrefix, command, text }) {
       
       if (room.game.player1 && room.game.player2 && room.game.player3 && room.game.player4) {
 
-      // Hadiah ben do seneng :v
-<<<<<<< HEAD
+      // Hadiah - Menggunakan versi reward yang lebih besar
       room.price.money += (Math.floor(Math.random() * 1000001)) * 1
       room.price.exp += (Math.floor(Math.random() * 500001)) * 1
       room.price.iron += (pickRandom([0, 0, 0, 0, 1, 0, 0, 0])) * 1
@@ -110,19 +109,6 @@ async function handler(m, { conn, usedPrefix, command, text }) {
       room.game.makananPet += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
       room.game.common += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
       room.game.uncommon += (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0])) * 1
-=======
-      room.price.money += (Math.floor(Math.random() * 501) + 500) * 1
-      room.price.exp += (Math.floor(Math.random() * 501) + 500) * 1
-      room.price.iron += (pickRandom([1, 0, 1, 0, 1, 0, 0, 0])) * 1
-      room.game.diamond += (pickRandom([0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
-      room.game.sampah += (Math.floor(Math.random() * 51) + 20) * 1
-      room.price.string += (Math.floor(Math.random() * 5) + 2) * 1
-      room.price.kayu += (Math.floor(Math.random() * 11) + 5) * 1
-      room.price.batu += (Math.floor(Math.random() * 11) + 5) * 1
-      room.game.makananPet += (pickRandom([0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
-      room.game.common += (pickRandom([0, 1, 1, 1, 0, 0, 0, 0])) * 1
-      room.game.uncommon += (pickRandom([0, 1, 0, 1, 0, 0, 0, 0, 0])) * 1
->>>>>>> b5b675fae74a7559015b7c525fdb56c7a96e627a
 
       let str = `
 Room ID: ${room.id}
@@ -211,7 +197,7 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
         })
         if (![c1, c2, c3].includes(c4)) m.reply(str2, c4, {
           contextInfo: {
-            mentionedJid: conn.parseMention(st2)
+            mentionedJid: conn.parseMention(str2)
           }
         })
 
@@ -344,7 +330,6 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
               player4: '',
           },
           price: {
-<<<<<<< HEAD
               money: (Math.floor(Math.random() * 500001)) * 1,
               exp: (Math.floor(Math.random() * 70001)) * 1,
               sampah: (Math.floor(Math.random() * 201)) * 1,
@@ -356,19 +341,6 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
               string: (Math.floor(Math.random() * 2)) * 1,
               common: (pickRandom([0, 0, 0, 1, 0, 0])) * 1,
               uncommon: (pickRandom([0, 0, 0, 1, 0, 0, 0])) * 1,
-=======
-              money: (Math.floor(Math.random() * 4001) + 1000) * 1,
-              exp: (Math.floor(Math.random() * 4001) + 1000) * 1,
-              sampah: (Math.floor(Math.random() * 101) + 50) * 1,
-              potion: (Math.floor(Math.random() * 5) + 2) * 1,
-              diamond: (pickRandom([0, 0, 1, 1, 2, 0, 0])) * 1,
-              iron: (Math.floor(Math.random() * 5) + 2) * 1,
-              kayu: (Math.floor(Math.random() * 21) + 10) * 1,
-              batu: (Math.floor(Math.random() * 11) + 5) * 1,
-              string: (Math.floor(Math.random() * 11) + 5) * 1,
-              common: (pickRandom([0, 1, 1, 1, 2, 0])) * 1,
-              uncommon: (pickRandom([0, 1, 1, 0, 1, 0, 0])) * 1,
->>>>>>> b5b675fae74a7559015b7c525fdb56c7a96e627a
               mythic: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0])) * 1,
               legendary: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0])) * 1,
               pet: (pickRandom([0, 0, 0, 1, 0, 0, 0, 0, 0, 0])) * 1,
@@ -381,10 +353,10 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
       }
       if (text) room.name = text
       
-      let lmao = 'Menunggu partner ' + (text ? `mengetik command dibawah ini
+      let lmao3 = 'Menunggu partner ' + (text ? `mengetik command dibawah ini
 ${usedPrefix}${command} ${text}` : '') + '\natau ketik *sendiri* untuk bermain sendiri'
 conn.sendMessage(m.chat, {
-  text: lmao,
+  text: lmao3,
   contextInfo: {
   externalAdReply: {
   title: 'D u n g e o n',
@@ -480,15 +452,13 @@ Nyawa Kamu berkurang -${healt * 1}, dan durability Sword Kamu -${sword * 1} kare
         m.reply(str3, room.player1)
       }
       if ((users.healt * 1) < 1 || (users.sworddurability * 1) < 1) {
-        let sword1 = (users.sworddurability * 1) < 1 && (users.sword * 1) == 1
-        let _sword1 = (users.sworddurability * 1) < 1 && (users.sword * 1) > 1
         let __sword1 = (users.sworddurability * 1) < 1 && (users.sword * 1) > 0
         let healt1 = (users.healt * 1) < 1
         if (__sword1) {
           users[p1].sword -= 1
           users[p1].sworddurability = 0
         }
-        let str3 = `${__sword1 ? ` Sword Kamu ${_sword1 ? ` Level nya berkurang 1 karena hancur` : ` Hancur, dan silahkan crafting Sword kembali dengan mengetik ${usedPrefix}`}craft sword` : ''} ${healt1 ? `${__sword1 ? 'Dan ' : ''}Nyawa Kamu habis, silahkan isi kembali dengan ketik ${usedPrefix}heal` : ''}`
+        let str3 = `${__sword1 ? ` Sword Kamu ${users[p1].sword > 1 ? ` Level nya berkurang 1 karena hancur` : ` Hancur, dan silahkan crafting Sword kembali dengan mengetik ${usedPrefix}`}craft sword` : ''} ${healt1 ? `${__sword1 ? 'Dan ' : ''}Nyawa Kamu habis, silahkan isi kembali dengan ketik ${usedPrefix}heal` : ''}`
         m.reply(str3, room.player1, {
           contextInfo: {
             mentionedJid: this.parseMention(str3)
@@ -538,7 +508,7 @@ Sedang berperang di dungeon...
       room.game.common += (pickRandom([0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0])) * 1
     }
 
-    let users = global.db.data.users[m.sender]
+    let users = global.db.data.users
     let orang = PLAYER.length
     let { healt, sword } = room.less
     let { exp, money, sampah, potion, diamond, iron, kayu, batu, string, common, uncommon, mythic, legendary, pet, makananPet } = room.price
@@ -651,45 +621,20 @@ Nyawa ${P} masing masing berkurang *-${healt * 1}*, dan durability Sword kalian 
       })
     }
 
-    // Biar lebih simple
-    let _1 = users && p1 && users[p1] ? users[p1] : {}
-    let _2 = users && p2 && users[p2] ? users[p2] : {}
-    let _3 = users && p3 && users[p3] ? users[p3] : {}
-    let _4 = users && p4 && users[p4] ? users[p4] : {}
-    let _H1 = _1 && _1.healt ? (_1.healt * 1) : 100
-    let _H2 = _2 && _2.healt ? (_2.healt * 1) : 100
-    let _H3 = _3 && _3.healt ? (_3.healt * 1) : 100
-    let _H4 = _4 && _4.healt ? (_4.healt * 1) : 100
-
-    // sd = SwordDurability :v
-    let _sd1 = _1 && _1.sworddurability ? (_1.sworddurability * 1) : 100
-    let _sd2 = _2 && _2.sworddurability ? (_2.sworddurability * 1) : 100
-    let _sd3 = _3 && _3.sworddurability ? (_3.sworddurability * 1) : 100
-    let _sd4 = _4 && _4.sworddurability ? (_4.sworddurability * 1) : 100
-
     //Peringatan kalau health nya 0 ataupun sword durabilitynya 0
-    if ((_H1 || _H2 || _H3 || _H4 || _sd1 || _sd2 || _sd3 || _sd4) < 1) {
+    let HEALT = [], SDH = [], SDM1L = []
+    for (let siapa in PLAYER) {
+      if ((users[siapa].healt * 1) < 1) HEALT.push(siapa)
+      if ((users[siapa].sworddurability * 1) < 1 && (users[siapa].sword * 1) == 1) SDH.push(siapa)
+      if ((users[siapa].sworddurability * 1) < 1 && (users[siapa].sword * 1) !== 1) SDM1L.push(siapa)
+    }
 
-      //Sama kek atas biar simple aja :v 
-      let s1 = _sd1 ? (_sd1 * 1) < 1 : false
-      let s2 = _sd2 ? (_sd2 * 1) < 1 : false
-      let s3 = _sd3 ? (_sd3 * 1) < 1 : false
-      let s4 = _sd4 ? (_sd4 * 1) < 1 : false
-
-      //Buat nyimpen data sementara :v
-      let HEALT = [], SDH = [], SDM1L = []
-      for (let siapa in PLAYER) {
-        if ((users[siapa].healt * 1) < 1) HEALT.push(siapa)
-        if ((users[siapa].sworddurability * 1) < 1 && (users[siapa].sword * 1) == 1) SDH.push(siapa)
-        if ((users[siapa].sworddurability * 1) < 1 && (users[siapa].sword * 1) !== 1) SDM1L.push(siapa)
-      }
-
-      // Convert Array to String
+    if (HEALT.length > 0 || SDH.length > 0 || SDM1L.length > 0) {
       let sI = data(SDH)
       let sH = data(SDM1L)
       let H = data(HEALT)
 
-      let str3 = `${((SDH || SDH.length > 0) || (SDM1L || SDM1L.length > 0)) ? `⚔️Sword ${((SDH || SDH.length > 0 ? sI + ' Hancur, silahkan crafting ⚔️Sword kembali dengan mengetik *' + usedPrefix + 'craft sword*' : '') + (SDM1L || SDM1L.length > 0 ? (SDH || SDH.length > 0 ? ', Sedangkan ⚔️Sword ' : '') + sH + ' Hancur, dan Menurun *1* Level' : ''))}` : ''}${HEALT || HEALT.length > 0 ? `❤️Nyawa ${H} habis, silahkan isi ❤️Nyawa dengan mengetik ${usedPrefix}heal` : ''}`
+      let str3 = `${(SDH.length > 0 || SDM1L.length > 0) ? `⚔️Sword ${(SDH.length > 0 ? sI + ' Hancur, silahkan crafting ⚔️Sword kembali dengan mengetik *' + usedPrefix + 'craft sword*' : '') + (SDM1L.length > 0 ? (SDH.length > 0 ? ', Sedangkan ⚔️Sword ' : '') + sH + ' Hancur, dan Menurun *1* Level' : '')}` : ''}${HEALT.length > 0 ? `❤️Nyawa ${H} habis, silahkan isi ❤️Nyawa dengan mengetik ${usedPrefix}heal` : ''}`
       m.reply(str3, c1, {
         contextInfo: {
           mentionedJid: this.parseMention(str3)
@@ -728,23 +673,10 @@ handler.mods = false
 handler.limit = true;
 module.exports = handler
 
-/**
-* pickRandom from array
-* @param {Array} list 
-* @returns *
-*/
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
 
-/**
-* Message if the conditions are not met
-* @param {Number} sword 
-* @param {Number} armor 
-* @param {Number} healt 
-* @param {String} usedPrefix 
-* @returns String
-*/
 function item(sword, armor, healt, usedPrefix) {
 let sw = (sword * 1) < 1
 let a = (armor * 1) < 1
@@ -755,33 +687,17 @@ ${sw ? 'Kamu belum memiliki ⚔️Sword' : ''}${sw && a && h ? ',' : sw && a ? '
 return str
 }
 
-/**
-* To split jid
-* @param {String} jid 
-* @returns String
-*/
 function M(jid) {
 return '@' + jid.split('@')[0]
 }
 
-/**
-* To clock
-* @param {Number} ms 
-* @returns String
-*/
 function clockString(ms) {
 let h = Math.floor(ms / 3600000)
 let m = Math.floor(ms / 60000) % 60
 let s = Math.floor(ms / 1000) % 60
-console.log({ms,h,m,s})
 return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
 
-/**
-* Get data in Array
-* @param {Array} DATA ( avaible array length is 4)
-* @returns String
-*/
 function data(DATA) {
 let panjang = DATA.length * 1
 let msg = ''
