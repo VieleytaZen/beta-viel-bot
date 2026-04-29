@@ -1,5 +1,5 @@
 let timeout = 100000
-let poin = 1000
+let poin = 500
 let src
 const fs = require('fs');
 let handler = async (m, { conn, usedPrefix }) => {

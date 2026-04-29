@@ -14,15 +14,21 @@ let handler = async (m, {conn, text, isPrems}) => {
         throw `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(86400000 - (currentTime - lastClaimTime))}*`;
     }
 
-    // Tambahkan XP sesuai jenis user
-    let reward = isPrems ? prem : free;
-    user.exp += reward;
+    // Tambahkan XP dan Money sesuai jenis user
+    let rewardXp = isPrems ? 500 : 100;
+    let rewardMoney = isPrems ? 5000 : 1000;
+    
+    user.exp += rewardXp;
+    user.money += rewardMoney;
     
     m.reply(`
-🎁 *HADIAH XP*
-*Spam terus untuk mendapatkan xp*
-cek .balance jumlah xp mu!
-🆙 *XP* : +${reward}`);
+🎁 *HADIAH HARIAN*
+*Selamat! Kamu telah mengklaim hadiah harianmu.*
+
+🆙 *XP* : +${rewardXp}
+💰 *Money* : +${rewardMoney}
+
+Cek .balance untuk melihat total saldo kamu!`);
 
     user.lastclaim = currentTime;
 }

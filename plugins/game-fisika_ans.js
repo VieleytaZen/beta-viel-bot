@@ -1,4 +1,4 @@
-let poin = 1000
+let poin = 500
 let handler = m => m
 
 handler.before = async function (m) {

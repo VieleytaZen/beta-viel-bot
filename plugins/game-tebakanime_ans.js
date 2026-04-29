@@ -1,4 +1,4 @@
-let poin = 1000
+let poin = 500
 
 const threshold = 0.72
 let handler = m => m

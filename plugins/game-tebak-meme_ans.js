@@ -1,4 +1,4 @@
-let poin = 1000;
+let poin = 500;
 const similarity = require("similarity");
 const threshold = 0.72;
 

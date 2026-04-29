@@ -2,7 +2,7 @@ let fs = require('fs')
 let path = require('path')
 
 let timeout = 100000
-let poin = 1000
+let poin = 500
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakislami = conn.tebakislami ? conn.tebakislami : {}
     let id = m.chat

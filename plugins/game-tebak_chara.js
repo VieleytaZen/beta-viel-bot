@@ -1,5 +1,5 @@
 let timeout = 100000
-let poin = 1000
+let poin = 500
 let fetch = require("node-fetch");
 let handler = async (m, { conn, usedPrefix }) => {
   conn.tebakchara = conn.tebakchara ? conn.tebakchara : {};

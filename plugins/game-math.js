@@ -1,15 +1,15 @@
 const fetch = require('node-fetch');
 
 const modes = {
-  noob: { bonus: 10, time: 20000, money: 500 },
-  easy: { bonus: 20, time: 30000, money: 1000 },
-  medium: { bonus: 40, time: 40000, money: 2000 },
-  hard: { bonus: 100, time: 60000, money: 4000 },
-  master: { bonus: 250, time: 70000, money: 7000 },
-  grandmaster: { bonus: 500, time: 90000, money: 15000 },
-  legendary: { bonus: 1000, time: 120000, money: 30000 },
-  mythic: { bonus: 3000, time: 150000, money: 50000 },
-  god: { bonus: 5000, time: 200000, money: 65000 },
+  noob: { bonus: 10, time: 20000, money: 100 },
+  easy: { bonus: 20, time: 30000, money: 250 },
+  medium: { bonus: 40, time: 40000, money: 500 },
+  hard: { bonus: 100, time: 60000, money: 1000 },
+  master: { bonus: 250, time: 70000, money: 1500 },
+  grandmaster: { bonus: 500, time: 90000, money: 2500 },
+  legendary: { bonus: 1000, time: 120000, money: 4000 },
+  mythic: { bonus: 3000, time: 150000, money: 6000 },
+  god: { bonus: 5000, time: 200000, money: 8000 },
 };
 
 let handler = async (m, { conn, args, usedPrefix }) => {

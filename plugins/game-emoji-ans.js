@@ -1,6 +1,6 @@
 let similarity = require('similarity')
 const threshold = 0.72
-let poin = 1000
+let poin = 500
 let handler = m => m
 handler.before = async function (m) {
     let id = m.chat
