@@ -9,20 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(global.wait);
 
     try {
-        // 1. Create Transaction in Pakasir
-        const createRes = await axios.post('https://app.pakasir.com/api/transactioncreate/qris', {
-            project: global.pakasir_slug,
-            api_key: global.pakasir_key,
-            amount: amount,
-            order_id: orderId
-        });
-
-        if (createRes.data.status !== 'success') {
-            return m.reply(`*Gagal membuat transaksi!*\n\nPesan: ${createRes.data.msg || createRes.data.message || 'Unknown Error'}`);
-        }
-
-        let qrString = createRes.data.qr_string;
-        let qrBuffer = await qrcode.toBuffer(qrString);
+        let paymentUrl = `https://app.pakasir.com/pay/${global.pakasir_slug}/${amount}?order_id=${orderId}&qris_only=1`;
 
         let caption = `
 *───〔 BELI PREMIUM 〕───*
@@ -32,60 +19,32 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 💰 *Harga:* Rp ${amount.toLocaleString()}
 🆔 *Order ID:* ${orderId}
 
-Silakan scan QRIS di atas untuk mendapatkan akses Premium. 
-Pembayaran akan dicek otomatis dalam waktu 5 menit.
+Silakan klik link di bawah untuk membayar via QRIS:
+${paymentUrl}
+
+Setelah membayar, klik tombol di bawah untuk verifikasi.
 `.trim();
 
-        await conn.sendFile(m.chat, qrBuffer, 'qris.png', caption, m);
-
-        // 2. Polling Status
-        let interval = setInterval(async () => {
-            try {
-                const checkRes = await axios.get(`https://app.pakasir.com/api/transactiondetail`, {
-                    params: {
-                        project: global.pakasir_slug,
-                        api_key: global.pakasir_key,
-                        order_id: orderId,
-                        amount: amount
-                    }
-                });
-
-                if (checkRes.data.status === 'success' && checkRes.data.data.status === 'PAID') {
-                    clearInterval(interval);
-                    clearTimeout(timeout);
-
-                    let user = global.db.data.users[m.sender];
-                    let now = new Date().getTime();
-                    
-                    // Jika user sudah premium, tambahkan durasinya. Jika belum, set dari sekarang.
-                    if (user.premiumTime > now) {
-                        user.premiumTime += days * 86400000;
-                    } else {
-                        user.premiumTime = now + (days * 86400000);
-                    }
-                    user.premium = true;
-
-                    let successMsg = `
-*───〔 PEMBELIAN BERHASIL 〕───*
-
-✅ *Status:* PREMIUM AKTIF
-⏳ *Durasi:* +${days} Hari
-📅 *Berlaku hingga:* ${new Date(user.premiumTime).toLocaleString()}
-
-Selamat! Kamu sekarang memiliki akses fitur Premium.
-`.trim();
-                    conn.reply(m.chat, successMsg, m);
+        await conn.reply(m.chat, caption, m, {
+            contextInfo: {
+                externalAdReply: {
+                    title: 'PEMBELIAN PREMIUM QRIS',
+                    body: `Klik untuk bayar Rp ${amount.toLocaleString()}`,
+                    mediaType: 1,
+                    sourceUrl: paymentUrl,
+                    thumbnailUrl: 'https://app.pakasir.com/assets/img/pakasir.png',
+                    renderLargerThumbnail: true
                 }
-            } catch (err) {
-                console.error('Polling error:', err.message);
             }
-        }, 10000); // Check every 10 seconds
+        });
 
-        // 3. Timeout after 5 minutes
-        let timeout = setTimeout(() => {
-            clearInterval(interval);
-            conn.reply(m.chat, `*Waktu pembayaran Order ID ${orderId} telah habis.* Pembelian Premium dibatalkan.`, m);
-        }, 300000);
+        conn.topup_prem = conn.topup_prem ? conn.topup_prem : {};
+        conn.topup_prem[m.sender] = {
+            orderId,
+            amount,
+            days,
+            time: Date.now()
+        };
 
     } catch (e) {
         console.error(e);
