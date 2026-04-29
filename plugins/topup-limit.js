@@ -22,7 +22,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         });
 
         if (createRes.data.status !== 'success') {
-            throw new Error(createRes.data.message || 'Gagal membuat transaksi');
+            return m.reply(`*Gagal membuat transaksi!*\n\nPesan: ${createRes.data.msg || createRes.data.message || 'Unknown Error'}`);
         }
 
         let qrString = createRes.data.qr_string;
