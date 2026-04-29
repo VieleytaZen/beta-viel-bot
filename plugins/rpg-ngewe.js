@@ -61,10 +61,10 @@ handler.help = ['ngewe']
 handler.tags = ['rpg']
 handler.command = /^(ngewe|anu)$/i
 handler.register = true
-handler.premium = false
+handler.premium = true
 handler.rpg = true
 handler.limit = true
-module.exports = handler
+module.exports = handler;
 
 
 function clockString(ms) {

@@ -26,6 +26,7 @@ throw `Can't find data!`
 
 handler.command = ['xnxxsearch'];
 handler.tags = ['internet'];
+handler.premium = true;
 
 handler.limit = true
 module.exports = handler;

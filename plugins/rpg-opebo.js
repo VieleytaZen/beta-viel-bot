@@ -41,6 +41,7 @@ Dan Gratis Boba + Nasi Padang
 handler.help = ['openbo']
 handler.tags = ['rpg']
 handler.command = /^(openbo)$/i
+handler.premium = true
 handler.group = true
 handler.rpg = true
 handler.limit = true
