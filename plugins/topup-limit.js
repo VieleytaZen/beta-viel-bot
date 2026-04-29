@@ -14,11 +14,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     try {
         // 1. Create Transaction in Pakasir
-        const createRes = await axios.post('https://app.pakasir.com/api/transactioncreate', {
-            slug: global.pakasir_slug,
+        const createRes = await axios.post('https://app.pakasir.com/api/transactioncreate/qris', {
+            project: global.pakasir_slug,
+            api_key: global.pakasir_key,
             amount: amount,
-            order_id: orderId,
-            payment_method: 'qris'
+            order_id: orderId
         });
 
         if (createRes.data.status !== 'success') {
