@@ -18,7 +18,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         });
 
         if (createRes.data.status !== 'success') {
-            return m.reply(`*Gagal membuat transaksi!*\n\nPesan: ${createRes.data.msg || createRes.data.message || 'Unknown Error'}`);
+            return m.reply(`*Gagal membuat transaksi!*\n\nRespon: ${JSON.stringify(createRes.data)}`);
         }
 
         let qrString = createRes.data.qr_string;

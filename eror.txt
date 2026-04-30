@@ -1,4 +1,4 @@
-.topup 1000
+.belipremium
 [
   WebMessageInfo {
     messageStubParameters: [],
@@ -14,10 +14,10 @@
     key: MessageKey {
       remoteJid: '120363045373820868@g.us',
       fromMe: true,
-      id: '3EB0BF5B3DA6A2661B3C18'
+      id: '3EB020395A768E974FDA13'
     },
     message: Message { extendedTextMessage: [ExtendedTextMessage] },
-    messageTimestamp: Long { low: 1777531711, high: 0, unsigned: true },
+    messageTimestamp: Long { low: 1777532166, high: 0, unsigned: true },
     status: 1,
     participant: '6285113291911:1@s.whatsapp.net'
   },
@@ -35,10 +35,31 @@
     key: MessageKey {
       remoteJid: '120363411204683545@g.us',
       fromMe: true,
-      id: '3EB07DEBCE8B2ED9306187'
+      id: '3EB0CB308783AE536112BF'
     },
     message: Message { extendedTextMessage: [ExtendedTextMessage] },
-    messageTimestamp: Long { low: 1777531712, high: 0, unsigned: true },
+    messageTimestamp: Long { low: 1777532166, high: 0, unsigned: true },
+    status: 1,
+    participant: '6285113291911:1@s.whatsapp.net'
+  },
+  WebMessageInfo {
+    messageStubParameters: [],
+    labels: [],
+    userReceipt: [],
+    reactions: [],
+    pollUpdates: [],
+    eventResponses: [],
+    statusMentions: [],
+    messageAddOns: [],
+    statusMentionSources: [],
+    supportAiCitations: [],
+    key: MessageKey {
+      remoteJid: '120363411204683545@g.us',
+      fromMe: true,
+      id: '3EB09D90C477BF184B2947'
+    },
+    message: Message { extendedTextMessage: [ExtendedTextMessage] },
+    messageTimestamp: Long { low: 1777532166, high: 0, unsigned: true },
     status: 1,
     participant: '6285113291911:1@s.whatsapp.net'
   },
@@ -56,17 +77,17 @@
     key: MessageKey {
       remoteJid: '120363045373820868@g.us',
       fromMe: true,
-      id: '3EB0098DD850AF0833C036'
+      id: '3EB077F156EBF4CE8918E0'
     },
     message: Message { extendedTextMessage: [ExtendedTextMessage] },
-    messageTimestamp: Long { low: 1777531712, high: 0, unsigned: true },
+    messageTimestamp: Long { low: 1777532166, high: 0, unsigned: true },
     status: 1,
     participant: '6285113291911:1@s.whatsapp.net'
   }
 ]
 ▣────────────···
 │ +62 851-1329-1911 ~Viel
-│⏰ㅤ13:48:32 GMT+0700 (Western Indonesia Time)
+│⏰ㅤ13:56:06 GMT+0700 (Western Indonesia Time)
 │📑ㅤ
 │📊ㅤ48 [48.0 B]
 │📤ㅤ+62 851-1329-1911 ~Viel
