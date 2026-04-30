@@ -21,17 +21,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             order_id: orderId
         });
 
-        if (createRes.data.status !== 'success') {
+        if (!createRes.data.payment) {
             return m.reply(`*Gagal membuat transaksi!*\n\nRespon: ${JSON.stringify(createRes.data)}`);
         }
 
-        let qrString = createRes.data.qr_string;
+        let paymentData = createRes.data.payment;
+        let qrString = paymentData.payment_number;
         let qrBuffer = await qrcode.toBuffer(qrString);
 
         let caption = `
 *───〔 TOPUP LIMIT 〕───*
 
-💰 *Nominal:* Rp ${amount.toLocaleString()}
+💰 *Nominal:* Rp ${paymentData.amount.toLocaleString()}
+💹 *Total Bayar:* Rp ${paymentData.total_payment.toLocaleString()} (Termasuk Fee)
 🎫 *Dapatkan:* ${limits} Limit
 🆔 *Order ID:* ${orderId}
 
