@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix }) => {
                 }
             });
 
-            if (checkRes.data.status === 'success' && checkRes.data.data.status === 'PAID') {
+            if (checkRes.data.transaction && checkRes.data.transaction.status === 'completed') {
                 let user = global.db.data.users[m.sender];
                 let now = new Date().getTime();
                 if (user.premiumTime > now) user.premiumTime += premData.days * 86400000;
@@ -55,7 +55,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
                 return m.reply(`*───〔 PEMBELIAN BERHASIL 〕───*\n\n✅ *Status:* PAID\n⏳ *Durasi:* +${premData.days} Hari\n📅 *Berlaku hingga:* ${new Date(user.premiumTime).toLocaleString()}`);
             } else {
-                return m.reply(`*Pembayaran belum terdeteksi.*\n\nID: ${premData.orderId}\nStatus: ${checkRes.data.data ? checkRes.data.data.status : 'PENDING'}`);
+                return m.reply(`*Pembayaran belum terdeteksi.*\n\nID: ${premData.orderId}\nStatus: ${checkRes.data.transaction ? checkRes.data.transaction.status : 'PENDING'}`);
             }
         } catch (e) {
             console.error(e);

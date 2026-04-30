@@ -1,2 +1,25 @@
-Gagal membuat transaksi!
-Respon: {"payment":{"project":"viel-bot","order_id":"PREM-1777532339832-6285161444491","amount":10000,"total_payment":10380,"fee":380,"received":10000,"payment_method":"qris","payment_number":"00020101021226610016ID.CO.SHOPEE.WWW01189360091800216005230208216005230303UME51440014ID.CO.QRIS.WWW0215ID10243228429300303UME520479295303360540810380.005802ID5907Pakasir6012KAB. KEBUMEN610554392622205181546408550849984036304C1F4","expired_at":"2026-04-30T07:58:59.942832388Z"}}
+───〔 TOPUP LIMIT 〕───
+💰 Nominal: Rp 1,000
+💹 Total Bayar: Rp 1,317 (Termasuk Fee)
+🎫 Dapatkan: 75 Limit
+🆔 Order ID: TOPUP-1777532705207-6285161444491
+Silakan scan QRIS di atas untuk melakukan pembayaran. Pembayaran akan dicek otomatis.
+Waktu bayar: 5 Menit.
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"pending","payment_method":"qris","completed_at":null,"is_sandbox":false}}
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"pending","payment_method":"qris","completed_at":null,"is_sandbox":false}}
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"completed","payment_method":"qris","completed_at":"2026-04-30T07:05:33.356Z","is_sandbox":false}}
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"completed","payment_method":"qris","completed_at":"2026-04-30T07:05:33.356Z","is_sandbox":false}}
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"completed","payment_method":"qris","completed_at":"2026-04-30T07:05:33.356Z","is_sandbox":false}}
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"completed","payment_method":"qris","completed_at":"2026-04-30T07:05:33.356Z","is_sandbox":false}}
+▣────────────···
+│ +62 851-1329-1911 ~Viel
+│⏰ㅤ14:06:07 GMT+0700 (Western Indonesia Time)
+│📑ㅤ
+│📊ㅤ125 [125.0 B]
+│📤ㅤ+62 851-1329-1911 ~Viel
+│📃ㅤ0|54|100
+│📥ㅤ120363045373820868@g.us ~Affa Iyah?
+│💬ㅤExtendedText
+▣────────────···
+Waktu pembayaran Order ID TOPUP-1777532466113-6285161444491 telah habis. Silakan lakukan topup kembali jika belum membayar.
+[POLLING] TOPUP-1777532705207-6285161444491: {"transaction":{"amount":1000,"order_id":"TOPUP-1777532705207-6285161444491","project":"viel-bot","status":"completed","payment_method":"qris","completed_at":"2026-04-30T07:05:33.356Z","is_sandbox":false}}

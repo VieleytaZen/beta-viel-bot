@@ -62,9 +62,9 @@ Pembayaran akan dicek otomatis dalam waktu 5 menit.
 
                 console.log(`[POLLING] ${orderId}:`, JSON.stringify(checkRes.data));
 
-                let status = (checkRes.data.data && checkRes.data.data.status) || checkRes.data.status;
+                let status = checkRes.data.transaction ? checkRes.data.transaction.status : null;
 
-                if (status === 'PAID' || status === 'success' && checkRes.data.data && checkRes.data.data.status === 'PAID') {
+                if (status === 'completed') {
                     clearInterval(interval);
                     clearTimeout(timeout);
 
