@@ -96,8 +96,15 @@ Terima kasih telah melakukan topup!
 
     } catch (e) {
         console.error(e);
-        let errorMsg = e.response ? `[${e.response.status}] ${JSON.stringify(createRes.data || e.response.data)}` : e.message;
-        m.reply(`*Terjadi kesalahan saat memproses topup.*\n\nDetail: ${errorMsg}`);
+        let detail = 'Gagal terhubung ke server.';
+        if (e.response) {
+            detail = `[${e.response.status}] ${JSON.stringify(e.response.data)}`;
+        } else if (e.request) {
+            detail = 'Tidak ada respon dari server Pakasir.';
+        } else {
+            detail = e.message;
+        }
+        m.reply(`*Terjadi kesalahan saat memproses topup.*\n\nDetail: ${detail}`);
     }
 };
 
