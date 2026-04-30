@@ -64,7 +64,12 @@ Waktu bayar: 5 Menit.
                     }
                 });
 
-                if (checkRes.data.status === 'success' && checkRes.data.data.status === 'PAID') {
+                console.log(`[POLLING] ${orderId}:`, JSON.stringify(checkRes.data));
+
+                // Cek status dalam respon Pakasir (biasanya di data.status atau data.data.status)
+                let status = (checkRes.data.data && checkRes.data.data.status) || checkRes.data.status;
+                
+                if (status === 'PAID' || status === 'success' && checkRes.data.data && checkRes.data.data.status === 'PAID') {
                     clearInterval(interval);
                     clearTimeout(timeout);
 
@@ -75,7 +80,7 @@ Waktu bayar: 5 Menit.
                     let successMsg = `
 *───〔 TOPUP BERHASIL 〕───*
 
-✅ *Status:* BERHASIL
+✅ *Status:* BERHASIL / PAID
 💰 *Nominal:* Rp ${amount.toLocaleString()}
 🎫 *Ditambahkan:* ${limits} Limit
 💹 *Total Limit Sekarang:* ${user.limit}

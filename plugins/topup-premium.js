@@ -60,7 +60,11 @@ Pembayaran akan dicek otomatis dalam waktu 5 menit.
                     }
                 });
 
-                if (checkRes.data.status === 'success' && checkRes.data.data.status === 'PAID') {
+                console.log(`[POLLING] ${orderId}:`, JSON.stringify(checkRes.data));
+
+                let status = (checkRes.data.data && checkRes.data.data.status) || checkRes.data.status;
+
+                if (status === 'PAID' || status === 'success' && checkRes.data.data && checkRes.data.data.status === 'PAID') {
                     clearInterval(interval);
                     clearTimeout(timeout);
 
