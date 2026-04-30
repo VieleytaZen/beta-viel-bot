@@ -96,7 +96,8 @@ Terima kasih telah melakukan topup!
 
     } catch (e) {
         console.error(e);
-        m.reply('*Terjadi kesalahan saat memproses topup.* Silakan coba lagi nanti atau hubungi owner.');
+        let errorMsg = e.response ? `[${e.response.status}] ${JSON.stringify(createRes.data || e.response.data)}` : e.message;
+        m.reply(`*Terjadi kesalahan saat memproses topup.*\n\nDetail: ${errorMsg}`);
     }
 };
 

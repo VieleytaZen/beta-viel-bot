@@ -98,7 +98,8 @@ Selamat! Kamu sekarang memiliki akses fitur Premium.
 
     } catch (e) {
         console.error(e);
-        m.reply('*Terjadi kesalahan saat memproses pembelian premium.* Silakan coba lagi nanti.');
+        let errorMsg = e.response ? `[${e.response.status}] ${JSON.stringify(createRes.data || e.response.data)}` : e.message;
+        m.reply(`*Terjadi kesalahan saat memproses pembelian premium.*\n\nDetail: ${errorMsg}`);
     }
 };
 
