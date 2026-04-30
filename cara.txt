@@ -1,0 +1,264 @@
+================================================================================
+                    PANDUAN SUPER LENGKAP PENGGUNAAN VIEL BOT
+================================================================================
+Selamat datang di Viel Bot, asisten virtual cerdas berbasis WhatsApp yang dilengkapi dengan ratusan fitur menarik! Bot ini bukan hanya sekadar bot biasa, melainkan sebuah ekosistem lengkap yang mencakup sistem ekonomi (RPG), mini-games kompetitif, alat bantu sehari-hari, hingga integrasi kecerdasan buatan (AI) tingkat lanjut.
+
+Dokumen ini adalah buku panduan resmi (Manual Book) yang menjelaskan SECARA DETAIL setiap sudut dari bot ini. Bacalah dengan saksama agar kamu bisa menguasai semua fiturnya!
+
+DAFTAR ISI:
+1. PENGENALAN & PERINTAH DASAR
+2. SISTEM EKONOMI (UANG, LIMIT, XP)
+3. SISTEM PAY TO WIN (TOP UP OTOMATIS VIA QRIS)
+4. ROLE PLAYING GAME (RPG) - KARIR & PETUALANGAN
+5. DUNIA PERMAINAN (MINI GAMES)
+6. DOWNLOADER & PENCARIAN MEDIA
+7. KECERDASAN BUATAN (AI) & OPENAI
+8. TOOLS, MAKER, & STICKER
+9. FITUR ISLAMI & PRIMBON
+10. MANAJEMEN GRUP (GROUP ADMIN)
+11. ATURAN, ETIKA, & KETENTUAN (RULES)
+
+================================================================================
+1. PENGENALAN & PERINTAH DASAR
+================================================================================
+Bot ini merespon perintah (command) yang diawali dengan karakter khusus yang disebut "prefix". Prefix default bot ini adalah tanda titik (.) atau pagar (#). Contoh: `.menu` atau `#menu`.
+
+- .menu / .help     : Menampilkan daftar seluruh fitur yang dikelompokkan berdasarkan kategori.
+- .ping / .speed    : Mengecek kecepatan respon (latensi) bot.
+- .owner            : Mengirimkan kontak pemilik (owner) bot jika kamu butuh bantuan teknis.
+- .info             : Menampilkan informasi status server, runtime, dan statistik bot.
+- .rules            : Menampilkan aturan dasar penggunaan bot.
+- .ceksn            : Mengecek Serial Number (SN) akun kamu di database bot.
+- .unreg <SN>       : Menghapus pendaftaran akunmu dari database bot.
+
+================================================================================
+2. SISTEM EKONOMI (UANG, LIMIT, XP)
+================================================================================
+Viel Bot menggunakan sistem ekonomi mandiri. Kamu membutuhkan Limit untuk menjalankan fitur-fitur berat (seperti download, AI, atau game tertentu), Money (uang) untuk bertransaksi di dalam RPG, dan XP untuk menaikkan Level akunmu.
+
+- .balance / .bal   : Mengecek jumlah saldo Money, sisa Limit, dan total XP kamu saat ini.
+- .daily            : Mengklaim jatah harian (XP dan Money gratis). WAJIB dilakukan setiap hari! User Premium mendapat hadiah 5x lipat.
+- .weekly           : Mengklaim hadiah mingguan (lebih besar dari daily).
+- .monthly          : Mengklaim hadiah bulanan (sangat besar).
+- .buy <jumlah>     : Membeli Limit menggunakan Money (Harga: 1 Limit = 500 Money). Contoh: .buy 10
+- .sell <jumlah>    : Menjual Limit untuk mendapatkan Money (Harga Jual: 1 Limit = 100 Money).
+- .transfer <@tag> <jumlah> : Mengirimkan Money milikmu kepada teman di grup.
+- .leaderboard / .lb: Melihat daftar top player dengan Money, Level, atau Limit terbanyak (Global Ranking).
+
+================================================================================
+3. SISTEM PAY TO WIN (TOP UP OTOMATIS VIA QRIS)
+================================================================================
+Ingin jadi penguasa di bot ini tanpa harus capek farming? Atau kehabisan Limit saat asyik bermain? Viel Bot mendukung sistem pembayaran otomatis menggunakan uang asli!
+
+A. TOP UP LIMIT (.topup / .belilimit)
+Limit adalah "nyawa" bot. Kehabisan limit berarti kamu tidak bisa memakai fitur premium/berat.
+- Ketik: .topup <nominal_rupiah> (Contoh: .topup 5000)
+- Minimal pembelian adalah Rp 1.000.
+- Rate Konversi: Rp 1.000 = 75 Limit.
+- Setelah mengetik perintah, bot akan langsung mengirimkan gambar QR Code (QRIS).
+- Scan QRIS tersebut menggunakan Dana, OVO, GoPay, ShopeePay, atau M-Banking kamu.
+- Bayar sesuai nominal (termasuk fee jika ada).
+- TUNGGU MAX 10 DETIK. Bot akan mengecek otomatis dan Limit akan langsung ditambahkan ke akunmu tanpa perlu konfirmasi manual!
+- Jika dirasa lama, ketik .cekstatus untuk memeriksa pembayaranmu secara manual.
+
+B. BELI PREMIUM (.belipremium / .buypremium)
+User Premium adalah kasta tertinggi di bot ini.
+Keuntungan Premium:
+1. Mendapatkan hadiah .daily, .weekly, .monthly jauh lebih besar.
+2. Bebas menggunakan fitur khusus yang dikunci (seperti downloader HD).
+3. Akses ke menu rahasia (Menu 18+ / NSFW) jika diaktifkan.
+4. Limit harian yang jauh lebih banyak.
+
+- Ketik: .belipremium
+- Harga: Rp 10.000 untuk durasi 30 Hari.
+- Bot akan mengirimkan QRIS. Scan dan bayar.
+- Status akunmu akan otomatis berubah menjadi Premium dalam hitungan detik setelah dibayar.
+- Jika kamu sudah Premium dan membeli lagi, durasi 30 harinya akan DITAMBAHKAN ke sisa waktumu.
+
+================================================================================
+4. ROLE PLAYING GAME (RPG) - KARIR & PETUALANGAN
+================================================================================
+Fitur ini sangat luas dan kompleks. Kamu mensimulasikan kehidupan virtual di dalam grup WhatsApp.
+
+A. PEKERJAAN & KARIR
+- .kerja : Melihat daftar profesi yang tersedia (Dokter, Pedagang, Ojek, Kuli, Montir, Petani, Polisi).
+- .kerja <profesi> : Mulai bekerja (contoh: .kerja kuli). Pendapatan bervariasi antara 500 - 1500 Money per shift.
+- Waktu Istirahat (Cooldown): Setelah bekerja, kamu harus istirahat selama 5 menit sebelum bisa bekerja lagi.
+
+B. KEBUTUHAN DASAR (SURVIVAL)
+Karaktermu bisa lapar, haus, dan terluka.
+- .heal / .heal <jumlah> : Menggunakan Potion untuk mengisi darah (Healt). Nyawa wajib di atas 80 sebelum berpetualang.
+- .makan / .eat : Mengonsumsi makanan yang ada di inventory (daging, ikan, ayam, buah) untuk menambah Stamina.
+- .masak / .cook : Memasak bahan mentah menjadi makanan jadi.
+
+C. PETUALANGAN & DUNGEON
+- .craft sword / .craft armor : Membuat senjata dan pelindung menggunakan bahan mentah (kayu, besi, string). WAJIB DIMILIKI sebelum berpetualang.
+- .adventure : Berangkat berpetualang. Kamu akan melawan monster acak (Goblin, Dragon, Golem, dll) di berbagai peta dunia (Jepang, Mars, Hutan Amazon).
+- Hadiah Adventure: Kamu akan mendapatkan XP (1000-5000), Money (5000-15000), Potion, dan peluang mendapatkan barang langka seperti Diamond atau Crate (Peti).
+- Resiko: Nyawamu akan berkurang, dan durabilitas Pedang/Armor akan menurun setiap kali berpetualang. Jika durabilitas habis (0), item tersebut akan hancur dan kamu harus .craft ulang.
+- .dungeon : Fitur petualangan grup. Ajak teman-teman di grup untuk membentuk party dan mengalahkan boss dungeon bersama-sama untuk hadiah yang luar biasa.
+- .berburu / .hunt : Pergi berburu hewan di hutan (mendapatkan daging, kulit, dll).
+- .mancing / .fishing : Memancing ikan di sungai/laut (membutuhkan pancingan dan umpan).
+
+D. TOKO & INVENTORY
+- .inv / .inventory : Membuka tas ranselmu untuk melihat seluruh barang yang kamu miliki (senjata, bahan mentah, crate, pet).
+- .shop buy <item> <jumlah> : Membeli barang dari toko.
+- .shop sell <item> <jumlah> : Menjual barang tangkapan/tambang ke toko untuk mendapatkan uang.
+- Barang di Toko: Potion, Coal, Diamond, Emerald, Kayu, Besi, Makanan Pet, hingga Pet Legendaris (Phoenix, Naga, Kyubi).
+
+E. FITUR RPG LAINNYA
+- .bank / .nabung / .tarik : Menyimpan uang di bank agar aman dari pencopet (.copet).
+- .open <crate_name> : Membuka kotak gacha (Common, Uncommon, Mythic, Legendary) untuk mendapatkan hadiah acak.
+- .pasar : Pasar gelap antar pemain.
+- .kencan : Mengajak karakter kencan untuk menambah mood.
+
+================================================================================
+5. DUNIA PERMAINAN (MINI GAMES)
+================================================================================
+Ratusan game seru untuk meramaikan suasana grup! Setiap jawaban benar mendapat 500 Money.
+
+A. TEBAK-TEBAKAN (Gunakan akal dan kecepatan)
+Cara Main: Ketik perintahnya, bot akan mengirimkan soal, lalu REPLY (balas) pesan bot tersebut dengan jawabanmu. Waktu menjawab rata-rata 60 detik.
+- .tebakgambar : Menebak kalimat dari gabungan petunjuk gambar.
+- .tebaklagu : Menebak judul lagu dari potongan audio.
+- .tebakbendera : Menebak nama negara dari gambar bendera.
+- .asahotak : Teka-teki logika ringan.
+- .susunkata : Menyusun huruf acak menjadi kata yang benar.
+- .tebakkimia, .tebakhero, .tebakhewan, .tebakanime, .tebakjkt48, .tebaklogo.
+
+B. MATH GAME (.math <tingkat kesulitan>)
+- Tingkat kesulitan: noob, easy, medium, hard, master, grandmaster, legendary, mythic, god.
+- Contoh: .math easy
+- Bot akan memberikan soal matematika (misal: 15 + 20). Jawab secepatnya! Hadiahnya bervariasi dari 100 Money hingga 8000 Money tergantung tingkat kesulitan.
+
+C. MULTIPLAYER GAMES (Main bareng teman)
+- .tictactoe <@tag> : Mengajak teman main Tic Tac Toe. Gunakan angka 1-9 untuk mengisi papan.
+- .suitpvp <@tag> : Mengajak teman taruhan suit. Kalian berdua akan dikirimi pesan pribadi oleh bot untuk memilih (Batu/Gunting/Kertas), pemenangnya akan mengambil uang yang ditaruhkan.
+- .wwgc / .werewolf : Memainkan game sosial deduksi Werewolf di grup. Minimal 5 pemain. Ada peran Warga, Serigala, Penerawang, dll.
+
+D. CASINO & JUDI (Gunakan Uang RPG-mu)
+- .slot <jumlah_taruhan> : Mesin slot kasino. Jika hoki dapat jackpot 3 gambar kembar.
+- .judi <jumlah_taruhan> : Taruhan lempar dadu melawan bot.
+- .betpvp : Taruhan satu lawan satu.
+
+================================================================================
+6. DOWNLOADER & PENCARIAN MEDIA
+================================================================================
+Bot ini adalah asisten download yang sangat andal.
+
+A. DOWNLOAD VIDEO/AUDIO
+- .ytmp3 <link_youtube> : Mengubah video YouTube menjadi file MP3 (Lagu) yang dikirim langsung ke WhatsApp.
+- .ytv / .ytmp4 <link_youtube> : Mendownload video YouTube beresolusi standar.
+- .tiktok <link_tiktok> : Mendownload video TikTok tanpa watermark.
+- .ig / .igdl <link_instagram> : Mendownload Reels, IGTV, atau Foto dari Instagram.
+- .facebook / .fbdl <link_fb> : Mendownload video dari Facebook.
+- .spotify <link_spotify_atau_judul> : Mendownload lagu dari Spotify.
+
+B. SEARCH ENGINE
+- .google <query> : Mencari informasi di Google.
+- .pinterest <query> : Mencari inspirasi gambar (cocok untuk cari wallpaper/anime).
+- .lirik <judul_lagu> : Mencari lirik lagu lengkap.
+- .githubsearch <query> : Mencari repository di GitHub.
+- .gsmarena <tipe_hp> : Mencari spesifikasi lengkap smartphone.
+
+================================================================================
+7. KECERDASAN BUATAN (AI) & OPENAI
+================================================================================
+Berbincanglah dengan berbagai persona AI yang tertanam di bot ini.
+
+- .ai / .chat <pertanyaan> : Ngobrol dengan AI standar (ChatGPT).
+- .bard <pertanyaan> : Ngobrol dengan Google Bard AI (Bisa membaca gambar jika kamu me-reply gambar dengan caption .bard).
+- .bing <pertanyaan> : Mencari jawaban menggunakan Bing AI.
+- CHARACTER AI: Ngobrol dengan karakter anime/game seolah mereka nyata!
+  - .arona <teks> (Karakter Blue Archive)
+  - .elaina <teks> (Majo no Tabitabi)
+  - .nahida <teks> (Genshin Impact)
+
+================================================================================
+8. TOOLS, MAKER, & STICKER
+================================================================================
+Berbagai alat bantu praktis untuk keperluan sehari-hari.
+
+A. STICKER MAKER
+- .s / .sticker : (Kirim gambar dengan caption .s atau reply gambar). Bot akan mengubahnya menjadi stiker WhatsApp.
+- .sgif : Mengubah video pendek/GIF menjadi stiker bergerak (Maksimal 10 detik).
+- .smeme <teks_atas>|<teks_bawah> : Membuat stiker meme dari gambar.
+- .attp <teks> : Membuat stiker tulisan berwarna-warni yang berkedip.
+- .brat <teks> : Membuat stiker dengan template tulisan "Brat" yang viral.
+
+B. TOOLS GAMBAR & TEKS
+- .hd / .remini : (Reply gambar) Memperjelas/meningkatkan resolusi gambar yang buram menggunakan AI.
+- .ocr : (Reply gambar) Membaca dan mengekstrak teks yang ada di dalam gambar.
+- .tourl : (Reply gambar/video) Mengupload file sementara dan menjadikannya link URL pendek.
+- .nulis <teks> : Bot akan menuliskan teksmu di atas kertas seolah-olah ditulis tangan.
+- .kalkulator <angka> : Menghitung operasi matematika otomatis.
+- .translate <bahasa_tujuan> <teks> : Menerjemahkan bahasa.
+
+================================================================================
+9. FITUR ISLAMI & PRIMBON
+================================================================================
+A. ISLAMI
+- .jadwalsholat <nama_kota> : Mengecek jadwal sholat hari ini untuk kotamu.
+- .bacaansholat : Menampilkan panduan lengkap bacaan sholat.
+- .doaharian : Kumpulan doa-doa pendek sehari-hari.
+- .kisahnabi <nama_nabi> : Membaca kisah 25 Nabi dan Rasul.
+- .surah <nomor/nama> : Membaca ayat-ayat Al-Qur'an.
+- .tahlil / .wirid : Bacaan tahlil dan wirid lengkap.
+
+B. PRIMBON & RAMALAN (FUN)
+- .artimama <nama> : Mencari arti dari namamu.
+- .artimimpi <mimpi> : Mencari tafsir mimpimu semalam menurut primbon.
+- .cekjodoh <nama1> <nama2> : Menghitung persentase kecocokan pasangan.
+- .cekkodam <nama> : (Hiburan) Melihat penjaga gaib / khodam di dalam dirimu.
+- .ramalancinta, .nomorhoki, .arahrejeki.
+
+================================================================================
+10. MANAJEMEN GRUP (GROUP ADMIN ONLY)
+================================================================================
+Fitur ini khusus digunakan oleh Admin Grup untuk mengelola anggotanya.
+
+- .add <nomor> / .kick <@tag> : Menambah atau mengeluarkan anggota dari grup.
+- .promote <@tag> / .demote <@tag> : Menjadikan atau mencopot jabatan admin.
+- .hidetag <teks> : Mengirim pesan yang akan men-tag (mention) seluruh anggota grup tanpa menampilkan daftar namanya (Cocok untuk pengumuman penting).
+- .tagall : Men-tag seluruh anggota grup dengan menampilkan list namanya.
+- .group <open/close> : Membuka atau menutup grup (hanya admin yang bisa mengirim pesan jika di-close).
+- .setnamagc <nama> / .setdeskgc <teks> : Mengubah nama dan deskripsi grup.
+- .setppgc : (Reply gambar) Mengubah foto profil grup.
+- .revoke : Mereset link tautan grup.
+- .linkgroup : Menampilkan link tautan grup untuk dibagikan.
+
+================================================================================
+11. ATURAN, ETIKA, & KETENTUAN (RULES)
+================================================================================
+Demi menjaga keamanan, kenyamanan, dan kelangsungan hidup bot, seluruh pengguna WAJIB mematuhi aturan berikut:
+
+1. DILARANG SPAM COMMAND
+   Mengirimkan perintah yang sama berulang kali dalam waktu kurang dari 3 detik (spam) akan menyebabkan sistem keamanan bot aktif. Akunmu akan dibanned secara otomatis. Gunakan bot dengan santai.
+
+2. DILARANG MENELPON BOT (CALL/VIDEO CALL)
+   Menelpon nomor bot akan menyebabkan akunmu otomatis di-BLOCK secara permanen oleh sistem. Bot tidak bisa menjawab panggilan.
+
+3. SISTEM ANTI-BADWORD & ANTI-PORN
+   Bot ini dilengkapi sensor otomatis.
+   - Mengirimkan link grup lain tanpa izin admin akan membuat pesanmu dihapus dan kamu bisa di-kick.
+   - Mengirimkan media berbau pornografi di grup akan otomatis dihapus oleh bot.
+   - Berbicara kasar secara berlebihan akan menambah poin "Warn" (Peringatan) kamu. Jika mencapai batas maksimal, kamu akan di-kick dari grup atau dibanned dari bot.
+
+4. TENTANG KONTEN DEWASA (18+ / NSFW)
+   - Seluruh fitur pencarian dan download berbau NSFW (Bokep, Hentai, dll) serta perintah RPG dewasa (.ngewe, .openbo) telah DIKUNCI OLEH SISTEM.
+   - Fitur-fitur ini HANYA eksklusif untuk pengguna yang telah membeli status PREMIUM (.belipremium). Pengguna gratis tidak dapat mengaksesnya sama sekali.
+
+5. KEBIJAKAN TOP UP & DONASI
+   - Seluruh uang yang masuk melalui transaksi QRIS (.topup / .belipremium) digunakan murni untuk biaya pemeliharaan server bot (hosting, API, database) agar bot bisa online 24 jam nonstop.
+   - Transaksi yang sudah sukses tidak dapat di-refund (dikembalikan). Jika terjadi error saldo tidak masuk setelah membayar, harap segera lapor ke Owner dengan melampirkan screenshot bukti transfer dan Order ID.
+
+6. DATA PRIVASI
+   - Bot tidak menyimpan isi percakapan pribadi kamu. Pesan hanya diproses lalu dihapus dari memori.
+   - Bot hanya menyimpan Nomor WhatsApp, Saldo RPG (Money/Limit), dan status pendaftaranmu di dalam database agar kamu bisa terus melanjutkan progres game-mu.
+
+JIKA KAMU MENEMUKAN ERROR ATAU BUG:
+Gunakan perintah .bug <penjelasan error> atau segera hubungi nomor Owner menggunakan perintah .owner.
+
+TERIMA KASIH TELAH MENGGUNAKAN VIEL BOT!
+MARI CIPTAKAN LINGKUNGAN GRUP YANG MENYENANGKAN!
+================================================================================

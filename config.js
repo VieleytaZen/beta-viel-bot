@@ -33,8 +33,23 @@ global.APIKeys = {
   'https://api.betabotz.eu.org': global.lann, 
 }
 
+// Jadibot Restoration
+if (global.conns instanceof Array) console.log()
+else global.conns = []
+
 let fs = require('fs')
+let path = require('path')
 let chalk = require('chalk')
+
+async function restoreSessions() {
+    let authFolder = 'sessions'
+    if (!fs.existsSync(authFolder)) return
+    let files = fs.readdirSync(authFolder)
+    for (let file of files) {
+        if (file === 'creds.json' || !fs.statSync(path.join(authFolder, file)).isDirectory()) continue
+    }
+}
+
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
   fs.unwatchFile(file)
