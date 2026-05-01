@@ -942,21 +942,21 @@ module.exports = {
             let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
 
             //let isROwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-            let isROwner = [global.conn.user.jid, ...global.owner]
+            let isROwner = [(global.conn?.user?.jid || this.user?.jid), ...global.owner]
               .map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
               .includes(
                 m.sender.endsWith('@lid') 
-                  ? conn.getJid(m.sender)?.replace(/[^0-9]/g, '') + '@s.whatsapp.net' 
+                  ? this.getJid(m.sender)?.replace(/[^0-9]/g, '') + '@s.whatsapp.net' 
                   : m.sender.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
               );
             let isOwner = isROwner || m.fromMe
             let isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
             let isPrems = isROwner || (db.data.users[m.sender].premiumTime > 0 || db.data.users[m.sender].premium)
            
-            const groupMetadata = (m.isGroup ? (conn.chats[m.chat] || {}).metadata || (await this.groupMetadata(m.chat).catch((_) => null)) : {}) || {};
+            const groupMetadata = (m.isGroup ? (this.chats[m.chat] || {}).metadata || (await this.groupMetadata(m.chat).catch((_) => null)) : {}) || {};
             const participants = (m.isGroup ? groupMetadata.participants : []) || [];
-            const user = (m.isGroup ? participants.find((u) => conn.getJid(u.id) === m.sender) : {}) || {}; // User Data
-            const bot = (m.isGroup ? participants.find((u) => conn.getJid(u.id) == this.user.jid) : {}) || {}; // Your Data
+            const user = (m.isGroup ? participants.find((u) => this.getJid(u.id) === m.sender) : {}) || {}; // User Data
+            const bot = (m.isGroup ? participants.find((u) => this.getJid(u.id) == this.user.jid) : {}) || {}; // Your Data
             const isRAdmin = user?.admin == 'superadmin' || false;
             const isAdmin = isRAdmin || user?.admin == 'admin' || false; // Is User Admin?
             const isBotAdmin = bot?.admin || false; // Are you Admin?
@@ -969,7 +969,7 @@ module.exports = {
                     continue
                 }
                 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
-                let _prefix = plugin.customPrefix ? plugin.customPrefix : conn.prefix ? conn.prefix : global.prefix
+                let _prefix = plugin.customPrefix ? plugin.customPrefix : this.prefix ? this.prefix : global.prefix
                 let match = (_prefix instanceof RegExp ? // RegExp Mode?
                     [[_prefix.exec(m.text), _prefix]] :
                     Array.isArray(_prefix) ? // Array?
@@ -1215,8 +1215,8 @@ module.exports = {
                     const isAdd = ['add', 'invite', 'invite_v4'].includes(action)
 
                     text = (isAdd
-                        ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
-                        : (chat.sBye || this.bye || conn.bye || 'Bye, @user!'))
+                        ? (chat.sWelcome || this.welcome || global.conn?.welcome || 'Welcome, @user!')
+                        : (chat.sBye || this.bye || global.conn?.bye || 'Bye, @user!'))
                         .replace('@subject', groupMetadata.subject || 'this group')
                         .replace('@desc', groupMetadata.desc?.toString() || '')
                         .replace('@user', '@' + jid.split('@')[0])
@@ -1245,9 +1245,9 @@ module.exports = {
             }
             break            
             // case 'promote':
-            // text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+            // text = (chat.sPromote || this.spromote || this.spromote || '@user ```is now Admin```')
             // case 'demote':
-            // if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+            // if (!text) text = (chat.sDemote || this.sdemote || this.sdemote || '@user ```is no longer Admin```')
             // text = text.replace('@user', '@' + participants[0].split('@')[0])
             // if (chat.detect) this.sendMessage(id, { text }, { mentions: [participants[0]] })
             // break
@@ -1255,7 +1255,7 @@ module.exports = {
 },
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
-        let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
+        let chats = Object.entries(this.chats).find(([user, data]) => data.messages && data.messages[id])
         if (!chats) return
         let msg = JSON.parse(chats[1].messages[id])
         let chat = global.db.data.chats[msg.key.remoteJid] || {}
