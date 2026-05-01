@@ -1,3 +1,4 @@
+console.log('Plugin Jadibot loaded')
 const { 
     useMultiFileAuthState, 
     DisconnectReason, 
@@ -10,16 +11,18 @@ const qrcode = require('qrcode')
 const fs = require('fs')
 const path = require('path')
 const { makeWASocket } = require('../lib/simple')
+const { handler } = require('../handler')
 
-if (global.conns instanceof Array) console.log()
+if (global.conns instanceof Array) console.log('global.conns already exists')
 else global.conns = []
 
-let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
+let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let parent = conn
     if (conn.user.jid !== parent.user.jid) return m.reply('Perintah ini hanya bisa digunakan di bot utama!')
     
     if (args[0] === 'list') {
         let text = `*LIST JADIBOT*\n\n`
+        if (global.conns.length === 0) return m.reply('Tidak ada bot yang sedang aktif.')
         text += global.conns.map((v, i) => `${i + 1}. @${v.user.jid.split('@')[0]} (${v.user.name || 'No Name'})`).join('\n')
         return m.reply(text, m.chat, { mentions: global.conns.map(v => v.user.jid) })
     }
@@ -59,12 +62,18 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         } else {
             // Use Pairing Code if number is provided
             let phoneNumber = args[0].replace(/[^0-9]/g, '')
-            if (phoneNumber.length < 11) return m.reply('Nomor tidak valid!')
+            if (phoneNumber.length < 10) return m.reply('Nomor tidak valid!')
             
+            m.reply('Tunggu sebentar, sedang meminta kode pairing...')
             setTimeout(async () => {
-                let code = await subConn.requestPairingCode(phoneNumber)
-                code = code?.match(/.{1,4}/g)?.join('-') || code
-                await parent.reply(m.chat, `Kode Pairing kamu adalah: *${code}*\n\nMasukkan kode tersebut di WhatsApp kamu (Perangkat Tertaut > Tautkan dengan nomor telepon)`, m)
+                try {
+                    let code = await subConn.requestPairingCode(phoneNumber)
+                    code = code?.match(/.{1,4}/g)?.join('-') || code
+                    await parent.reply(m.chat, `Kode Pairing kamu adalah: *${code}*\n\nMasukkan kode tersebut di WhatsApp kamu (Perangkat Tertaut > Tautkan dengan nomor telepon)`, m)
+                } catch (e) {
+                    console.error(e)
+                    m.reply('Gagal meminta kode pairing. Pastikan nomor benar dan coba lagi nanti.')
+                }
             }, 3000)
         }
     }
@@ -84,26 +93,28 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
             let reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
             if (reason === DisconnectReason.restartRequired) {
                 // Restart logic
+                console.log('Sub-bot restart required.')
             } else if (reason === DisconnectReason.loggedOut) {
+                console.log('Sub-bot logged out.')
                 if (fs.existsSync(userFolder)) {
                     fs.rmSync(userFolder, { recursive: true })
                 }
                 let index = global.conns.indexOf(subConn)
                 if (index > -1) global.conns.splice(index, 1)
             } else {
+                console.log('Sub-bot closed. Reason:', reason)
                 let index = global.conns.indexOf(subConn)
                 if (index > -1) global.conns.splice(index, 1)
             }
         }
     })
 
-    subConn.ev.on('messages.upsert', async (message) => {
-        if (global.handler) await global.handler.call(subConn, message)
-    })
+    // Menghubungkan handler utama ke sub-bot
+    subConn.ev.on('messages.upsert', handler.bind(subConn))
 }
 
-handler.help = ['jadibot', 'jadibot <nomor>', 'jadibot list']
-handler.tags = ['main']
-handler.command = /^jadibot$/i
+handler_jadibot.help = ['jadibot', 'jadibot <nomor>', 'jadibot list']
+handler_jadibot.tags = ['main']
+handler_jadibot.command = /^(jadibot|clone)$/i
 
-module.exports = handler
+module.exports = handler_jadibot
