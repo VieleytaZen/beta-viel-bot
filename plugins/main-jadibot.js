@@ -10,6 +10,7 @@ const qrcode = require('qrcode')
 const fs = require('fs')
 const path = require('path')
 const pino = require('pino')
+const fetch = require('node-fetch')
 const { makeWASocket } = require('../lib/simple')
 const { handler } = require('../handler')
 
@@ -18,6 +19,11 @@ else global.conns = []
 
 let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let parent = conn
+    let user = global.db.data.users[m.sender]
+
+    // Cek Akses
+    let isPremium = isOwner || user.premium || false
+    let hasJadibotAccess = isPremium || user.jadibot || false
     
     // Fitur List Jadibot
     if (args[0] === 'list') {
@@ -32,14 +38,70 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
     // Fitur Stop Jadibot
     if (args[0] === 'stop') {
         if (conn.user.jid !== parent.user.jid) {
-            // Jika perintah stop dipanggil dari sub-bot itu sendiri
             await m.reply('Mematikan bot...')
             await conn.logout()
             return
         } else {
-            // Jika dipanggil dari bot utama untuk mematikan salah satu sub-bot
-            let text = `Gunakan perintah ini di chat sub-bot yang ingin dimatikan atau ketik *.stopjadibot [nomor]*`
-            return m.reply(text)
+            return m.reply(`Gunakan perintah ini di chat sub-bot yang ingin dimatikan atau ketik *.stopjadibot [nomor]*`)
+        }
+    }
+
+    // --- LOGIKA PEMBAYARAN OTOMATIS ---
+    if (args[0] === 'pay') {
+        let type = args[1] // 'premium' atau 'jadibot'
+        if (!['premium', 'jadibot'].includes(type)) return m.reply(`Pilih tipe pembayaran:\n\n• *${usedPrefix + command} pay premium* (Rp 20.000)\n• *${usedPrefix + command} pay jadibot* (Rp 10.000)`)
+        
+        const amount = type === 'premium' ? 20000 : 10000
+        const order_id = (type === 'premium' ? 'PREM-' : 'JB-') + Date.now()
+        const project = global.pakasir_slug
+        const api_key = global.pakasir_key
+        
+        try {
+            m.reply(`Sedang membuat invoice QRIS untuk *${type.toUpperCase()}*...`)
+            let res = await fetch('https://app.pakasir.com/api/transactioncreate/qris', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project, order_id, amount, api_key })
+            })
+            let json = await res.json()
+            
+            if (json.status === 'success') {
+                let qrisData = json.data.qr_content
+                let buffer = await qrcode.toBuffer(qrisData, { scale: 8 })
+                let caption = `*─── [ INVOICE ${type.toUpperCase()} ] ───*\n\n`
+                caption += `Layanan: *${type === 'premium' ? 'Premium Full Akses' : 'Akses Jadibot Saja'}*\n`
+                caption += `Total Bayar: *Rp ${amount.toLocaleString()}*\n`
+                caption += `Order ID: \`${order_id}\`\n\n`
+                caption += `Silahkan scan QRIS di atas.\n`
+                caption += `Status akan dicek otomatis setiap 10 detik.\n\n`
+                caption += `_Berlaku untuk 30 hari._`
+                
+                await parent.sendFile(m.chat, buffer, 'qris.png', caption, m)
+                
+                let checkCount = 0
+                let interval = setInterval(async () => {
+                    checkCount++
+                    let checkRes = await fetch(`https://app.pakasir.com/api/transactiondetail?project=${project}&amount=${amount}&order_id=${order_id}&api_key=${api_key}`)
+                    let checkJson = await checkRes.json()
+                    
+                    if (checkJson.transaction && checkJson.transaction.status === 'completed') {
+                        clearInterval(interval)
+                        if (type === 'premium') {
+                            user.premium = true
+                            user.premiumTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
+                        } else {
+                            user.jadibot = true
+                            user.jadibotTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
+                        }
+                        await parent.reply(m.chat, `✅ *PEMBAYARAN BERHASIL!*\n\nKamu sekarang memiliki akses *${type.toUpperCase()}* selama 30 hari.\nSilahkan coba gunakan perintahnya kembali.`, m)
+                    }
+                    if (checkCount > 60) clearInterval(interval)
+                }, 10000)
+                return
+            }
+        } catch (e) {
+            console.error(e)
+            return m.reply('Terjadi kesalahan pembayaran.')
         }
     }
 
@@ -49,9 +111,22 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         if (!jid) return m.reply('Masukkan nomor bot yang ingin dimatikan!')
         let index = global.conns.findIndex(v => v.user.jid === jid)
         if (index === -1) return m.reply('Nomor tersebut tidak ada dalam daftar bot aktif.')
-        
         await global.conns[index].logout()
         return m.reply(`Bot @${jid.split('@')[0]} telah dimatikan.`, m.chat, { mentions: [jid] })
+    }
+
+    // Proteksi Akses Jadibot
+    if (!hasJadibotAccess) {
+        let text = `*─── [ AKSES JADIBOT ] ───*\n\n`
+        text += `Maaf, fitur ini hanya untuk user yang berlangganan.\n\n`
+        text += `*Pilihan Paket:*\n`
+        text += `1. *Paket Jadibot Saja* (Rp 10.000/bln)\n`
+        text += `   Ketik: *${usedPrefix + command} pay jadibot*\n\n`
+        text += `2. *Paket Premium Full* (Rp 20.000/bln)\n`
+        text += `   Ketik: *${usedPrefix + command} pay premium*\n\n`
+        text += `_Keuntungan Premium: Semua fitur bot + Jadibot._\n`
+        text += `_Keuntungan Jadibot: Hanya fitur bot di nomor kamu._`
+        return conn.reply(m.chat, text, m)
     }
 
     if (conn.user.jid !== parent.user.jid) return m.reply('Perintah ini hanya bisa digunakan di bot utama!')
