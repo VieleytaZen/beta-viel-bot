@@ -1,4 +1,3 @@
-console.log('Plugin Jadibot loaded')
 const { 
     useMultiFileAuthState, 
     DisconnectReason, 
@@ -10,6 +9,7 @@ const {
 const qrcode = require('qrcode')
 const fs = require('fs')
 const path = require('path')
+const pino = require('pino')
 const { makeWASocket } = require('../lib/simple')
 const { handler } = require('../handler')
 
@@ -42,15 +42,15 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         version,
         auth: state,
         printQRInTerminal: false,
-        browser: ['Jadibot', 'Chrome', '1.0.0'],
-        logger: require('pino')({ level: 'silent' })
+        browser: ["Ubuntu", "Chrome", "20.0.04"],
+        logger: pino({ level: 'silent' }),
+        markOnlineOnConnect: false,
     }
 
     let subConn = makeWASocket(connectionOptions)
     
     if (!state.creds.registered) {
         if (!args[0]) {
-            // Default to QR if no number provided
             subConn.ev.on('connection.update', async (update) => {
                 const { connection, lastDisconnect, qr } = update
                 if (qr) {
@@ -60,21 +60,19 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
                 }
             })
         } else {
-            // Use Pairing Code if number is provided
             let phoneNumber = args[0].replace(/[^0-9]/g, '')
             if (phoneNumber.length < 10) return m.reply('Nomor tidak valid!')
             
-            m.reply('Tunggu sebentar, sedang meminta kode pairing...')
-            setTimeout(async () => {
-                try {
-                    let code = await subConn.requestPairingCode(phoneNumber)
-                    code = code?.match(/.{1,4}/g)?.join('-') || code
-                    await parent.reply(m.chat, `Kode Pairing kamu adalah: *${code}*\n\nMasukkan kode tersebut di WhatsApp kamu (Perangkat Tertaut > Tautkan dengan nomor telepon)`, m)
-                } catch (e) {
-                    console.error(e)
-                    m.reply('Gagal meminta kode pairing. Pastikan nomor benar dan coba lagi nanti.')
-                }
-            }, 3000)
+            // Wait for socket to be ready to request pairing code
+            await delay(5000)
+            try {
+                let code = await subConn.requestPairingCode(phoneNumber)
+                code = code?.match(/.{1,4}/g)?.join('-') || code
+                await parent.reply(m.chat, `Kode Pairing kamu adalah: *${code}*\n\nMasukkan kode tersebut di WhatsApp kamu (Perangkat Tertaut > Tautkan dengan nomor telepon)`, m)
+            } catch (e) {
+                console.error('Pairing Error:', e)
+                m.reply('Gagal meminta kode pairing. Pastikan nomor benar dan coba lagi nanti.')
+            }
         }
     }
 
@@ -92,8 +90,8 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         if (connection === 'close') {
             let reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
             if (reason === DisconnectReason.restartRequired) {
-                // Restart logic
                 console.log('Sub-bot restart required.')
+                // Ideally, re-run the start logic here
             } else if (reason === DisconnectReason.loggedOut) {
                 console.log('Sub-bot logged out.')
                 if (fs.existsSync(userFolder)) {
@@ -109,7 +107,6 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         }
     })
 
-    // Menghubungkan handler utama ke sub-bot
     subConn.ev.on('messages.upsert', handler.bind(subConn))
 }
 
