@@ -18,14 +18,43 @@ else global.conns = []
 
 let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let parent = conn
-    if (conn.user.jid !== parent.user.jid) return m.reply('Perintah ini hanya bisa digunakan di bot utama!')
     
+    // Fitur List Jadibot
     if (args[0] === 'list') {
-        let text = `*LIST JADIBOT*\n\n`
+        let text = `*LIST JADIBOT AKTIF*\n\n`
         if (global.conns.length === 0) return m.reply('Tidak ada bot yang sedang aktif.')
-        text += global.conns.map((v, i) => `${i + 1}. @${v.user.jid.split('@')[0]} (${v.user.name || 'No Name'})`).join('\n')
+        text += global.conns.map((v, i) => {
+            return `${i + 1}. @${v.user.jid.split('@')[0]} (${v.user.name || 'No Name'})\n   Status: Aktif ✅`
+        }).join('\n\n')
         return m.reply(text, m.chat, { mentions: global.conns.map(v => v.user.jid) })
     }
+
+    // Fitur Stop Jadibot
+    if (args[0] === 'stop') {
+        if (conn.user.jid !== parent.user.jid) {
+            // Jika perintah stop dipanggil dari sub-bot itu sendiri
+            await m.reply('Mematikan bot...')
+            await conn.logout()
+            return
+        } else {
+            // Jika dipanggil dari bot utama untuk mematikan salah satu sub-bot
+            let text = `Gunakan perintah ini di chat sub-bot yang ingin dimatikan atau ketik *.stopjadibot [nomor]*`
+            return m.reply(text)
+        }
+    }
+
+    // Fitur Stop Jadibot Berdasarkan Nomor (Hanya Owner)
+    if (command === 'stopjadibot' && isOwner) {
+        let jid = args[0] ? args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.quoted ? m.quoted.sender : ''
+        if (!jid) return m.reply('Masukkan nomor bot yang ingin dimatikan!')
+        let index = global.conns.findIndex(v => v.user.jid === jid)
+        if (index === -1) return m.reply('Nomor tersebut tidak ada dalam daftar bot aktif.')
+        
+        await global.conns[index].logout()
+        return m.reply(`Bot @${jid.split('@')[0]} telah dimatikan.`, m.chat, { mentions: [jid] })
+    }
+
+    if (conn.user.jid !== parent.user.jid) return m.reply('Perintah ini hanya bisa digunakan di bot utama!')
 
     let authFolder = 'sessions'
     let userJid = m.sender.split('@')[0]
@@ -51,7 +80,7 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         let subConn = makeWASocket(connectionOptions)
         
         if (!state.creds.registered) {
-            if (!args[0]) {
+            if (!args[0] || isNaN(args[0].replace(/[^0-9]/g, ''))) {
                 subConn.ev.on('connection.update', async (update) => {
                     const { connection, lastDisconnect, qr } = update
                     if (qr) {
@@ -71,7 +100,6 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
                     await parent.reply(m.chat, `Kode Pairing kamu adalah: *${code}*\n\nMasukkan kode tersebut di WhatsApp kamu (Perangkat Tertaut > Tautkan dengan nomor telepon)`, m)
                 } catch (e) {
                     console.error('Pairing Error:', e)
-                    // m.reply('Gagal meminta kode pairing. Pastikan nomor benar dan coba lagi nanti.')
                 }
             }
         }
@@ -93,7 +121,7 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
                 let reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
                 if (reason === DisconnectReason.restartRequired) {
                     console.log('Sub-bot restart required. Reconnecting...')
-                    startSubBot() // Auto restart
+                    startSubBot()
                 } else if (reason === DisconnectReason.loggedOut) {
                     console.log('Sub-bot logged out.')
                     if (fs.existsSync(userFolder)) {
@@ -103,10 +131,8 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
                     if (index > -1) global.conns.splice(index, 1)
                 } else {
                     console.log('Sub-bot closed. Reason:', reason)
-                    // For other reasons, might want to attempt reconnection after a delay
-                    if (reason !== DisconnectReason.connectionClosed) {
-                        setTimeout(() => startSubBot(), 5000)
-                    }
+                    let index = global.conns.findIndex(v => v.user.jid === subConn.user.jid)
+                    if (index > -1) global.conns.splice(index, 1)
                 }
             }
         })
@@ -118,14 +144,8 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
     startSubBot()
 }
 
-handler_jadibot.help = ['jadibot', 'jadibot <nomor>', 'jadibot list']
+handler_jadibot.help = ['jadibot', 'jadibot <nomor>', 'jadibot list', 'jadibot stop', 'stopjadibot <nomor>']
 handler_jadibot.tags = ['main']
-handler_jadibot.command = /^(jadibot|clone)$/i
-
-module.exports = handler_jadibot
-
-handler_jadibot.help = ['jadibot', 'jadibot <nomor>', 'jadibot list']
-handler_jadibot.tags = ['main']
-handler_jadibot.command = /^(jadibot|clone)$/i
+handler_jadibot.command = /^(jadibot|clone|stopjadibot)$/i
 
 module.exports = handler_jadibot
