@@ -76,10 +76,8 @@ function start(file) {
     isRunning = false;
     console.error('\x1b[31m%s\x1b[0m', `Exited with code: ${code}`);
     
-    // Jangan langsung restart jika code 0 (sengaja dimatikan)
     if (code === 0) return;
 
-    // Hapus watcher lama sebelum menambah yang baru untuk mencegah memory leak
     fs.unwatchFile(args[0]);
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0]);
@@ -87,7 +85,6 @@ function start(file) {
       start(file);
     });
 
-    // Auto restart setelah 5 detik jika crash
     setTimeout(() => start(file), 5000);
   });
 
@@ -100,51 +97,12 @@ function start(file) {
 
 start('main.js');
 
-    start("main.js");
-  });
-
-  const pluginsFolder = path.join(__dirname, "plugins");
-
-  fs.readdir(pluginsFolder, (err, files) => {
-    if (err) {
-      console.error('\x1b[31m%s\x1b[0m', `Error reading plugins folder: ${err}`);
-      return;
-    }
-    console.log('\x1b[33m%s\x1b[0m', `🟡 Found ${files.length} plugins in folder ${pluginsFolder}`);
-    try {
-      require.resolve('@adiwajshing/baileys');
-      console.log('\x1b[33m%s\x1b[0m', `🟡 Baileys library version ${require('@adiwajshing/baileys/package.json').version} is installed`);
-    } catch (e) {
-      console.error('\x1b[31m%s\x1b[0m', `❌ Baileys library is not installed`);
-    }
-  });
-
-  console.log(`🖥️ \x1b[33m${os.type()}\x1b[0m, \x1b[33m${os.release()}\x1b[0m - \x1b[33m${os.arch()}\x1b[0m`);
-  const ramInGB = os.totalmem() / (1024 * 1024 * 1024);
-  console.log(`💾 \x1b[33mTotal RAM: ${ramInGB.toFixed(2)} GB\x1b[0m`);
-  const freeRamInGB = os.freemem() / (1024 * 1024 * 1024);
-  console.log(`💽 \x1b[33mFree RAM: ${freeRamInGB.toFixed(2)} GB\x1b[0m`);
-  console.log('\x1b[33m%s\x1b[0m', `📃 Script by VieleytaZen`);
-
-  setInterval(() => {}, 1000);
-}
-
-start("main.js");
-
 const tmpDir = './tmp';
-  if (!fs.existsSync(tmpDir)) {
+if (!fs.existsSync(tmpDir)) {
     fs.mkdirSync(tmpDir);
     console.log('\x1b[33m%s\x1b[0m', `📁 Created directory ${tmpDir}`);
 }
 
 process.on('unhandledRejection', (reason) => {
   console.error('\x1b[31m%s\x1b[0m', `Unhandled promise rejection: ${reason}`);
-  console.error('\x1b[31m%s\x1b[0m', 'Unhandled promise rejection. Script will restart...');
-  start('main.js');
-});
-
-process.on('exit', (code) => {
-  console.error(`Exited with code: ${code}`);
-  console.error('Script will restart...');
-  start('main.js');
 });
