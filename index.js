@@ -6,6 +6,9 @@ const os = require('os');
 const express = require('express');
 const app = express();
 
+// Menghindari peringatan memory leak
+process.setMaxListeners(0);
+
 // Express.js 
 const ports = [4000, 3000, 5000, 8000];
 let availablePortIndex = 0;
@@ -22,33 +25,23 @@ function checkPort(port) {
 
 async function startServer() {
   const port = ports[availablePortIndex];
-  const isPortAvailable = await checkPort(port);
-
-  if (isPortAvailable) {
-    console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
-    app.get('/', (req, res) => {
-      res.setHeader('Content-Type', 'application/json');
-      const data = {
-        status: 'true',
-        message: 'Bot Successfully Activated!',
-        author: 'VieleytaZen',
-      };
-      const result = {
-        response: data
-      };
-      res.send(JSON.stringify(result, null, 2));
-    });
-  } else {
-    console.log(`Port ${port} is already in use. Trying another port...`);
-    availablePortIndex++;
-
-    if (availablePortIndex >= ports.length) {
-      console.log('No more available ports. Exiting...');
-      process.exit(1);
-    } else {
-      ports[availablePortIndex] = parseInt(port) + 1;
-      startServer();
+  try {
+    const isPortAvailable = await checkPort(port);
+    if (isPortAvailable) {
+      console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
+      app.get('/', (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
+        const data = {
+          status: 'true',
+          message: 'Bot Successfully Activated!',
+          author: 'VieleytaZen',
+        };
+        res.send(JSON.stringify({ response: data }, null, 2));
+      });
     }
+  } catch (e) {
+    availablePortIndex++;
+    if (availablePortIndex < ports.length) startServer();
   }
 }
 
@@ -82,22 +75,31 @@ function start(file) {
   p.on("exit", (code) => {
     isRunning = false;
     console.error('\x1b[31m%s\x1b[0m', `Exited with code: ${code}`);
-    start('main.js');
-
+    
+    // Jangan langsung restart jika code 0 (sengaja dimatikan)
     if (code === 0) return;
 
+    // Hapus watcher lama sebelum menambah yang baru untuk mencegah memory leak
+    fs.unwatchFile(args[0]);
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0]);
-	  console.error('\x1b[31m%s\x1b[0m', `File ${args[0]} has been modified. Script will restart...`);
-      start("main.js");
+      console.error('\x1b[31m%s\x1b[0m', `File ${args[0]} modified. Restarting...`);
+      start(file);
     });
+
+    // Auto restart setelah 5 detik jika crash
+    setTimeout(() => start(file), 5000);
   });
 
   p.on("error", (err) => {
     console.error('\x1b[31m%s\x1b[0m', `Error: ${err}`);
     p.kill();
     isRunning = false;
-    console.error('\x1b[31m%s\x1b[0m', `Error occurred. Script will restart...`);
+  });
+}
+
+start('main.js');
+
     start("main.js");
   });
 
