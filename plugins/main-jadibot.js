@@ -81,27 +81,35 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
                 let checkCount = 0
                 let interval = setInterval(async () => {
                     checkCount++
-                    let checkRes = await fetch(`https://app.pakasir.com/api/transactiondetail?project=${project}&amount=${amount}&order_id=${order_id}&api_key=${api_key}`)
-                    let checkJson = await checkRes.json()
-                    
-                    if (checkJson.transaction && checkJson.transaction.status === 'completed') {
-                        clearInterval(interval)
-                        if (type === 'premium') {
-                            user.premium = true
-                            user.premiumTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
-                        } else {
-                            user.jadibot = true
-                            user.jadibotTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
+                    try {
+                        let checkRes = await fetch(`https://app.pakasir.com/api/transactiondetail?project=${project}&amount=${amount}&order_id=${order_id}&api_key=${api_key}`)
+                        let checkJson = await checkRes.json()
+                        
+                        if (checkJson.transaction && checkJson.transaction.status === 'completed') {
+                            clearInterval(interval)
+                            if (type === 'premium') {
+                                user.premium = true
+                                user.premiumTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
+                            } else {
+                                user.jadibot = true
+                                user.jadibotTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
+                            }
+                            await parent.reply(m.chat, `✅ *PEMBAYARAN BERHASIL!*\n\nKamu sekarang memiliki akses *${type.toUpperCase()}* selama 30 hari.\nSilahkan coba gunakan perintahnya kembali.`, m)
                         }
-                        await parent.reply(m.chat, `✅ *PEMBAYARAN BERHASIL!*\n\nKamu sekarang memiliki akses *${type.toUpperCase()}* selama 30 hari.\nSilahkan coba gunakan perintahnya kembali.`, m)
+                    } catch (e) {
+                        console.error('Check Status Error:', e)
                     }
                     if (checkCount > 60) clearInterval(interval)
                 }, 10000)
                 return
+            } else {
+                // Berikan pesan error spesifik dari Pakasir
+                let errorMsg = json.message || 'Gagal membuat invoice.'
+                return m.reply(`*Pesan Error:* ${errorMsg}\n\nPastikan *Project Slug* dan *API Key* di \`config.js\` sudah benar.`)
             }
         } catch (e) {
             console.error(e)
-            return m.reply('Terjadi kesalahan pembayaran.')
+            return m.reply('Terjadi kesalahan koneksi saat menghubungi server Pakasir.')
         }
     }
 
