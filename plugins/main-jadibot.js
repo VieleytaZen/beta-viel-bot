@@ -23,7 +23,7 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
 
     // Cek Akses
     let isPremium = isOwner || user.premium || false
-    let hasJadibotAccess = isPremium || user.jadibot || false
+    let hasJadibotAccess = isPremium
     
     // Fitur List Jadibot
     if (args[0] === 'list') {
@@ -46,76 +46,6 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
         }
     }
 
-    // --- LOGIKA PEMBAYARAN OTOMATIS ---
-    if (args[0] === 'pay') {
-        let type = args[1] // 'premium' atau 'jadibot'
-        if (!['premium', 'jadibot'].includes(type)) return m.reply(`Pilih tipe pembayaran:\n\n• *${usedPrefix + command} pay premium* (Rp 20.000)\n• *${usedPrefix + command} pay jadibot* (Rp 10.000)`)
-        
-        const amount = type === 'premium' ? 20000 : 10000
-        const order_id = (type === 'premium' ? 'PREM-' : 'JB-') + Date.now()
-        const project = global.pakasir_slug
-        const api_key = global.pakasir_key
-        
-        try {
-            m.reply(`Sedang membuat invoice QRIS untuk *${type.toUpperCase()}*...`)
-            
-            const createRes = await axios.post('https://app.pakasir.com/api/transactioncreate/qris', {
-                project,
-                api_key,
-                amount,
-                order_id
-            })
-
-            if (createRes.data.payment) {
-                let paymentData = createRes.data.payment
-                let qrString = paymentData.payment_number
-                let buffer = await qrcode.toBuffer(qrString, { scale: 8 })
-                
-                let caption = `*─── [ INVOICE ${type.toUpperCase()} ] ───*\n\n`
-                caption += `Layanan: *${type === 'premium' ? 'Premium Full Akses' : 'Akses Jadibot Saja'}*\n`
-                caption += `Total Bayar: *Rp ${paymentData.amount.toLocaleString()}*\n`
-                caption += `Total Bayar (+Fee): *Rp ${paymentData.total_payment.toLocaleString()}*\n`
-                caption += `Order ID: \`${order_id}\`\n\n`
-                caption += `Silahkan scan QRIS di atas.\n`
-                caption += `Status akan dicek otomatis setiap 10 detik.\n\n`
-                caption += `_Berlaku untuk 30 hari._`
-                
-                await parent.sendFile(m.chat, buffer, 'qris.png', caption, m)
-                
-                let checkCount = 0
-                let interval = setInterval(async () => {
-                    checkCount++
-                    try {
-                        let checkRes = await axios.get(`https://app.pakasir.com/api/transactiondetail`, {
-                            params: { project, amount, order_id, api_key }
-                        })
-                        
-                        if (checkRes.data.transaction && checkRes.data.transaction.status === 'completed') {
-                            clearInterval(interval)
-                            if (type === 'premium') {
-                                user.premium = true
-                                user.premiumTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
-                            } else {
-                                user.jadibot = true
-                                user.jadibotTime = Date.now() + (30 * 24 * 60 * 60 * 1000)
-                            }
-                            await parent.reply(m.chat, `✅ *PEMBAYARAN BERHASIL!*\n\nKamu sekarang memiliki akses *${type.toUpperCase()}* selama 30 hari.\nSilahkan coba gunakan perintahnya kembali.`, m)
-                        }
-                    } catch (e) {
-                        console.error('Check Status Error:', e)
-                    }
-                    if (checkCount > 60) clearInterval(interval) // 10 menit
-                }, 10000)
-                return
-            } else {
-                return m.reply(`*Gagal membuat transaksi!*\n\nRespon: ${JSON.stringify(createRes.data)}`)
-            }
-        } catch (e) {
-            console.error(e)
-            return m.reply('Terjadi kesalahan koneksi saat menghubungi server Pakasir.')
-        }
-    }
-
     // Fitur Stop Jadibot Berdasarkan Nomor (Hanya Owner)
     if (command === 'stopjadibot' && isOwner) {
         let jid = args[0] ? args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.quoted ? m.quoted.sender : ''
@@ -129,14 +59,9 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
     // Proteksi Akses Jadibot
     if (!hasJadibotAccess) {
         let text = `*─── [ AKSES JADIBOT ] ───*\n\n`
-        text += `Maaf, fitur ini hanya untuk user yang berlangganan.\n\n`
-        text += `*Pilihan Paket:*\n`
-        text += `1. *Paket Jadibot Saja* (Rp 10.000/bln)\n`
-        text += `   Ketik: *${usedPrefix + command} pay jadibot*\n\n`
-        text += `2. *Paket Premium Full* (Rp 20.000/bln)\n`
-        text += `   Ketik: *${usedPrefix + command} pay premium*\n\n`
-        text += `_Keuntungan Premium: Semua fitur bot + Jadibot._\n`
-        text += `_Keuntungan Jadibot: Hanya fitur bot di nomor kamu._`
+        text += `Maaf, fitur ini khusus untuk member *Premium*.\n\n`
+        text += `Untuk mendapatkan akses Jadibot dan semua fitur premium lainnya, silakan beli premium terlebih dahulu.\n\n`
+        text += `Ketik: *${usedPrefix}belipremium*\n`
         return conn.reply(m.chat, text, m)
     }
 

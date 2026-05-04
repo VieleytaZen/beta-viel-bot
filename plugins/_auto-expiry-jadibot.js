@@ -16,7 +16,7 @@ handler.before = async function (m, { conn }) {
         let user = users[jid]
         
         // --- 1. PENGINGAT 24 JAM SEBELUM MATI ---
-        let expiryTime = user.premium ? user.premiumTime : user.jadibotTime
+        let expiryTime = user.premium ? user.premiumTime : 0
         if (expiryTime > 0) {
             let timeLeft = expiryTime - now
             let oneDay = 24 * 60 * 60 * 1000
@@ -25,9 +25,9 @@ handler.before = async function (m, { conn }) {
             if (timeLeft > 0 && timeLeft <= oneDay && !user.expiryReminderSent) {
                 let message = `*─── [ PENGINGAT MASA AKTIF ] ───*\n\n`
                 message += `Halo @${jid.split('@')[0]},\n`
-                message += `Masa aktif langganan *${user.premium ? 'PREMIUM' : 'JADIBOT'}* kamu akan habis dalam *24 jam*.\n\n`
+                message += `Masa aktif langganan *PREMIUM* kamu akan habis dalam *24 jam*.\n\n`
                 message += `Segera perpanjang agar bot kamu tetap aktif!\n`
-                message += `Ketik: *.jadibot pay* untuk perpanjang otomatis.`
+                message += `Ketik: *.belipremium* untuk perpanjang.`
                 
                 await conn.reply(jid, message, null, { mentions: [jid] })
                 user.expiryReminderSent = true // Tandai agar tidak spam
@@ -35,19 +35,13 @@ handler.before = async function (m, { conn }) {
         }
 
         // --- 2. PENGHAPUSAN SESI JIKA EXPIRED ---
-        // Jika user bukan owner, dan waktu premium/jadibot sudah habis
+        // Jika user bukan owner, dan waktu premium sudah habis
         if (!global.owner.some(v => v === jid.split('@')[0])) {
-            if ((user.premium && user.premiumTime < now) || (user.jadibot && user.jadibotTime < now)) {
+            if (user.premium && user.premiumTime < now) {
                 
                 // Matikan status akses
-                if (user.premium && user.premiumTime < now) {
-                    user.premium = false
-                    user.premiumTime = 0
-                }
-                if (user.jadibot && user.jadibotTime < now) {
-                    user.jadibot = false
-                    user.jadibotTime = 0
-                }
+                user.premium = false
+                user.premiumTime = 0
                 user.expiryReminderSent = false // Reset pengingat untuk langganan berikutnya
 
                 // Cari dan matikan koneksi sub-bot jika sedang aktif
@@ -69,7 +63,7 @@ handler.before = async function (m, { conn }) {
                         console.log(`Sesi jadibot ${jid} dihapus karena expired.`)
                         
                         // Kirim notifikasi akhir
-                        await conn.reply(jid, `*─── [ MASA AKTIF HABIS ] ───*\n\nMasa aktif langganan kamu telah habis. Sesi bot telah diputuskan dan dihapus.\nTerima kasih telah berlangganan!`, null)
+                        await conn.reply(jid, `*─── [ MASA AKTIF HABIS ] ───*\n\nMasa aktif langganan premium kamu telah habis. Sesi bot telah diputuskan dan dihapus.\nTerima kasih telah berlangganan!`, null)
                     } catch (e) {
                         console.error('Gagal hapus folder sesi expired:', e)
                     }

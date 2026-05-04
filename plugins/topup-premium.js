@@ -38,7 +38,7 @@ Silakan scan QRIS di atas untuk mendapatkan akses Premium.
 Pembayaran akan dicek otomatis dalam waktu 5 menit.
 `.trim();
 
-        await conn.sendFile(m.chat, qrBuffer, 'qris.png', caption, m);
+        let qrisMsg = await conn.sendFile(m.chat, qrBuffer, 'qris.png', caption, m);
 
         conn.topup_prem = conn.topup_prem ? conn.topup_prem : {};
         conn.topup_prem[m.sender] = {
@@ -68,6 +68,15 @@ Pembayaran akan dicek otomatis dalam waktu 5 menit.
                     clearInterval(interval);
                     clearTimeout(timeout);
 
+                    // Hapus pesan QRIS
+                    try {
+                        if (qrisMsg && qrisMsg.key) {
+                            await conn.sendMessage(m.chat, { delete: qrisMsg.key });
+                        }
+                    } catch (e) {
+                        console.error('Gagal menghapus pesan QRIS:', e);
+                    }
+
                     let user = global.db.data.users[m.sender];
                     let now = new Date().getTime();
                     
@@ -96,9 +105,19 @@ Selamat! Kamu sekarang memiliki akses fitur Premium.
         }, 10000); // Check every 10 seconds
 
         // 3. Timeout after 5 minutes
-        let timeout = setTimeout(() => {
+        let timeout = setTimeout(async () => {
             clearInterval(interval);
             if (conn.topup_prem && conn.topup_prem[m.sender]) delete conn.topup_prem[m.sender];
+            
+            // Hapus pesan QRIS
+            try {
+                if (qrisMsg && qrisMsg.key) {
+                    await conn.sendMessage(m.chat, { delete: qrisMsg.key });
+                }
+            } catch (e) {
+                console.error('Gagal menghapus pesan QRIS:', e);
+            }
+            
             conn.reply(m.chat, `*Waktu pembayaran Order ID ${orderId} telah habis.* Pembelian Premium dibatalkan.`, m);
         }, 300000);
 

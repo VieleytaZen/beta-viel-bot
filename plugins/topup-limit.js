@@ -41,7 +41,7 @@ Silakan scan QRIS di atas untuk melakukan pembayaran. Pembayaran akan dicek otom
 Waktu bayar: 5 Menit.
 `.trim();
 
-        await conn.sendFile(m.chat, qrBuffer, 'qris.png', caption, m);
+        let qrisMsg = await conn.sendFile(m.chat, qrBuffer, 'qris.png', caption, m);
 
         // Simpan data transaksi sementara di memory untuk dicek lewat button/command
         conn.topup = conn.topup ? conn.topup : {};
@@ -73,6 +73,15 @@ Waktu bayar: 5 Menit.
                     clearInterval(interval);
                     clearTimeout(timeout);
 
+                    // Hapus pesan QRIS
+                    try {
+                        if (qrisMsg && qrisMsg.key) {
+                            await conn.sendMessage(m.chat, { delete: qrisMsg.key });
+                        }
+                    } catch (e) {
+                        console.error('Gagal menghapus pesan QRIS:', e);
+                    }
+
                     let user = global.db.data.users[m.sender];
                     user.limit += limits;
                     delete conn.topup[m.sender];
@@ -95,9 +104,19 @@ Terima kasih telah melakukan topup!
         }, 10000); // Check every 10 seconds
 
         // 3. Timeout after 5 minutes
-        let timeout = setTimeout(() => {
+        let timeout = setTimeout(async () => {
             clearInterval(interval);
             if (conn.topup && conn.topup[m.sender]) delete conn.topup[m.sender];
+            
+            // Hapus pesan QRIS
+            try {
+                if (qrisMsg && qrisMsg.key) {
+                    await conn.sendMessage(m.chat, { delete: qrisMsg.key });
+                }
+            } catch (e) {
+                console.error('Gagal menghapus pesan QRIS:', e);
+            }
+            
             conn.reply(m.chat, `*Waktu pembayaran Order ID ${orderId} telah habis.* Silakan lakukan topup kembali jika belum membayar.`, m);
         }, 300000);
 
