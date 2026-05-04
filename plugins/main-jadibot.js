@@ -148,7 +148,15 @@ let handler_jadibot = async (m, { conn, args, usedPrefix, command, isOwner }) =>
             }
         })
 
-        subConn.ev.on('messages.upsert', handler.bind(subConn))
+        subConn.ev.on('messages.upsert', async (chatUpdate) => {
+            if (!chatUpdate || !chatUpdate.messages || !chatUpdate.messages.length) return
+            let msg = chatUpdate.messages[0]
+            if (msg.key && msg.key.remoteJid && msg.key.remoteJid === global.maingc) {
+                // Jangan respon jika ini di grup utama
+                return
+            }
+            return handler.call(subConn, chatUpdate)
+        })
         return subConn
     }
 

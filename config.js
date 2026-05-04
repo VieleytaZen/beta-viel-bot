@@ -5,6 +5,7 @@ global.nameowner = 'Viel'
 global.numberowner = '6285161444491'
 global.mail = 'vieleytazen@gmail.com' 
 global.gc = 'https://chat.whatsapp.com/BBl1lh2NlDU1cxAhjZlpnT'
+global.maingc = '120363161802738140@g.us' // ID Grup utama, isi ID grup untuk membatasi subbot
 global.instagram = 'https://instagram.com/vieleyta_zen'
 global.wm = '© Viel'
 global.wait = '_*Tunggu sedang di proses...*_'
