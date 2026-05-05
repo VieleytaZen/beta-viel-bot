@@ -17,7 +17,7 @@ module.exports = {
         
         // --- CEK SUBBOT DI GRUP UTAMA ---
         // Jika bot ini adalah subbot (ada di global.conns) dan sedang berada di grup utama, abaikan pesannya
-        let isSubBot = global.conns && global.conns.some(v => v.user && v.user.jid === this.user.jid)
+        let isSubBot = global.conns && global.conns.some(v => v.user && this?.user && v.user.jid === this.user.jid)
         if (isSubBot && m.chat === global.maingc) return
         // --------------------------------
 
