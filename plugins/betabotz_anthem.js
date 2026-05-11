@@ -46,7 +46,6 @@ Fiturnya mengagumkan, tak terbantahkan.
 Terima kasih, Tio Erlan Nayla,
 Bo`
 await conn.sendFile(m.chat, img, null, text, m);
-conn.sendMessage(m.chat, { audio: { url: audio }, mimetype: 'audio/mpeg' }, { quoted: m });
 
 }
 

@@ -115,16 +115,6 @@ async function sendMenu(m, conn, text, replace) {
         text,
         m
     );
-
-    // Music di Menu
-    let musicPath = path.join(__dirname, 'music.mp3');
-    if (fs.existsSync(musicPath)) {
-        await conn.sendMessage(m.chat, { 
-            audio: { url: musicPath }, 
-            mimetype: 'audio/mpeg',
-            ptt: false 
-        }, { quoted: m });
-    }
 }
 
 function clockString(ms) {
