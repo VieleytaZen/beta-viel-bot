@@ -15,6 +15,17 @@ module.exports = {
     if (chatUpdate.messages.length > 1) console.log(chatUpdate.messages);
     let m = chatUpdate.messages[chatUpdate.messages.length - 1];
     if (!m) return;
+
+    // --- CEK SUBBOT DI GRUP UTAMA ---
+    // Jika bot ini adalah subbot (ada di global.conns) dan sedang berada di grup utama, abaikan pesannya
+    let isSubBot =
+      global.conns &&
+      global.conns.some(
+        (v) => v.user && this?.user && v.user.jid === this.user.jid,
+      );
+    if (isSubBot && m.chat === global.maingc) return;
+    // --------------------------------
+
     //console.log(JSON.stringify(m, null, 4))
     try {
       m = simple.smsg(this, m) || m;

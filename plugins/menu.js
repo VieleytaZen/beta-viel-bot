@@ -110,7 +110,7 @@ async function sendMenu(m, conn, text, replace) {
 
     await conn.sendFile(
         m.chat,
-        'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
+        'https://cdn.filn.pp.ua/uploads/betabotzapi/e2f3b.jpg',
         null,
         text,
         m

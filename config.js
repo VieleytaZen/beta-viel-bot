@@ -1,59 +1,60 @@
-require("dotenv").config();
+global.owner = ['6285161444491']  
+global.mods = ['6285161444491'] 
+global.prems = ['6285161444491']
+global.nameowner = 'Viel'
+global.numberowner = '6285161444491'
+global.mail = 'vieleytazen@gmail.com' 
+global.gc = 'https://chat.whatsapp.com/BBl1lh2NlDU1cxAhjZlpnT'
+global.maingc = '120363161802738140@g.us' // ID Grup utama, isi ID grup untuk membatasi subbot
+global.instagram = 'https://instagram.com/vieleyta_zen'
+global.wm = '© Viel'
+global.wait = '_*Tunggu sedang di proses...*_'
+global.eror = '_*Server Error*_'
+global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
+global.packname = 'VieleytaZen'
+global.author = 'ig: vieleyta_zen'
+global.maxwarn = '5' // Peringatan maksimum
+global.antiporn = true // Auto delete pesan porno (bot harus admin)
 
-global.owner = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.mods = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.prems = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.nameowner = "LANN"; // wajib di isi tidak boleh kosong
-global.numberowner = "6281289694906"; // wajib di isi tidak boleh kosong
-global.mail = "danaputra10012@gmail.com"; // wajib di isi tidak boleh kosong
-global.gc = "https://chat.whatsapp.com/I5RpePh2b5u37OyFjzCNTr"; // wajib di isi tidak boleh kosong
-global.instagram = "https://www.instagram.com/dana_putra13/"; // wajib di isi tidak boleh kosong
-global.wm = "© BETABOTZ"; // isi nama bot atau nama kalian
-global.wait = "_*Tunggu sedang di proses...*_"; // ini pesan simulasi loading
-global.eror = "_*Server Error*_"; // ini pesan saat terjadi kesalahan
-global.stiker_wait = "*⫹⫺ Stiker sedang dibuat...*"; // ini pesan simulasi saat loading pembuatan sticker
-global.packname = "Made With"; // watermark stikcker packname
-global.author = "Bot WhatsApp"; // watermark stikcker author
-global.maxwarn = "3"; // Peringatan maksimum Warn
-global.groupLapor = "120363216901617825@g.us"; // grub dimana bot mengirim laporan error dari user
+// Pakasir Config
+global.pakasir_slug = 'viel-bot'
+global.pakasir_key = 'OQvowQjubQmC44isD93tmPnpkpdVBCQX'
 
-global.autobio = false; // Set true/false untuk mengaktifkan atau mematikan autobio (default: false)
-global.antiporn = false; // Set true/false untuk Auto delete pesan porno (bot harus admin) (default: false)
-global.spam = false; // Set true/false untuk anti spam (default: false)
-global.gcspam = false; // Set true/false untuk menutup grup ketika spam (default: false)
-
-
-// Prefix dari bot
+// Prefix
 global.prefix = './#'
+//INI WAJIB DI ISI!//
+global.lann = 'beta-rxyzal'
+global.aksesKey = '' // Register dan buy 
+//Daftar terlebih dahulu https://api.betabotz.eu.org
 
-// APIKEY INI WAJIB DI ISI! //
-global.lann = "";
-// global.lann = process.env.API_KEY_BETABOTZ;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.betabotz.eu.org
+global.APIs = {   
+  lann: 'https://api.betabotz.eu.org',
+}
+global.APIKeys = { 
+  'https://api.betabotz.eu.org': global.lann, 
+}
 
-// AKSESKEY INI DI ISI JIKA DIPERLUKAN (e.g suno ai (ai music ) & fitur prem lainnya//
-global.aksesKey = "";
-// global.aksesKey = process.env.API_KEY_BETABOTZ_AKSESKEY;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.betabotz.eu.org
+// Jadibot Restoration
+if (global.conns instanceof Array) console.log()
+else global.conns = []
 
-// Tidak boleh diganti atau di ubah
-global.APIs = {
-  lann: "https://api.betabotz.eu.org",
-};
+let fs = require('fs')
+let path = require('path')
+let chalk = require('chalk')
 
-//Tidak boleh diganti atau di ubah
-global.APIKeys = {
-  "https://api.betabotz.eu.org": global.lann,
-};
+async function restoreSessions() {
+    let authFolder = 'sessions'
+    if (!fs.existsSync(authFolder)) return
+    let files = fs.readdirSync(authFolder)
+    for (let file of files) {
+        if (file === 'creds.json' || !fs.statSync(path.join(authFolder, file)).isDirectory()) continue
+    }
+}
 
-let fs = require("fs");
-let chalk = require("chalk");
-let file = require.resolve(__filename);
+let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-  fs.unwatchFile(file);
-  console.log(chalk.redBright("Update 'config.js'"));
-  delete require.cache[file];
-  require(file);
-});
+  fs.unwatchFile(file)
+  console.log(chalk.redBright("Update 'config.js'"))
+  delete require.cache[file]
+  require(file)
+})
