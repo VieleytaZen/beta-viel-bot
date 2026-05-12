@@ -9,7 +9,7 @@ let moment = require('moment-timezone');
 let levelling = require('../lib/levelling');
 
 let arrayMenu = [
-    'all', 'ai', 'main', 'database', 'downloader', 'rpg', 'rpgG', 'sticker', 'advanced', 'xp', 'fun', 'game', 'github', 'group', 'image', 'nsfw', 'info', 'internet', 'islam', 'kerang', 'maker', 'news', 'owner', 'voice', 'quotes', 'store', 'stalk', 'shortlink', 'tools', 'anonymous'
+    'all', 'ai', 'main', 'database', 'downloader', 'rpg', 'rpgG', 'sticker', 'advanced', 'xp', 'fun', 'game', 'github', 'group', 'image', 'info', 'internet', 'islam', 'kerang', 'maker', 'news', 'owner', 'voice', 'quotes', 'store', 'stalk', 'shortlink', 'tools', 'anonymous'
 ];
 
 const allTags = arrayMenu.reduce((acc, tag) => {

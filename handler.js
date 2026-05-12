@@ -849,90 +849,6 @@ module.exports = {
           if (!("antiToxic" in chat)) chat.antiToxic = false;
           if (!isNumber(chat.expired)) chat.expired = 0;
           if (!("memgc" in chat)) chat.memgc = {};
-          if (!("antilinkig" in chat)) chat.antilinkig = false;
-          if (!("antilinkignokick" in chat)) chat.antilinkignokick = false;
-          if (!("antilinkfb" in chat)) chat.antilinkfb = false;
-          if (!("antilinkfbnokick" in chat)) chat.antilinkfbnokick = false;
-          if (!("antilinktwit" in chat)) chat.antilinktwit = false;
-          if (!("antilinktwitnokick" in chat)) chat.antilinktwitnokick = false;
-          if (!("antilinkyt" in chat)) chat.antilinkyt = false;
-          if (!("antilinkytnokick" in chat)) chat.antilinkytnokick = false;
-          if (!("antilinktele" in chat)) chat.antilinktele = false;
-          if (!("antilinktelenokick" in chat)) chat.antilinktelenokick = false;
-          if (!("antilinkwame" in chat)) chat.antilinkwame = false;
-          if (!("antilinkwamenokick" in chat)) chat.antilinkwamenokick = false;
-          if (!("antilinkall" in chat)) chat.antilinkall = false;
-          if (!("antilinkallnokick" in chat)) chat.antilinkallnokick = false;
-          if (!("antilinktt" in chat)) chat.antilinktt = false;
-          if (!("antilinkttnokick" in chat)) chat.antilinkttnokick = false;
-          if (!("antibot" in chat)) chat.antibot = false;
-          if (!("autohd" in chat)) chat.autohd = false;
-          if (!("autobio" in chat)) chat.autobio = false;
-          if (!("rpg" in chat)) chat.rpg = false;
-          if (!("nsfw" in chat)) chat.nsfw = false;
-          if (!("autobackup" in chat)) chat.autobackup = false;
-          if (!("autodl" in chat)) chat.autodl = true;
-          if (!("notifgempa" in chat)) chat.notifgempa = false;
-          if (!("notifcuaca" in chat)) chat.notifcuaca = false;
-          if (!("notifsholat" in chat)) chat.notifsholat = false;
-          if (!("autotranslate" in chat)) chat.autotranslate = false;
-          if (!("antitagsw" in chat)) chat.antitagsw = false;
-          if (!("autoacc" in chat)) chat.autoacc = false;
-          if (!("antiLinkCh" in chat)) chat.antiLinkCh = false;
-        } else
-          global.db.data.chats[m.chat] = {
-            antiLinkCh: false,
-            autoacc: false,
-            autotranslate: false,
-            notifsholat: false,
-            notifgempa: false,
-            notifcuaca: false,
-            autodl: true,
-            autobackup: false,
-            autobio: false,
-            autohd: false,
-            antiporn: false,
-            isBanned: false,
-            welcome: true,
-            welcometype: 1,
-            detect: false,
-            isBannedTime: false,
-            mute: false,
-            listStr: {},
-            sWelcome:
-              "*Selamat datang @user!*\n\n     Di group @subject\n\n╭─────「 *intro* 」\n│\n│─⪼ Nama : \n│─⪼ Umur :\n│─⪼ Askot :\n│─⪼ Gender :\n╰─────────────\n\n> semoga betah",
-            sBye: "Selamat tinggal @user!",
-            sPromote: "",
-            sDemote: "",
-            delete: false,
-            antiLink: false,
-            antiLinknokick: false,
-            antiSticker: false,
-            antiStickernokick: false,
-            viewonce: false,
-            antiToxic: false,
-            antilinkig: false,
-            antilinkignokick: false,
-            antilinkyt: false,
-            antilinkytnokick: false,
-            antilinktwit: false,
-            antilinktwitnokick: false,
-            antilinkfb: false,
-            antilinkfbnokick: false,
-            antilinkall: false,
-            antilinkallnokick: false,
-            antilinkwame: false,
-            antilinkwamenokick: false,
-            antilinktele: false,
-            antilinktelenokick: false,
-            antilinktt: false,
-            antilinkttnokick: false,
-            antibot: false,
-            rpg: false,
-            nsfw: false,
-            antitagsw: false,
-            antidelete: false,
-          };
         let memgc = global.db.data.chats[m.chat]?.memgc?.[m.sender];
         if (typeof memgc !== "object" || memgc === null) {
           global.db.data.chats[m.chat] = global.db.data.chats[m.chat] || {};
@@ -1127,20 +1043,6 @@ module.exports = {
           }
 
           if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) {
-            // Both Owner
-            fail("owner", m, this);
-            continue;
-          }
-          if (plugin.rpg && !global.db.data.chats[m.chat].rpg) {
-            // rpg
-            fail("rpg", m, this);
-            continue;
-          }
-          if (plugin.nsfw && !global.db.data.chats[m.chat].nsfw) {
-            // nsfw
-            fail("nsfw", m, this);
-            continue;
-          }
           if (plugin.rowner && !isROwner) {
             // Real Owner
             fail("rowner", m, this);

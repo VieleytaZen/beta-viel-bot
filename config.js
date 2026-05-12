@@ -14,7 +14,6 @@ global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'VieleytaZen'
 global.author = 'ig: vieleyta_zen'
 global.maxwarn = '5' // Peringatan maksimum
-global.antiporn = true // Auto delete pesan porno (bot harus admin)
 
 // Pakasir Config
 global.pakasir_slug = 'viel-bot'
